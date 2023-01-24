@@ -1,0 +1,12 @@
+nav {
+  background-color: greenyellow;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  color: cornflowerblue;
+}
