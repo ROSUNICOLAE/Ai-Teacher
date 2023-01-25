@@ -1,18 +1,15 @@
 import React from "react";
-import Body from "./Body";
-import CountSection from "./countSection";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 
-function MainPage() {
+
+function PhysicsAiTeacher() {
     return (
         <div>
             <Navbar />
-            <Body />
-            <CountSection />
             <Footer />
         </div>
     );
 }
 
-export default MainPage;
+export default PhysicsAiTeacher;

@@ -32,7 +32,7 @@ public class CourseMemory implements CourseDAO {
     public Set<String> getCoursesNames(){
         Set<String> coursesNames = new HashSet<>();
         for (Course course : courses) {
-            coursesNames.add(course.getName());
+            coursesNames.add(course.getName()+",");
         }
         return coursesNames;
     }

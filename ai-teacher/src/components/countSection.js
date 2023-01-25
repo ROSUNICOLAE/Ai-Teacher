@@ -43,7 +43,7 @@ function CountSection() {
             <div className="col-lg-3 col-6 text-center">
                 <span data-purecounter-start="0" data-purecounter-end="151" data-purecounter-duration="5"
                       className="purecounter">1 add from db</span>
-                <p>Trainers</p>
+                <p>Online Students</p>
             </div>
 
         </div>
