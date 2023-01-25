@@ -9,18 +9,16 @@ function MathAiTeacher() {
     const [response, setResponse] = useState('');
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch('http://localhost:8080/capital', {
+        fetch('http://localhost:3001/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': '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',
             },
-            body: JSON.stringify({promt: message }),
+            body: JSON.stringify({ message }),
         })
             .then((res) => res.json())
             .then((data) => setResponse(data.message));
     };
-
     return (
         <div>
             <Navbar />
@@ -34,7 +32,7 @@ function MathAiTeacher() {
                             <h1 className='mb-3'>Math AI Teacher</h1>
                             <form onSubmit={handleSubmit}>
                                 <div className="form-group">
-                                    <label htmlFor="message">Message</label> <br/>
+                                    <label htmlFor="message"></label> <br/>
                                     <textarea
                                         id="message"
                                         value={message}
@@ -48,7 +46,14 @@ function MathAiTeacher() {
                     </div>
                 </div>
             </div>
-            <div>{response}</div>
+<br/>
+            <h1 className='d-flex justify-content-center align-items-center h-100' style={{fontSize: '2rem', textAlign: 'center', backgroundColor: 'gray', padding: '20px', boxShadow: '4px 4px 8px #888888'}}>
+                Response from the Math Teacher :
+            </h1>
+            <div className='d-flex justify-content-center align-items-center h-100' style={{fontSize: '2rem', textAlign: 'center', backgroundColor: 'gray', padding: '20px', boxShadow: '4px 4px 8px #888888'}}>
+                {response}
+            </div>
+
 
             <Footer />
         </div>
