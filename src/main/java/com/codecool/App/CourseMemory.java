@@ -17,21 +17,14 @@ public class CourseMemory implements CourseDAO{
 
     @Override
     public Set<Course> getCourses() {
-        return null;
+        return courses;
     }
 
     @Override
     public Course addCourse(String name) {
-        return null;
+        Course course = new Course(name);
+        courses.add(course);
+        return course;
     }
 
-    @Override
-    public Course getCourseById(UUID id){
-        for (Course course : courses) {
-            if (course.getUuid().equals(id)){
-                return course;
-            }
-        }
-        return null;
-    }
 }

@@ -9,5 +9,4 @@ public interface CourseDAO {
     Set<Course> getCourses();
     Course addCourse(String name);
 
-    Course getCourseById(UUID id);
 }
