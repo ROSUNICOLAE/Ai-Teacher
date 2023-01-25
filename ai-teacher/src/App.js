@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import Header from "./components/Header";
+import CountSection from "./components/countSection";
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
             <p>AI Teacher is a web application that helps students to learn and practice their math skills.</p>
             <p>AI Teacher is a web application that helps students to learn and practice their math skills.</p>
           </body>
-
+          <CountSection />
       </header>
         <Footer />
     </div>
