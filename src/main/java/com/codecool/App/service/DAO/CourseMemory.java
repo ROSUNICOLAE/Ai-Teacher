@@ -1,15 +1,15 @@
-package com.codecool.App;
+package com.codecool.App.service.DAO;
 
 import com.codecool.App.models.Course;
+import com.codecool.App.service.DAO.CourseDAO;
 import org.springframework.stereotype.Repository;
 
 import java.util.HashSet;
 import java.util.Set;
-import java.util.UUID;
 
 
 @Repository
-public class CourseMemory implements CourseDAO{
+public class CourseMemory implements CourseDAO {
     private Set<Course> courses;
     public CourseMemory() {
         courses = new HashSet<>();

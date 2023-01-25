@@ -1,4 +1,4 @@
-package com.codecool.App;
+package com.codecool.App.service.DAO;
 
 import com.codecool.App.models.Course;
 
