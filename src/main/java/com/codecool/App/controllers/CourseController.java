@@ -16,10 +16,10 @@ public class CourseController {
     @Autowired
     CourseService courseService;
 
-    @GetMapping("/all-courses")
+    @GetMapping("/all")
     public @ResponseBody Set<Course> getCoursesAPI() {return courseService.getCourses();}
 
-    @PostMapping("add-course")
+    @PostMapping("/add")
     public void addCourse(@RequestParam String name) {
         courseService.addCourse(name);
     }

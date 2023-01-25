@@ -8,6 +8,15 @@ function CountSection() {
             .then(response => response.json())
             .then(data => setStudentsCount(data));
     }, []);
+
+    const [coursesCount, setCoursesCount] = useState(0);
+
+    useEffect(() => {
+        fetch("http://localhost:8080/courses/all")
+            .then(response => response.json())
+            .then(data => setCoursesCount(data.length));
+    }, []);
+
     return (
 <section id="counts" className="counts section-bg">
     <div className="container">
@@ -20,8 +29,7 @@ function CountSection() {
             </div>
 
             <div className="col-lg-3 col-6 text-center">
-                <span data-purecounter-start="0" data-purecounter-end="641" data-purecounter-duration="5"
-                      className="purecounter">1 add from db</span>
+                <span className="purecounter">{coursesCount}</span>
                 <p>Courses</p>
             </div>
 
