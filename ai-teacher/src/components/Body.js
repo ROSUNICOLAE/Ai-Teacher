@@ -3,10 +3,11 @@ import img from './images/AI k12.png.jpg';
 import {
     MDBBtn
 } from 'mdb-react-ui-kit';
+import { Link } from 'react-router-dom';
 
 
 
-function Header()  {
+function Body()  {
     const [showBasic, setShowBasic] = useState(true);
 
     return (
@@ -21,9 +22,11 @@ function Header()  {
                         <div className='text-white'>
                             <h1 className='mb-3'>AI TEACHER</h1>
                             <h4 className='mb-3'>The Future of Education: How AI Teachers are Transforming the Learning Experience</h4>
-                            <MDBBtn tag="a" outline size="lg">
-                                Start Learning now
-                            </MDBBtn>
+                            <Link to="/start-learning">
+                                <MDBBtn tag="a" outline size="lg">
+                                    Start Learning now
+                                </MDBBtn>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -31,4 +34,4 @@ function Header()  {
         </header>
     );
 }
-export default Header;
+export default Body;
