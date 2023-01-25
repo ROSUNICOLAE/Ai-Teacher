@@ -9,27 +9,19 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Set;
 
-@Controller
+@RestController
 @RequestMapping("/courses")
 public class CourseController {
-
+//dadadada
     @Autowired
     CourseService courseService;
 
-    @GetMapping()
-    public String getCourses(Model model){
-        model.addAttribute("courses", courseService.getCourses());
-        return "courses";
-    }
-
-    @GetMapping("/get-all-courses")
+    @GetMapping("/all-courses")
     public @ResponseBody Set<Course> getCoursesAPI() {return courseService.getCourses();}
 
-    @PostMapping()
-    public String addCourse(@RequestParam String name, Model model) {
+    @PostMapping("add-course")
+    public void addCourse(@RequestParam String name) {
         courseService.addCourse(name);
-        model.addAttribute("courses", courseService.getCourses());
-        return "courses";
     }
 
 }
