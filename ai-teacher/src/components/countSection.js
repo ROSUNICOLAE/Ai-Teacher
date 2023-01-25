@@ -6,7 +6,8 @@ function CountSection() {
     useEffect(() => {
         fetch("http://localhost:8080/students/all")
             .then(response => response.json())
-            .then(data => setStudentsCount(data));
+            .then(data => { setStudentsCount(data.length)
+                console.log(data)})
     }, []);
     return (
 <section id="counts" className="counts section-bg">

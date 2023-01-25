@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Set;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/students")
 public class StudentController {
 
@@ -19,7 +20,8 @@ public class StudentController {
 
 
     @GetMapping("/all")
-    public @ResponseBody Set<Student> getStudentsAPI() {
+    public Set<Student> getStudentsAPI() {
+        System.out.println(studentService.getStudents());
         return studentService.getStudents();
     }
 
