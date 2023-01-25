@@ -12,6 +12,10 @@ import java.util.Set;
 public class CourseMemory implements CourseDAO {
     private Set<Course> courses;
 
+    public CourseMemory() {
+        courses = new HashSet<>();
+        defaultCourses();
+    }
     private void defaultCourses(){
         Course course1 = new Course("Math");
         Course course2 = new Course("Physics");
@@ -22,15 +26,23 @@ public class CourseMemory implements CourseDAO {
         courses.add(course3);
         courses.add(course4);
     }
-    public CourseMemory() {
-        courses = new HashSet<>();
-        defaultCourses();
+
+// gete all curses names form curses
+    @Override
+    public Set<String> getCoursesNames(){
+        Set<String> coursesNames = new HashSet<>();
+        for (Course course : courses) {
+            coursesNames.add(course.getName());
+        }
+        return coursesNames;
     }
 
     @Override
     public Set<Course> getCourses() {
         return courses;
     }
+
+
 
     @Override
     public Course addCourse(String name) {

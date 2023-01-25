@@ -24,4 +24,8 @@ public class CourseController {
         courseService.addCourse(name);
     }
 
+    @GetMapping("/cousesNames")
+    public @ResponseBody Set<String> getCoursesNames() {return courseService.getCoursesNames();}
+
 }
+

@@ -8,4 +8,8 @@ import java.util.UUID;
 public interface CourseDAO {
     Set<Course> getCourses();
     Course addCourse(String name);
+
+    Set<String> getCoursesNames();
+
+
 }

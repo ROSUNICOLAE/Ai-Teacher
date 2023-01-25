@@ -22,4 +22,7 @@ public class CourseService {
         return courseDAO.addCourse(name);
     }
 
+
+    public Set<String> getCoursesNames() {  return courseDAO.getCoursesNames();
+    }
 }
