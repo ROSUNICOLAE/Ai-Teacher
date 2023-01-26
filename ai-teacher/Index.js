@@ -1,6 +1,5 @@
 // a express server, which will handle api requests in and respond back with a json object, it will use body barser as well as cors
 
-
 const OpenAI = require('openai');
 const { Configuration, OpenAIApi } = OpenAI;
 
@@ -25,7 +24,6 @@ app.post('/', async (req, res) =>{
     const response = await openai.createCompletion({
         model: "text-davinci-003",
         prompt: ` Act like a Math teacher, a genius in mathematics.And do not accept other questions from anything else. Try to answer in Romanian language.And try to be as explicit as possible.
-
         Person :  ${message}`,
         max_tokens: 1500,
         temperature: 0,
