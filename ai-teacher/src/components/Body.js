@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom';
 
 
 function Body()  {
-    const [showBasic, setShowBasic] = useState(true);
 
     return (
         <header>
@@ -31,6 +30,11 @@ function Body()  {
                     </div>
                 </div>
             </div>
+            <h4 className='d-flex justify-content-center align-items-center h-100'>TO BE DONE</h4>
+            <p>...</p><br/>
+            <p>...</p><br/>
+            <p>...</p><br/>
+            <p>...</p><br/>
         </header>
     );
 }

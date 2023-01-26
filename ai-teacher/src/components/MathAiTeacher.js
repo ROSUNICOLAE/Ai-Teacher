@@ -54,8 +54,6 @@ function MathAiTeacher() {
             <div className='d-flex justify-content-center align-items-center h-100' style={{fontSize: '2rem', textAlign: 'center', backgroundColor: 'gray', padding: '20px', boxShadow: '4px 4px 8px #888888'}}>
                 {response}
             </div>
-
-
             <Footer />
         </div>
     );
