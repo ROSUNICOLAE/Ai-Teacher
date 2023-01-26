@@ -10,7 +10,7 @@ import MainPage from './components/MainPage';
 import MathAiTeacher from "./components/MathAiTeacher";
 import PhysicsAiTeacher from "./components/PhysicsAiTeacher";
 import InfoAiTeacher from "./components/InfoAiTeacher";
-import HistoryoAiTeacher from "./components/HistoryAiTeacher";
+import HistoryAiTeacher from "./components/HistoryAiTeacher";
 
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
                     <Route path="/MathAi" element={<MathAiTeacher />} />
                     <Route path="/PhysicsAi" element={<PhysicsAiTeacher />} />
                     <Route path="/InfoAi" element={<InfoAiTeacher />} />
-                    <Route path="/HistoryAi" element={<HistoryoAiTeacher />} />
+                    <Route path="/HistoryAi" element={<HistoryAiTeacher />} />
             </Routes>
         </BrowserRouter>
     );

@@ -15,14 +15,16 @@ function StartLearningPage() {
 
     const courses = coursesNames.toString().split(",");
     const filteredCourses = courses.filter(course => course !== ""); // This will remove any empty spaces from the array
+    console.log(filteredCourses)
     const elements = filteredCourses.map((course, index) => (
         <li key={course}>
             {index+1}. {course}
-            <Link to={index === 0 ? '/MathAi' : `/aiteacher/${course}`}>
+            <Link to={course === "Math" ? '/MathAi' : course === "Physics" ? '/PhysicsAi' : `/`}>
                 <button>Go To AiTeacher</button>
             </Link>
         </li>
     ));
+
     return (
         <div>
             <Navbar />
