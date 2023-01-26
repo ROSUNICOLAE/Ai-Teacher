@@ -9,16 +9,19 @@ function MathAiTeacher() {
     const [response, setResponse] = useState('');
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch('http://localhost:3001/', {
+        fetch('http://localhost:8080/Mathai', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ message }),
+            body: JSON.stringify({
+                prompt : message
+            }),
+
         })
             .then((res) => res.json())
-            .then((data) => setResponse(data.message));
-    };
+            .then((data) => setResponse(data));
+    };console.log(response);
     return (
         <div>
             <Navbar />
