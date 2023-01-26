@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 import img from './images/AI k12.png.jpg';
+import data from "bootstrap/js/src/dom/data";
 
 
 function MathAiTeacher() {
@@ -14,14 +15,11 @@ function MathAiTeacher() {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({
-                prompt : message
-            }),
-
+            body: JSON.stringify({ prompt: message }),
         })
-            .then((res) => res.json())
-            .then((data) => setResponse(data));
-    };console.log(response);
+            .then(res => res.text())
+            .then(data => setResponse(data));
+    };
     return (
         <div>
             <Navbar />

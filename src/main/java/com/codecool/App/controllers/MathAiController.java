@@ -14,7 +14,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class MathAiController {
 
     private final String apiKey = "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";
-    private final String endpoint = "https://api.openai.com/v1/engines/davinci/completions";
+    private final String endpoint = "https://api.openai.com/v1/completions";
 
     @PostMapping("/Mathai")
     public String generateResponse(@RequestBody String prompt) throws JsonProcessingException {
@@ -24,13 +24,22 @@ public class MathAiController {
         headers.setContentType(MediaType.APPLICATION_JSON);
         headers.setBearerAuth(apiKey);
 
-        HttpEntity<String> request = new HttpEntity<>(prompt, headers);
-        ResponseEntity<String> response = restTemplate.exchange(endpoint, HttpMethod.POST, request, String.class);
+        JsonNode requestJson = new ObjectMapper().createObjectNode()
+                .put("model", "text-davinci-003")
+                .put("prompt", "Act like a Math teacher, a genius in mathematics.And do not accept other questions from anything else. Try to answer in Romanian language.And try to be as explicit as possible.\n" +
+                        prompt)
+                .put("max_tokens", 500);
+;
+        System.out.println(requestJson);
 
+        HttpEntity<JsonNode> request = new HttpEntity<>(requestJson, headers);
+        ResponseEntity<String> response = restTemplate.exchange(endpoint, HttpMethod.POST, request, String.class);
+        System.out.println(response);
         ObjectMapper mapper = new ObjectMapper();
         JsonNode jsonNode = mapper.readTree(response.getBody());
-        return jsonNode.get("choices").get(0).get("text").toString();
+        return jsonNode.get("choices").get(0).get("text").asText();
     }
+
 }
 
 
