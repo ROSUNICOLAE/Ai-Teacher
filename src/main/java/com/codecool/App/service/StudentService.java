@@ -10,12 +10,9 @@ import org.springframework.stereotype.Service;
 import java.util.Set;
 @Service
 public class StudentService {
-
     @Autowired
     private StudentDAO studentDAO;
-
     public Set<Student> getStudents(){return studentDAO.getStudents();}
-
     public Student addStudent(String name, String username, String email){
         return studentDAO.addStudent( name,  username,  email) ;
     }

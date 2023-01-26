@@ -23,8 +23,7 @@ public class CourseController {
     public void addCourse(@RequestParam String name) {
         courseService.addCourse(name);
     }
-
-    @GetMapping("/cousesNames")
+    @GetMapping("/coursesNames")
     public @ResponseBody Set<String> getCoursesNames() {return courseService.getCoursesNames();}
 
 }

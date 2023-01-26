@@ -9,7 +9,6 @@ public class Student {
     private String username;
     private String email;
 
-
     public Student(String name, String username, String email) {
         this.uuid = UUID.randomUUID();
         this.name = name;

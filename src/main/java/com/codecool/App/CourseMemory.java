@@ -17,17 +17,11 @@ public class CourseMemory implements CourseDAO {
         defaultCourses();
     }
     private void defaultCourses(){
-        Course course1 = new Course("Math");
-        Course course2 = new Course("Physics");
-        Course course3 = new Course("Information Technology");
-        Course course4 = new Course("History");
-        courses.add(course1);
-        courses.add(course2);
-        courses.add(course3);
-        courses.add(course4);
+        courses.add(new Course("Math"));
+        courses.add(new Course("Physics"));
+        courses.add(new Course("Information Technology"));
+        courses.add(new Course("History"));
     }
-
-// gete all curses names form curses
     @Override
     public Set<String> getCoursesNames(){
         Set<String> coursesNames = new HashSet<>();
@@ -41,8 +35,6 @@ public class CourseMemory implements CourseDAO {
     public Set<Course> getCourses() {
         return courses;
     }
-
-
 
     @Override
     public Course addCourse(String name) {

@@ -12,7 +12,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
 public class CapitalController {
-
     private final String apiKey = "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";
     private final String endpoint = "https://api.openai.com/v1/engines/davinci/completions";
 
