@@ -29,7 +29,6 @@ public class PhysicsAiController {
                 .put("prompt", "Answer like a Physics Teacher, a genius in Physics.And do not accept other questions from anything else. Try to answer in Romanian language.And try to be as explicit as possible.\n" +
                         prompt)
                 .put("max_tokens", 500);
-        ;
         System.out.println(requestJson);
 
         HttpEntity<JsonNode> request = new HttpEntity<>(requestJson, headers);
