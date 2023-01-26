@@ -1,4 +1,6 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
+
 
 function Navbar() {
     return (
@@ -20,6 +22,9 @@ function Navbar() {
                         </li>
                         <li className="nav-item">
                             <a className="nav-link disabled">Sign in</a>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/">Home <i className="fas fa-home"></i></Link>
                         </li>
                     </ul>
                 </div>
