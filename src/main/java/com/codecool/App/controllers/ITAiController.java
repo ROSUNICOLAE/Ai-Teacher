@@ -26,7 +26,7 @@ public class ITAiController {
 
         JsonNode requestJson = new ObjectMapper().createObjectNode()
                 .put("model", "text-davinci-003")
-                .put("prompt", "Act like a computer science teacher, a genius in informatics.And do not accept other questions from anything else. Try to be as explicit as possible.\n" +
+                .put("prompt", "Act like a Computer Science teacher, a genius in informatics. And do not accept other questions from anything else. Try to be as explicit as possible.\n" +
                         prompt)
                 .put("max_tokens", 500);
 

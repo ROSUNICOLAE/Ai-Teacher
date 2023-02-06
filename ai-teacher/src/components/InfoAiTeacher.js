@@ -9,7 +9,8 @@ function InfoAiTeacher() {
     const [response, setResponse] = useState('');
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch('http://localhost:8080/InfoAi', {
+        fetch('http://localhost:8080' +
+            '/InfoAi', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
