@@ -3,7 +3,7 @@ import Footer from "./Footer";
 import Navbar from "./Navbar";
 
 
-function HistoryoAiTeacher() {
+function HistoryAiTeacher() {
     return (
         <div>
             <Navbar />
@@ -12,4 +12,4 @@ function HistoryoAiTeacher() {
     );
 }
 
-export default HistoryoAiTeacher;
+export default HistoryAiTeacher;
