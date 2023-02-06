@@ -1,12 +1,11 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 
 
 function Navbar() {
     return (
-        <nav className="navbar navbar-expand-lg bg-body-tertiary" style={{backgroundColor: "#e3f2fd"}}>
+        <nav className="navbar navbar-expand-lg bg-tertiary" style={{ backgroundColor: "mistyrose" }}>
             <div className="container-fluid">
-                <a className="navbar-brand" href="#">AIteacher</a>
+                <a className="navbar-brand" href="/"><i className="fas fa-home"></i>AIteacher</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -15,18 +14,16 @@ function Navbar() {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="#">Subjects</a>
+                            <a className="nav-link active" aria-current="page" href="/subject">Subjects</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">About us</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link disabled">Sign in</a>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/">Home <i className="fas fa-home"></i></Link>
+                            <a className="nav-link" href="/about">About us</a>
                         </li>
                     </ul>
+                    <form className="d-flex" role="login">
+                        <button className="btn btn-light signUp" type="submit">Sign Up</button>
+                        <button className="btn btn-light" type="submit">Sign In</button>
+                    </form>
                 </div>
             </div>
         </nav>
