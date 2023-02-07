@@ -1,22 +1,22 @@
 package com.codecool.App.controllers;
+
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.http.*;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.http.*;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
-public class MathAiController {
-
+public class HistoryAiTeacher {
     private final String apiKey = "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";
     private final String endpoint = "https://api.openai.com/v1/completions";
 
-    @PostMapping("/Mathai")
+    @PostMapping("/HistoryAi")
     public String generateResponse(@RequestBody String prompt) throws JsonProcessingException {
         RestTemplate restTemplate = new RestTemplate();
 
@@ -26,10 +26,9 @@ public class MathAiController {
 
         JsonNode requestJson = new ObjectMapper().createObjectNode()
                 .put("model", "text-davinci-003")
-                .put("prompt", "Act like a Math teacher, a genius in mathematics. And do not accept other questions from anything else. Try to be as explicit as possible.\n" +
+                .put("prompt", "Answer like a History Teacher. Do not accept other questions from anything else. Try to be as explicit as possible.\n" +
                         prompt)
                 .put("max_tokens", 500);
-
         System.out.println(requestJson);
 
         HttpEntity<JsonNode> request = new HttpEntity<>(requestJson, headers);
@@ -40,7 +39,5 @@ public class MathAiController {
         return jsonNode.get("choices").get(0).get("text").asText();
     }
 
+
 }
-
-
-

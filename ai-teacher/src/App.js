@@ -11,6 +11,7 @@ import MathAiTeacher from "./components/MathAiTeacher";
 import PhysicsAiTeacher from "./components/PhysicsAiTeacher";
 import InfoAiTeacher from "./components/InfoAiTeacher";
 import HistoryAiTeacher from "./components/HistoryAiTeacher";
+import SignUp from "./components/SignUp";
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
                     <Route path="/PhysicsAi" element={<PhysicsAiTeacher />} />
                     <Route path="/InfoAi" element={<InfoAiTeacher />} />
                     <Route path="/HistoryAi" element={<HistoryAiTeacher />} />
+                    <Route path="/signup" element={<SignUp />} />
             </Routes>
         </BrowserRouter>
     );
