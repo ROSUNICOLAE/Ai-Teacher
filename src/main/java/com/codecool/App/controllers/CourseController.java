@@ -1,12 +1,11 @@
 package com.codecool.App.controllers;
 
-import com.codecool.App.CourseService;
+import com.codecool.App.service.CourseService;
 import com.codecool.App.models.Course;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Set;
 
 @RestController
@@ -17,14 +16,14 @@ public class CourseController {
     CourseService courseService;
 
     @GetMapping("/all")
-    public @ResponseBody Set<Course> getCoursesAPI() {return courseService.getCourses();}
+    public @ResponseBody List<Course> getCoursesAPI() {return courseService.getCourses();}
 
     @PostMapping("/add")
     public void addCourse(@RequestParam String name) {
         courseService.addCourse(name);
     }
     @GetMapping("/coursesNames")
-    public @ResponseBody Set<String> getCoursesNames() {return courseService.getCoursesNames();}
+    public @ResponseBody List<String> getCoursesNames() {return courseService.getCoursesNames();}
 
 }
 
