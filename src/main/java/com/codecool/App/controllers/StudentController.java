@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Set;
 
 @RestController
@@ -20,14 +21,14 @@ public class StudentController {
 
 
     @GetMapping("/all")
-    public Set<Student> getStudentsAPI() {
+    public List<Student> getStudentsAPI() {
         System.out.println(studentService.getStudents());
         return studentService.getStudents();
     }
 
     @PostMapping("/add")
-    public void addStudent(@RequestParam String name, @RequestParam String username, @RequestParam String email) {
-        studentService.addStudent(name, username, email);
+    public void addStudent(@RequestParam String name, @RequestParam String username, @RequestParam String email,@RequestParam Long id) {
+        studentService.addStudent(name, username, email, id);
 
     }
 
