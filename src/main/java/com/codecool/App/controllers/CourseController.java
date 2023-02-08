@@ -26,14 +26,5 @@ public class CourseController {
     @GetMapping("/coursesNames")
     public @ResponseBody List<String> getCoursesNames() {return courseService.getCoursesNames();}
 
-    @PostConstruct
-    public void addDefaultCourses() {
-        courseService.addCourse("Math");
-        courseService.addCourse("Physics");
-        courseService.addCourse("History");
-        courseService.addCourse("Informatics");
-    }
-
-
 }
 

@@ -10,7 +10,7 @@ import java.util.List;
 public class CourseService {
 
     @Autowired
-    private CourseRepository courseRepository;
+    CourseRepository courseRepository;
 
     public List<Course> getCourses() {
         return courseRepository.findAll();
