@@ -14,7 +14,9 @@ public class StudentService {
     private StudentRepository studentRepository;
 
     public List<Student> getStudents(){return studentRepository.findAll();}
-    public Student addStudent(String name, String username, String email, Long id){
-        return studentRepository.save(new Student(name, username, email, id));
+    public Student addStudent(Student student){return studentRepository.save(student);}
+
+    public Student findByUsername(String username) {
+    return studentRepository.findByUsername(username);
     }
 }
