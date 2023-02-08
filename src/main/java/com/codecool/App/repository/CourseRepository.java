@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface CourseRepository extends JpaRepository<Course, Long> {
-    @Query("SELECT c.name FROM courses c")
+    @Query("SELECT c.name FROM Course c")
     // write the query here to get all the names of the courses from the database
     List<String> findAllNames();
 }

@@ -9,7 +9,7 @@ function StartLearningPage() {
     const [coursesNames, setCoursesNames] = useState("");
 
     useEffect(() => {
-        fetch("http://localhost:8080/courses/cousesNames")
+        fetch("http://localhost:8080/courses/coursesNames")
             .then(response => response.json())
             .then(data => setCoursesNames(data));
     }, []);

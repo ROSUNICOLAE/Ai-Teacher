@@ -24,7 +24,7 @@ function App() {
                     <Route path="/PhysicsAi" element={<PhysicsAiTeacher />} />
                     <Route path="/InfoAi" element={<InfoAiTeacher />} />
                     <Route path="/HistoryAi" element={<HistoryAiTeacher />} />
-                    <Route path="/signup" element={<SignUp />} />
+                    <Route path="/SingUpForm" element={<SignUp />} />
             </Routes>
         </BrowserRouter>
     );

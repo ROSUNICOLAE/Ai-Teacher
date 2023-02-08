@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-git pu
 
 @Service
 public class CourseService {
@@ -25,4 +24,5 @@ public class CourseService {
     public List<String> getCoursesNames() {
         return courseRepository.findAllNames();
     }
+
 }
