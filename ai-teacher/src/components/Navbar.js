@@ -57,26 +57,32 @@ function Navbar() {
                         </li>
                     </ul>
                                 <MDBBtn onClick={() => setScrollableModal(!scrollableModal)}>SIGN UP</MDBBtn>
-                                <MDBModal show={scrollableModal} setShow={setScrollableModal} tabIndex='-1'>
-                                    <MDBModalDialog scrollable>
-                                        <MDBModalContent>
-                                            <MDBModalHeader>
-                                                <MDBModalTitle>Create a new Student account</MDBModalTitle>
-                                                <MDBBtn
-                                                    className='btn-close'
-                                                    color='none'
-                                                    onClick={() => setScrollableModal(!scrollableModal)}
-                                                ></MDBBtn>
-                                            </MDBModalHeader>
-                                            <MDBModalBody>
-                                                <form onSubmit={handleSubmit}>
-                                                    <MDBInput label='Name input' id='name' type='text' value={name} onChange={e => setName(e.target.value)} />
-                                                    <MDBInput label='Username input' id='username' type='text' value={username} onChange={e => setUsername(e.target.value)} />
-                                                    <MDBInput label='Email input' id='email' type='email' value={email} onChange={e => setEmail(e.target.value)} />
-                                                    <MDBBtn MDBBtn outline rounded className='mx-2' color='dark' type="submit" >
-                                                        Create Account
-                                                    </MDBBtn>
-                                                </form>
+                    <MDBModal show={scrollableModal} setShow={setScrollableModal} tabIndex='-1'>
+                        <MDBModalDialog className="modal-dialog-centered" scrollable>
+                            <MDBModalContent>
+                                <MDBModalHeader>
+                                    <MDBModalTitle>Create a new Student account</MDBModalTitle>
+                                </MDBModalHeader>
+                                <MDBModalBody>
+                                    <form onSubmit={(e) => {
+                                        handleSubmit(e)
+                                        setScrollableModal(!scrollableModal)
+                                    }}>
+                                        <div>
+                                            <label htmlFor="name">Name:</label>
+                                            <MDBInput id='name' type='text' value={name} onChange={e => setName(e.target.value)} />
+                                        </div>
+                                        <div>
+                                            <label htmlFor="username">Username:</label>
+                                            <MDBInput id='username' type='text' value={username} onChange={e => setUsername(e.target.value)} />
+                                        </div>
+                                        <div>
+                                            <label htmlFor="email">Email:</label>
+                                            <MDBInput id='email' type='email' value={email} onChange={e => setEmail(e.target.value)} />
+                                        </div>
+                                        <MDBBtn MDBBtn outline rounded className='mx-2' color='dark' type="submit">Create Account</MDBBtn>
+                                    </form>
+
                                             </MDBModalBody>
                                             <MDBModalFooter>
                                                 <MDBBtn color='secondary' onClick={() => setScrollableModal(!setScrollableModal)}>

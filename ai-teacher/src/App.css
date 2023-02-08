@@ -69,3 +69,16 @@ nav {
 .signUp {
   margin-right: 5px;
 }
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+MDBInput {
+  width: 100%;
+  margin-bottom: 1rem;
+}
