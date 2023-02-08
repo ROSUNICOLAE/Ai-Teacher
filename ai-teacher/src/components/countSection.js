@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 function CountSection() {
     const [studentsCount, setStudentsCount] = useState(0);
+    const [coursesCount, setCoursesCount] = useState(0);
 
     useEffect(() => {
         fetch("http://localhost:8080/students/all")
@@ -10,7 +11,6 @@ function CountSection() {
                 console.log(data)})
     }, []);
 
-    const [coursesCount, setCoursesCount] = useState(0);
 
     useEffect(() => {
         fetch("http://localhost:8080/courses/all")
@@ -36,13 +36,13 @@ function CountSection() {
 
             <div className="col-lg-3 col-6 text-center">
                 <span data-purecounter-start="0" data-purecounter-end="421" data-purecounter-duration="5"
-                      className="purecounter">1 add from db</span>
+                      className="purecounter">"not ready yet"</span>
                 <p>Events</p>
             </div>
 
             <div className="col-lg-3 col-6 text-center">
                 <span data-purecounter-start="0" data-purecounter-end="151" data-purecounter-duration="5"
-                      className="purecounter">1 add from db</span>
+                      className="purecounter">"not ready yet"</span>
                 <p>Online Students</p>
             </div>
 
