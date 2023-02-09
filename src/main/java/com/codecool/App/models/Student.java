@@ -1,26 +1,41 @@
 package com.codecool.App.models;
 
 import jakarta.persistence.*;
-import lombok.Builder;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.UUID;
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "students")
+@Table(	name = "students")
+
 public class Student {
 
     @Id
-    @GeneratedValue (strategy = GenerationType.AUTO  )
+    @GeneratedValue (strategy = GenerationType.TABLE  )
+    @Column(name = "id")
     private Long id;
+
+    @Column(name = "name")
     private String name;
+    @Column(name = "username")
     private String username;
+
+    @Column(name = "email")
     private String email;
+
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(	name = "user_roles",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id"))
+    private Set<Role> roles = new HashSet<>();
 
     public Student(String name, String username, String email) {
         this.name = name;
@@ -28,7 +43,7 @@ public class Student {
         this.email = email;
     }
 
-    public Long getUuid() {
+    public Long getId() {
         return id;
     }
 
@@ -54,5 +69,13 @@ public class Student {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
     }
 }
