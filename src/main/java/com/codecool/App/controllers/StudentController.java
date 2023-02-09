@@ -34,7 +34,7 @@ public class StudentController {
         String username = (String) payload.get("username");
         String email = (String) payload.get("email");
 
-        Student existingStudent = studentService.findByUsername(username);
+        Student existingStudent = studentService.validateAndGetUserByUsername(username);
         if (existingStudent != null) {
             return ResponseEntity.badRequest().body("A student with this username already exists");
         }

@@ -65,7 +65,7 @@ public class AuthController {
         return ResponseEntity.ok(new JwtResponse(jwt,
                 userDetails.getId(),
                 userDetails.getUsername(),
-                userDetails.getEmail(),
+                userDetails.getPassword(),
                 roles));
     }
 
@@ -92,9 +92,11 @@ public class AuthController {
         Set<Role> roles = new HashSet<>();
 
         if (strRoles == null) {
-            Role userRole = roleRepository.findByName(ERole.ROLE_USER)
-                    .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+//            Role userRole = roleRepository.findByName(ERole.ROLE_USER)
+//                    .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+            Role userRole = new Role(ERole.ROLE_USER);
             roles.add(userRole);
+            roleRepository.saveAndFlush(userRole);
         } else {
             strRoles.forEach(role -> {
                 switch (role) {
@@ -108,6 +110,7 @@ public class AuthController {
                         Role userRole = roleRepository.findByName(ERole.ROLE_USER)
                                 .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
                         roles.add(userRole);
+                        roleRepository.saveAndFlush(userRole);
                 }
             });
         }

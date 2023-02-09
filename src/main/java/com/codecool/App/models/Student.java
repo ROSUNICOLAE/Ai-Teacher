@@ -2,6 +2,9 @@ package com.codecool.App.models;
 
 import jakarta.persistence.*;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -16,16 +19,20 @@ import java.util.UUID;
 @Entity
 @Table(	name = "students",
         uniqueConstraints = {
-@UniqueConstraint(columnNames = "username"),
-		})
+                @UniqueConstraint(columnNames = "username"),
+                @UniqueConstraint(columnNames = "email")
+        })
 public class Student {
 
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY  )
     private Long id;
-
+    @NotBlank
     private String name;
+    @NotBlank
     private String username;
+
+    @NotBlank
     private String email;
 
     @ManyToMany(fetch = FetchType.LAZY)
@@ -40,7 +47,7 @@ public class Student {
         this.email = email;
     }
 
-    public Long getUuid() {
+    public Long getId() {
         return id;
     }
 
