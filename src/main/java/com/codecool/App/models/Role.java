@@ -36,9 +36,5 @@ public class Role {
 
 
     //add defaul ROLE_USER and ROLE_ADMIN
-    @PostConstruct
-    public void init() {
-        Role roleUser = new Role(ERole.ROLE_USER);
-        Role roleAdmin = new Role(ERole.ROLE_ADMIN);
-    }
+
 }

@@ -2,38 +2,34 @@ package com.codecool.App.models;
 
 import jakarta.persistence.*;
 
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.HashSet;
 import java.util.Set;
-import java.util.UUID;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(	name = "students",
-        uniqueConstraints = {
-                @UniqueConstraint(columnNames = "username"),
-                @UniqueConstraint(columnNames = "email")
-        })
+@Table(	name = "students")
+
 public class Student {
 
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY  )
+    @GeneratedValue (strategy = GenerationType.TABLE  )
+    @Column(name = "id")
     private Long id;
-    @NotBlank
+
+    @Column(name = "name")
     private String name;
-    @NotBlank
+    @Column(name = "username")
     private String username;
 
-    @NotBlank
+    @Column(name = "email")
     private String email;
+
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(	name = "user_roles",

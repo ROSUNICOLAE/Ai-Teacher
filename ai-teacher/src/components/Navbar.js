@@ -11,13 +11,15 @@ import {
     MDBModalFooter,
     MDBInput
 } from 'mdb-react-ui-kit';
-
+import axios from "axios";
 
 function Navbar() {
     const [name, setName] = useState('');
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [scrollableModal, setScrollableModal] = useState(false);
+    const [signInModal, setSignInModal] = useState(false);
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -28,6 +30,22 @@ function Navbar() {
         });
         console.log(response);
     };
+
+    // create a handlesignin function for await fetch from 'http://localhost:8080/api/auth/signin' body use username and  email
+    const handleSignIn = async (e) => {
+        e.preventDefault();
+        const response = await fetch('http://localhost:8080/api/auth/signin', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ username, email})
+        });
+        console.log(response.headers.get("Authorization"));
+        console.log(response);
+        if (response.headers.get("Authorization")) {
+            localStorage.setItem("token", response.headers.get("Authorization"));
+            setToken
+        }
+    }
 
     return (
         <nav className="navbar navbar-expand-lg bg-tertiary" style={{ backgroundColor: "mistyrose" }}>
@@ -92,7 +110,37 @@ function Navbar() {
                                         </MDBModalContent>
                                     </MDBModalDialog>
                                 </MDBModal>
-                        <button className="btn btn-light" type="submit">Sign In</button>
+                    <MDBBtn onClick={() => setSignInModal(!signInModal)}>SIGN IN</MDBBtn>
+                    <MDBModal show={signInModal} setShow={setSignInModal} tabIndex='-1'>
+                        <MDBModalDialog className="modal-dialog-centered" scrollable>
+                            <MDBModalContent>
+                                <MDBModalHeader>
+                                    <MDBModalTitle>Sign In</MDBModalTitle>
+                                </MDBModalHeader>
+                                <MDBModalBody>
+                                    <form onSubmit={(e) => {
+                                        handleSignIn(e)
+                                        setSignInModal(!signInModal)
+                                    }}>
+                                        <div>
+                                            <label htmlFor="username">Username:</label>
+                                            <MDBInput id='username' type='text' value={username} onChange={e => setUsername(e.target.value)} />
+                                        </div>
+                                        <div>
+                                            <label htmlFor="email">Email:</label>
+                                            <MDBInput id='email' type='email' value={email} onChange={e => setEmail(e.target.value)} />
+                                        </div>
+                                        <MDBBtn MDBBtn outline rounded className='mx-2' color='dark' type="submit">Sign In</MDBBtn>
+                                    </form>
+                                </MDBModalBody>
+                                <MDBModalFooter>
+                                    <MDBBtn color='secondary' onClick={() => setSignInModal(!signInModal)}>
+                                        Close
+                                    </MDBBtn>
+                                </MDBModalFooter>
+                            </MDBModalContent>
+                        </MDBModalDialog>
+                    </MDBModal>
                 </div>
             </div>
         </nav>

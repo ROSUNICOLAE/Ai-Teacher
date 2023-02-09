@@ -1,8 +1,10 @@
 package com.codecool.App.service;
 import com.codecool.App.models.Course;
 import com.codecool.App.repository.CourseRepository;
+import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
@@ -23,6 +25,16 @@ public class CourseService {
         // method to get all courses names
     public List<String> getCoursesNames() {
         return courseRepository.findAllNames();
+    }
+
+
+    @PostConstruct
+    public void init() {
+        courseRepository.save(new Course("Java"));
+        courseRepository.save(new Course("Python"));
+        courseRepository.save(new Course("C#"));
+        courseRepository.save(new Course("C++"));
+
     }
 
 }

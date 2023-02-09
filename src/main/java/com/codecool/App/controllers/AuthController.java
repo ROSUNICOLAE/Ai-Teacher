@@ -16,7 +16,10 @@ import com.codecool.App.repository.StudentRepository;
 import com.codecool.App.security.jwt.JwtUtils;
 import com.codecool.App.security.services.UserDetailsImpl;
 import jakarta.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -50,23 +53,22 @@ public class AuthController {
 
     @PostMapping("/signin")
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
-
+        System.out.println("1");
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getEmail()));
-
+        System.out.println("2");
         SecurityContextHolder.getContext().setAuthentication(authentication);
         String jwt = jwtUtils.generateJwtToken(authentication);
-
+        System.out.println("3");
         UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
+        System.out.println("4");
         List<String> roles = userDetails.getAuthorities().stream()
                 .map(item -> item.getAuthority())
                 .collect(Collectors.toList());
+        System.out.println("");
+        System.out.println(jwt);
+        return ResponseEntity.ok().header(HttpHeaders.AUTHORIZATION, jwt).build();
 
-        return ResponseEntity.ok(new JwtResponse(jwt,
-                userDetails.getId(),
-                userDetails.getUsername(),
-                userDetails.getPassword(),
-                roles));
     }
 
     @PostMapping("/signup")
@@ -84,9 +86,7 @@ public class AuthController {
         }
 
         // Create new user's account
-        Student student = new Student(signUpRequest.getUsername(),
-                signUpRequest.getEmail(),
-                encoder.encode(signUpRequest.getEmail()));
+        Student student = new Student(signUpRequest.getName(),signUpRequest.getUsername(), encoder.encode(signUpRequest.getEmail()));
 
         Set<String> strRoles = signUpRequest.getRole();
         Set<Role> roles = new HashSet<>();

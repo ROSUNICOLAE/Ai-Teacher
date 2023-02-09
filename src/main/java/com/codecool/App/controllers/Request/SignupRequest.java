@@ -9,8 +9,6 @@ public class SignupRequest {
     private String email;
     private Set<String> role;
 
-    public SignupRequest() {
-    }
 
     public SignupRequest(String name, String username, String email, Set<String> role) {
         this.name = name;
