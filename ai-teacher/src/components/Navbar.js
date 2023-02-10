@@ -52,8 +52,10 @@ function Navbar() {
         setSignInModal(false);
     };
 
+
+
     return (
-        <nav className="navbar navbar-expand-lg bg-tertiary" style={{ backgroundColor: "mistyrose" }}>
+        <nav className="navbar navbar-expand-lg bg-tertiary" style={{ backgroundColor: "white" }}>
             <div className="container-fluid">
                 <a className="navbar-brand" href="/"><i className="fas fa-home"></i>AIteacher</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
