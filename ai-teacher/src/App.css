@@ -90,8 +90,8 @@ MDBInput {
 .cube {
   margin: auto;
   position: relative;
-  height: 250px;
-  width: 250px;
+  height: 200px;
+  width: 200px;
   transform-style: preserve-3d;
 }
 
@@ -99,15 +99,28 @@ MDBInput {
   position: absolute;
   box-sizing: border-box;
   padding: 10px;
-  height: 125%;
-  width: 125%;
+  height: 135%;
+  width: 135%;
   opacity: 0.9;
   background-color: rgba(0, 0, 0, 0.45);
   border: solid 1px #eeeeee;
   color: #ffffff;
 }
 .front {
-  transform: translateZ(100px);
+  transform: translateZ(170px);
+  transform-origin: top left;
+
+}
+
+.front, .back, .top, .bottom, .left, .right {
+  text-align: center;
+  font-weight: bold;
+  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-size: 1.5em;
 }
 
 .back {
@@ -147,7 +160,7 @@ MDBInput {
   animation: rotate 20s infinite linear;
 }
 .wrap:hover .front {
-  transform: translateZ(200px);
+  transform: translateZ(150px);
 }
 
 .wrap:hover .back {

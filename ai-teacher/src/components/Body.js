@@ -34,23 +34,24 @@ function Body()  {
             </div>
                 <div className="wrap">
                     <div className="cube">
+
                         <div className="front">
                             The Future of Education: How AI Teachers are Transforming the Learning Experience
                         </div>
                         <div className="back">
-                            Artificial Intelligence (AI) has revolutionized numerous industries, and education is no exception. AI teachers are transforming the traditional education system by offering new and innovative ways of learning that cater to the needs of students in the 21st century
+                            A new AI way of learning
                         </div>
                         <div className="top">
-                            >One of the main benefits of AI teachers is their ability to personalize the learning experience for each student. AI algorithms can analyze student performance data and adjust the curriculum and teaching method to suit the individual needs of each student, leading to more efficient and effective learning
+                            24/7 Access to a Personal Mentor
                         </div>
                         <div className="bottom">
-                            Additionally, AI teachers can provide 24/7 access to education, making it possible for students to learn at their own pace and on their own schedule. This is particularly beneficial for students in remote or underprivileged areas who may not have access to traditional educational resources
+                            Personal Mentor and Teacher
                         </div>
                         <div className="left">
-                            Another advantage of AI teachers is that they can conduct real-time assessments of student performance and provide instant feedback. This helps students to identify areas where they need improvement and focus their efforts accordingly
+                            Artificial Intelligence (AI).
                         </div>
                         <div className="right">
-                            In conclusion, AI teachers have the potential to revolutionize the way we think about education. With their ability to personalize the learning experience, provide 24/7 access to education, and conduct real-time assessments, AI teachers have the potential to improve educational outcomes and provide students with a more engaging and effective learning experience
+                            LEARN SMARTER, NOT HARDER
                         </div>
                     </div>
                 </div>

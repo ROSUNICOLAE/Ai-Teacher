@@ -26,10 +26,9 @@ public class PhysicsAiController {
 
         JsonNode requestJson = new ObjectMapper().createObjectNode()
                 .put("model", "text-davinci-003")
-                .put("prompt", "Answer like a Physics Teacher, a genius in Physics. And do not accept other questions from anything else. Try to be as explicit as possible.\n" +
+                .put("prompt", "Answer like a Physics Teacher, a genius in Physics. And do not accept other questions from anything else. Try to be as explicit as possible. Be interested to help an give live support for the student to complete his homeworks and fulfill his knowledge.\n" +
                         prompt)
                 .put("max_tokens", 500);
-        System.out.println(requestJson);
 
         HttpEntity<JsonNode> request = new HttpEntity<>(requestJson, headers);
         ResponseEntity<String> response = restTemplate.exchange(endpoint, HttpMethod.POST, request, String.class);
