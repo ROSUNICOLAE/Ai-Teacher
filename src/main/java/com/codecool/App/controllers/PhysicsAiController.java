@@ -16,10 +16,12 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.List;
 import java.util.Optional;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
+@RequestMapping("/api")
 public class PhysicsAiController {
 
     private final String apiKey = "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";
@@ -39,7 +41,7 @@ public class PhysicsAiController {
     @PostMapping("/Physicsai")
     public String generateResponse(@RequestBody String prompt, @RequestHeader("Authorization") String token) throws JsonProcessingException {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        System.out.println("Authentication: " + authentication);
+
 
         RestTemplate restTemplate = new RestTemplate();
 
@@ -68,17 +70,31 @@ public class PhysicsAiController {
                 student = optionalStudent.get();
             }
         }
-
         if (student != null) {
             // Create a new message and associate it with the user
             Message message = new Message();
-            message.setPrompt(prompt);
+            String promptValue = prompt.substring(prompt.indexOf(":") + 2, prompt.length() - 2);
+            message.setPrompt(promptValue);
             message.setResponse(responseText);
             message.setStudent(student.getUsername());
             messageService.save(message);
         }
-
         return responseText;
+    }
 
+    @GetMapping("/messages")
+    public List<Message> getAllMessagesForCurrentUser() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String username = ((UserDetailsImpl) authentication.getPrincipal()).getUsername();
+
+        Optional<Student> optionalStudent = studentService.findByUsername(username);
+        if (optionalStudent.isPresent()) {
+            Student student = optionalStudent.get();
+            return messageService.getAllMessagesForUser(student.getUsername());
+        } else {
+            throw new RuntimeException("Error: Student not found.");
+        }
     }
 }
+
+
