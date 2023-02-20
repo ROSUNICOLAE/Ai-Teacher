@@ -57,8 +57,6 @@ public class WebSecurityConfig {
                 .anyRequest()
                 .permitAll();
 
-//        http.authenticationProvider(authenticationProvider());
-
         http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
 
         http.exceptionHandling().authenticationEntryPoint(unauthorizedHandler);
