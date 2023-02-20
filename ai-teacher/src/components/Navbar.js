@@ -81,9 +81,7 @@ function Navbar() {
                             <a className="nav-link" href="/about">About us</a>
                         </li>
                     </ul>
-                    {token ? null : (
-                        <MDBBtn onClick={() => setScrollableModal(!scrollableModal)}>SIGN UP</MDBBtn>
-                    )}
+                    {!token && <MDBBtn onClick={() => setScrollableModal(!scrollableModal)}>SIGN UP</MDBBtn>}
                     {token ? null : (
                         <MDBModal show={scrollableModal} setShow={setScrollableModal} tabIndex='-1'>
                             <MDBModalDialog className="modal-dialog-center" scrollable>
