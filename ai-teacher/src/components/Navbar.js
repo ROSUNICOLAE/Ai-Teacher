@@ -53,7 +53,6 @@ function Navbar() {
     };
 
 
-
     return (
         <nav className="navbar navbar-expand-lg bg-tertiary" style={{ backgroundColor: "white" }}>
             <div className="container-fluid">
@@ -78,10 +77,10 @@ function Navbar() {
                             <a className="nav-link active" aria-current="page" href="/HistoryAi">History</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/about">About us</a>
+                            <a className="nav-link" href="/about">About</a>
                         </li>
                     </ul>
-                    {!token && <MDBBtn onClick={() => setScrollableModal(!scrollableModal)}>SIGN UP</MDBBtn>}
+                    {!token && <MDBBtn onClick={() => setScrollableModal(!scrollableModal)}>Sign Up</MDBBtn>}
                     {token ? null : (
                         <MDBModal show={scrollableModal} setShow={setScrollableModal} tabIndex='-1'>
                             <MDBModalDialog className="modal-dialog-center" scrollable>
@@ -119,9 +118,9 @@ function Navbar() {
                         </MDBModal>
                     )}
                     {token ? (
-                        <MDBBtn onClick={() => setSignInModal(true)}>SIGN OUT</MDBBtn>
+                        <MDBBtn onClick={() => setSignInModal(true)}>Sign Out</MDBBtn>
                     ) : (
-                        <MDBBtn onClick={() => setSignInModal(!signInModal)}>SIGN IN</MDBBtn>
+                        <MDBBtn onClick={() => setSignInModal(!signInModal)}>Sign In</MDBBtn>
                     )}
 
                     <MDBModal show={signInModal} setShow={setSignInModal} tabIndex='-1'>

@@ -1,16 +1,17 @@
 import React from "react";
-import Body from "./Body";
-import Footer from "./Footer";
 import Navbar from "./Navbar";
+import CountSection from "./countSection";
+import Footer from "./Footer";
 
-function MainPage() {
+
+function About() {
     return (
         <div>
             <Navbar />
-            <Body />
+            <CountSection />
             <Footer />
         </div>
     );
 }
 
-export default MainPage;
+export default About;

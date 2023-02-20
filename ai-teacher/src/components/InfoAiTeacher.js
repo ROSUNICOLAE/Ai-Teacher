@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
-import img from "./images/AI k12.png.jpg";
+import img from "./images/pexels-tara-winstead-8386440.jpg";
 
 
 function InfoAiTeacher() {

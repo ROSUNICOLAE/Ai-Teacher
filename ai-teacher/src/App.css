@@ -12,7 +12,7 @@ nav {
 }
 
 .counts {
-  padding: 30px 0;
+  padding: 200px 0;
 }
 
 .counts .counters span {
@@ -57,11 +57,14 @@ nav {
   margin-bottom: 1rem;
 }
 
-.footer{
+
+.footer {
   position: fixed;
   bottom: 0;
+  left: 0;
   width: 100%;
-  background-color: lightsalmon;
+  background-color: black;
+  color: white;
   padding: 10px;
   text-align: center;
 }
@@ -87,6 +90,7 @@ MDBInput {
   perspective: 1000px;
   perspective-origin: 50% 50%;
 }
+
 .cube {
   margin: auto;
   position: relative;
@@ -181,4 +185,16 @@ MDBInput {
 
 .wrap:hover .bottom {
   transform: rotateX(270deg) translateZ(100px) translateY(100px);
+}
+
+#mainPageTitle {
+  margin-right: 480px;
+}
+
+#mainPageP1 {
+  margin-left: 500px;
+}
+
+#mainPageP2 {
+  margin-left: 700px;
 }

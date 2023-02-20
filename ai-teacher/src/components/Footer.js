@@ -3,11 +3,13 @@ import React from 'react';
 
 function Footer()  {
     return (
-        <div className="card footer" style={{ backgroundColor: 'mistyrose' }}>
-            <div className="card-body">
-                © 2023 Next Gen Code Team
+        <>
+        <div className="card">
+            <div className="card-body footer">
+                © 2023 Next Gen Code
             </div>
         </div>
+        </>
     );
 }
 
