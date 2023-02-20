@@ -1,73 +1,75 @@
 package com.codecool.App.security.jwt;
 
-
 import com.codecool.App.security.services.UserDetailsImpl;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
-import io.jsonwebtoken.security.SignatureException;
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 
-import java.time.ZonedDateTime;
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
 import java.util.Date;
 import java.util.UUID;
-import java.util.logging.Logger;
 
 @Component
 public class JwtUtils {
-//    private static final Logger logger = LoggerFactory.getLogger(JwtUtils.class);
 
-    @Value("v9y$B&E)H@MbQeThWmZq4t7w!z%C*F-JaNdRfUjXn2r5u8x/A?D(G+KbPeShVkYp")
-    private String jwtSecret;
+    private static final Logger logger = LoggerFactory.getLogger(JwtUtils.class);
 
-    @Value("${com.codecool.App.jwtExpirationMs}")
-    private int jwtExpirationMs;
 
+    private String jwtSecret ="%D*G-KaPdSgVkYp3s6v9y$B?E(H+MbQeThWmZq4t7w!z%C*F)J@NcRfUjXn2r5u8";
+
+
+    private int jwtExpirationMs = 86400000;
 
     public String generateJwtToken(Authentication authentication) {
-        UserDetailsImpl user = (UserDetailsImpl) authentication.getPrincipal();
-        System.out.println("11");
-        UserDetailsImpl userPrincipal = (UserDetailsImpl) authentication.getPrincipal();
-        System.out.println("12");
-        byte[] signingKey = jwtSecret.getBytes();
-        System.out.println("13");
+        UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
 
-            String token = Jwts.builder()
+        byte[] signingKey = jwtSecret.getBytes();
+
+        String token = Jwts.builder()
                 .setHeaderParam("typ", "JWT")
-                    .signWith(Keys.hmacShaKeyFor(signingKey), SignatureAlgorithm.HS512)
-                .setExpiration(Date.from(ZonedDateTime.now().plusMinutes(jwtExpirationMs).toInstant()))
-                .setIssuedAt(Date.from(ZonedDateTime.now().toInstant()))
-                .setId(UUID.randomUUID().toString())
                 .setIssuer("TOKEN_ISSUER")
                 .setAudience("TOKEN_AUDIENCE")
-                .setSubject(user.getUsername())
+                .setId(UUID.randomUUID().toString())
+                .setSubject(userDetails.getUsername())
+                .setIssuedAt(Date.from(Instant.now()))
+                .setExpiration(Date.from(Instant.now().plus(jwtExpirationMs, ChronoUnit.MILLIS)))
+                .signWith(Keys.hmacShaKeyFor(signingKey), SignatureAlgorithm.HS512)
                 .compact();
-        System.out.println("14");
+
         return token;
     }
 
     public String getUserNameFromJwtToken(String token) {
-        return Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(token).getBody().getSubject();
+        logger.info("Received JWT token: {}", token);
+        byte[] signingKey = jwtSecret.getBytes();
+        try {
+            return Jwts.parserBuilder()
+                    .setSigningKey(Keys.hmacShaKeyFor(signingKey))
+                    .build()
+                    .parseClaimsJws(token)
+                    .getBody()
+                    .getSubject();
+        } catch (JwtException e) {
+            logger.error("JWT validation error: {}", e.getMessage());
+        }
+        return null;
     }
 
     public boolean validateJwtToken(String authToken) {
         try {
-            Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(authToken);
+            Jwts.parserBuilder()
+                    .setSigningKey(Keys.hmacShaKeyFor(jwtSecret.getBytes()))
+                    .build()
+                    .parseClaimsJws(authToken);
             return true;
-        } catch (SignatureException e) {
-            e.printStackTrace();
-        } catch (MalformedJwtException e) {
-            e.printStackTrace();
-        } catch (ExpiredJwtException e) {
-            e.printStackTrace();
-        } catch (UnsupportedJwtException e) {
-            e.printStackTrace();
-        } catch (IllegalArgumentException e) {
-           e.printStackTrace();
+        } catch (JwtException e) {
+            logger.error("JWT validation error: {}", e.getMessage());
         }
-
         return false;
     }
 }

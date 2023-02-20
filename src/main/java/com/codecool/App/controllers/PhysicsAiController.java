@@ -1,13 +1,22 @@
 package com.codecool.App.controllers;
+
+import com.codecool.App.models.Message;
+import com.codecool.App.models.Student;
+import com.codecool.App.security.jwt.JwtUtils;
+import com.codecool.App.security.services.UserDetailsImpl;
+import com.codecool.App.service.MessageService;
+import com.codecool.App.service.StudentService;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
-import org.springframework.http.*;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.*;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
+
+import java.util.Optional;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
@@ -16,8 +25,22 @@ public class PhysicsAiController {
     private final String apiKey = "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";
     private final String endpoint = "https://api.openai.com/v1/completions";
 
+    private final MessageService messageService;
+    private final StudentService studentService;
+
+    @Autowired
+    private JwtUtils jwtUtils;
+    @Autowired
+    public PhysicsAiController(MessageService messageService, StudentService studentService) {
+        this.messageService = messageService;
+        this.studentService = studentService;
+    }
+
     @PostMapping("/Physicsai")
-    public String generateResponse(@RequestBody String prompt) throws JsonProcessingException {
+    public String generateResponse(@RequestBody String prompt, @RequestHeader("Authorization") String token) throws JsonProcessingException {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        System.out.println("Authentication: " + authentication);
+
         RestTemplate restTemplate = new RestTemplate();
 
         HttpHeaders headers = new HttpHeaders();
@@ -26,18 +49,36 @@ public class PhysicsAiController {
 
         JsonNode requestJson = new ObjectMapper().createObjectNode()
                 .put("model", "text-davinci-003")
-                .put("prompt", "Answer like a Physics Teacher, a genius in Physics. And do not accept other questions from anything else. Try to be as explicit as possible. Be interested to help an give live support for the student to complete his homeworks and fulfill his knowledge. and give all the answers in romanian language as much as possible\n" +
+                .put("prompt", "Answer like a Physics Teacher, a genius in Physics. And do not accept other questions from anything else. Try to be as explicit as possible. Be interested to help an give live support for the student to complete his homeworks and fulfill his knowledge.\n" +
                         prompt)
                 .put("max_tokens", 500);
 
         HttpEntity<JsonNode> request = new HttpEntity<>(requestJson, headers);
         ResponseEntity<String> response = restTemplate.exchange(endpoint, HttpMethod.POST, request, String.class);
-        System.out.println(response);
         ObjectMapper mapper = new ObjectMapper();
         JsonNode jsonNode = mapper.readTree(response.getBody());
-        return jsonNode.get("choices").get(0).get("text").asText();
+        String responseText = jsonNode.get("choices").get(0).get("text").asText();
+
+        // Get the current student from the authentication object
+        Student student = null;
+        if (authentication != null && authentication.isAuthenticated() && token != null) {
+            String username = jwtUtils.getUserNameFromJwtToken(token.substring(7));
+            Optional<Student> optionalStudent = studentService.findByUsername(username);
+            if (optionalStudent.isPresent()) {
+                student = optionalStudent.get();
+            }
+        }
+
+        if (student != null) {
+            // Create a new message and associate it with the user
+            Message message = new Message();
+            message.setPrompt(prompt);
+            message.setResponse(responseText);
+            message.setStudent(student.getUsername());
+            messageService.save(message);
+        }
+
+        return responseText;
+
     }
-
 }
-
-
