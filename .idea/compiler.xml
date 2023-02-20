@@ -8,7 +8,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="ElProyecteGrande-sprint4" />
-        <module name="ElProyecteGrande-sprint2" />
         <module name="ElProyecteGrande-sprint3" />
       </profile>
     </annotationProcessing>
