@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="ElProyecteGrande-sprint4" />
         <module name="ElProyecteGrande-sprint2" />
         <module name="ElProyecteGrande-sprint3" />
       </profile>
@@ -14,12 +15,14 @@
     <bytecodeTargetLevel>
       <module name="ElProyecteGrande-sprint2" target="17" />
       <module name="ElProyecteGrande-sprint3" target="17" />
+      <module name="ElProyecteGrande-sprint4" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="ElProyecteGrande-sprint2" options="-parameters" />
       <module name="ElProyecteGrande-sprint3" options="-parameters" />
+      <module name="ElProyecteGrande-sprint4" options="-parameters" />
     </option>
   </component>
 </project>
