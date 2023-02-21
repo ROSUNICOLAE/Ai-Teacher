@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 import img from './images/AI k12.png.jpg';
@@ -13,154 +13,161 @@ import {
 } from 'mdb-react-ui-kit';
 
 function PhysicsAiTeacher() {
-    const [message, setMessage] = useState('');
-    const [response, setResponse] = useState('');
+    const [message, setMessage] = useState("");
     const [messages, setMessages] = useState([]);
+    const [allMessages, setAllMessages] = useState([]);
 
     const fetchMessages = () => {
         const requestOptions = {
-            method: 'GET',
+            method: "GET",
             headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${localStorage.getItem('token')}`
-            }
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
         };
 
-        fetch('http://localhost:8080/api/messages', requestOptions)
-            .then(response => response.json())
-            .then(data => setMessages(data));
-    }
+        fetch("http://localhost:8080/api/messages", requestOptions)
+            .then((response) => response.json())
+            .then((data) => setAllMessages(data));
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const requestOptions = {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${localStorage.getItem('token')}`
-            },
-            body: JSON.stringify({ prompt: message })
-        };
+        if (message.trim()) {
+            const newMessage = {
+                text: message,
+                isUser: true,
+                time: new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
+            };
+            const newMessages = [...messages, newMessage];
+            setMessages(newMessages);
+            const requestOptions = {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${localStorage.getItem("token")}`,
+                },
+                body: JSON.stringify({ prompt: message }),
+            };
 
-        fetch('http://localhost:8080/api/Physicsai', requestOptions)
-            .then(response => response.text())
-            .then(data => {
-                setResponse(data);
-                fetchMessages();
-            });
-        setMessage('');
+            fetch("http://localhost:8080/api/Physicsai", requestOptions)
+                .then((response) => response.text())
+                .then((data) => {
+                    const newResponse = {
+                        text: data,
+                        isUser: false,
+                        time: new Date().toLocaleString("en-US", {
+                            hour: "numeric",
+                            minute: "numeric",
+                            hour12: true,
+                        }),
+                    };
+                    const updatedMessages = [...newMessages, newResponse];
+                    setMessages(updatedMessages);
+                    setAllMessages([...allMessages, newResponse]);
+                    fetchMessages();
+                });
+
+            setMessage("");
+        }
     };
 
     useEffect(() => {
         fetchMessages();
     }, []);
     return (
-        <MDBRow>
+        <div>
             <Navbar />
-            <div
-                className="p-5 text-center bg-image"
-                style={{ backgroundImage: `url('${img}')`, height: "500px" }}
-            >
-                <div className="mask" style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}>
-                    <div className="d-flex justify-content-center align-items-center h-100">
-                        <div className="text-white">
-                            <h1 className="mb-3">Physics AI Teacher</h1>
+            <div className="flex-container">
+                <aside className="sidemenu" style={{ overflowY: "auto" }}>
+                    <h4>All time conversational log with Aiteacher</h4>
+                    {allMessages.map((message, index) => (
+                        <div key={index}>
+                            <p>
+                                <strong>Message:</strong> {message.prompt}
+                            </p>
+                            <p>
+                                <strong>Response:</strong> {message.text || message.response}
+                            </p>
+                        </div>
+                    ))}
+                </aside>
+                <div className="question-container">
+                    <div id="aiTitle">
+                        <h1>Physics AI teacher</h1>
+                    </div>
+                    <div>
+                        <h4 id="aiQuote">
+                            "Those who cannot remember the past are condemned to repeat it." – George Santayana
+                        </h4>
+                    </div>
+                    <div className="d-flex justify-content-center align-items-center">
+                        <div className="maincontainer" style={{ width: "50%" }}>
+                            <div
+                                id="msg-box"
+                                className="card-body msg_card_body"
+                                style={{ height: "500px", overflowY: "auto" }}
+                            >
+                                {messages.map((msg, index) => (
+                                    <div
+                                        key={index}
+                                        className={
+                                            msg.isUser
+                                                ? "d-flex justify-content-end mb-4"
+                                                : "d-flex justify-content-start mb-4"
+                                        }
+                                    >
+                                        <div className="img_cont_msg">
+                                            <img
+                                                src="https://therichpost.com/wp-content/uploads/2020/06/avatar2.png"
+                                                className="rounded-circle user_img_msg"
+                                            />
+                                        </div>
+                                        <div
+                                            className={
+                                                msg.isUser ? "msg_cotainer_send" : "msg_cotainer"
+                                            }
+                                        >
+                                            {msg.text}
+                                            <span
+                                                className={
+                                                    msg.isUser ? "msg_time_send" : "msg_time"
+                                                }
+                                            >
+                                            {msg.time}
+                                        </span>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                            <div className="card-footer">
+                                <form onSubmit={handleSubmit} className="input-group">
+                                    <label htmlFor="message"></label>
+                                    <br />
+                                    <textarea
+                                        id="message"
+                                        value={message}
+                                        onChange={(e) => setMessage(e.target.value)}
+                                        name=""
+                                        className="form-control type_msg"
+                                        placeholder="Type your message..."
+                                    ></textarea>
+                                    <div className="input-group-append">
+                                        <button type="submit" className="input-group-text send_btn">
+                                            <i className="fas fa-location-arrow"></i>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <MDBCol sm="6">
-                <MDBCard>
-                    <MDBCardBody>
-                        <MDBCardTitle>Type your questions:</MDBCardTitle>
-                        <form onSubmit={handleSubmit}>
-                            <div className="form-group">
-                                <label htmlFor="message"></label> <br />
-                                <textarea
-                                    id="message"
-                                    value={message}
-                                    onChange={(e) => setMessage(e.target.value)}
-                                    className="form-control border border-primary h-100"
-                                ></textarea>
-                            </div>
-                            <MDBCardText>
-                                <br />
-                                Bring your questions to the AI teacher and get the answers.
-                            </MDBCardText>
-                            <button type="submit" className="btn btn-primary">
-                                Send
-                            </button>
-                        </form>
-                    </MDBCardBody>
-                </MDBCard>
-            </MDBCol>
-            <MDBCol sm="6">
-                <MDBRow className="h-100">
-                    <MDBCol className="d-flex flex-column">
-                        <MDBCard className="mb-3">
-                            <MDBCardBody>
-                                <MDBCardTitle>Teacher response : </MDBCardTitle>
-                                <div
-                                    className="d-flex justify-content-center align-items-center flex-grow-1"
-                                    style={{
-                                        fontSize: "1.5rem",
-                                        textAlign: "center",
-                                        backgroundColor: "aquamarine",
-                                        padding: "10px",
-                                        boxShadow: "10px 10px 8px #888888",
-                                    }}
-                                >
-                                    {response}
-                                </div>
-                                <MDBCardText>
-                                    <br />
-                                    Hint: you can ask for extra explanations.
-                                </MDBCardText>
-                            </MDBCardBody>
-                        </MDBCard>
-                        <MDBCard className="flex-grow-1">
-                            <MDBCardBody>
-                                <MDBCardTitle>Conversation Log </MDBCardTitle>
-                                {messages.length > 0 ? (
-                                    <div
-                                        className="d-flex flex-column justify-content-center align-items-center h-100"
-                                        style={{
-                                            fontSize: "1.5rem",
-                                            textAlign: "center",
-                                            backgroundColor: "aquamarine",
-                                            padding: "10px",
-                                            boxShadow: "10px 10px 8px #888888",
-                                            height: "500px", // set height of the div to make it scrollable
-                                            overflow: "scroll", // set overflow property to scroll
-                                        }}
-                                    >
-                                        {messages.map((message, index) => (
-                                            <div key={index}>
-                                                <p>
-                                                    <strong>Message:</strong> {message.prompt}
-                                                </p>
-                                                <p>
-                                                    <strong>Response:</strong> {message.response}
-                                                </p>
-                                            </div>
-                                        ))}
-                                    </div>
-                                ) : (
-                                    <div>No messages yet</div>
-                                )}
-                                <MDBCardText>
-                                    <br />
-                                    Scroll down to see the conversation log.
-                                </MDBCardText>
-                            </MDBCardBody>
-                        </MDBCard>
-                    </MDBCol>
-                </MDBRow>
-            </MDBCol>
             <Footer />
-        </MDBRow>
-
+        </div>
     );
+
+
 }
 
 export default PhysicsAiTeacher;
