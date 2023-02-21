@@ -193,6 +193,26 @@ MDBInput {
   margin-right: 480px;
 }
 
+#aiTitle {
+  margin-left: 100px;
+  margin-top: 20px;
+  font-family: 'Gloria Hallelujah';
+  font-size: 40px;
+  position: relative;
+  width: 600px;
+}
+
+#aiQuote {
+  margin-right: 480px;
+  font-family: 'Gloria Hallelujah';
+  font-size: 20px;
+  position: absolute;
+  top: 100px;
+  left: 800px;
+  width: 600px;
+  height: 100px;
+}
+
 #mainPageP1 {
   margin-left: 500px;
 }
@@ -209,7 +229,7 @@ MDBInput {
   width: 240px;
   height: 700px;
   padding: 10px;
-  background-color: royalblue;
+  background-color: #A1CAF1;
 }
 
 /*.side-menu-button {*/
@@ -247,7 +267,7 @@ MDBInput {
   left: 0; right: 0;
 }
 .chat-input-textarea {
-  background-color: #DCDCDC;
+  background-color: #BCD4E6;
   width: 70%;
   border-radius: 5px;
   border: none;
@@ -256,13 +276,28 @@ MDBInput {
   color: black;
   font-size: 1em;
   margin-left: 50px;
+  margin-right: 10px;
+}
+
+.chat-output-textarea {
+  background-color: #BCD4E6;
+  width: 70%;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  padding: 40px;
+  color: black;
+  font-size: 1em;
+  margin-left: 50px;
+  margin-right: 10px;
 }
 #hint {
   margin-left: 50px;
+  padding-top: 0px;
+  font-size: 13px;
 }
 .ask {
-  margin-left: 5px;
-  margin-top: 10px;
+  margin-bottom: 35px;
 }
 
 .chat-log {
@@ -272,7 +307,7 @@ MDBInput {
 }
 
 .chat-message-center {
-  background-color: darkslategrey;
+  background-color: #F0FFFF;
 }
 .chat-message {
   padding: 12px;
@@ -296,16 +331,16 @@ MDBInput {
   width: 40px;
 }
 
-.message {
-  padding-left: 40px;
-  padding-right: 40px;
+/*.message {*/
+/*  padding-left: 40px;*/
+/*  padding-right: 40px;*/
 
-}
+/*}*/
 
 .signup {
   margin-right: 10px;
 }
 
 .form-group {
-  display: inline-flex;
+  padding-top: 100px;
 }
