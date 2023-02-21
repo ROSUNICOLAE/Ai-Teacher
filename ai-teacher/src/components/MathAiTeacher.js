@@ -23,37 +23,36 @@ function MathAiTeacher() {
     return (
         <div>
             <Navbar />
-            <div
-                className='p-5 text-center bg-image'
-                style={{ backgroundImage: `url('${img}')`, height: '500px' }}
-            >
-                <div className='mask' style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)' }}>
-                    <div className='d-flex justify-content-center align-items-center h-100'>
-                        <div className='text-white'>
-                            <h1 className='mb-3'>Math AI Teacher</h1>
-                            <form onSubmit={handleSubmit}>
-                                <div className="form-group">
-                                    <label htmlFor="message"></label> <br/>
-                                    <textarea
-                                        id="message"
-                                        value={message}
-                                        onChange={(e) => setMessage(e.target.value)}
-                                        className="form-control border border-primary h-100"
-                                    ></textarea>
-                                </div>
-                                <button type="submit" className="btn btn-primary">Send</button>
-                            </form>
+            <aside className="sidemenu">
+                <h1> Aside</h1>
+                <div className="side-menu-button">
+                    <span>+</span> New Question
+                </div>
+            </aside>
+
+            <section className="chatbox">
+                <div className="chat-log">
+                    <div className="chat-message">
+                        <div className="avatar">
+                        </div>
+                        <div className="message">
+                            hello hello
                         </div>
                     </div>
                 </div>
-            </div>
-            <br/>
-            <h1 className='d-flex justify-content-center align-items-center h-100' style={{fontSize: '2rem', textAlign: 'center', backgroundColor: 'gray', padding: '20px', boxShadow: '4px 4px 8px #888888'}}>
-                Response from the Math Teacher :
-            </h1>
-            <div className='d-flex justify-content-center align-items-center h-100' style={{fontSize: '2rem', textAlign: 'center', backgroundColor: 'gray', padding: '20px', boxShadow: '4px 4px 8px #888888'}}>
-                {response}
-            </div>
+                <div className="chat-log">
+                    <div className="chat-message chatgpt">
+                        <div className="avatar chatgpt">
+                        </div>
+                        <div className="message">
+                        </div>
+                    </div>
+                </div>
+                <div className="chat-input-holder">
+          <textarea rows="1" className="chat-input-textarea" placeholder="Type your question here">
+          </textarea>
+                </div>
+            </section>
             <Footer />
         </div>
     );
