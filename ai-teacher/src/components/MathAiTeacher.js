@@ -48,8 +48,30 @@ function MathAiTeacher() {
                         {response}
                     </div>
                 </div>
-
             </section>
+                <div className="wrap">
+                    <div className="cube">
+
+                        <div className="front writing">
+                            AI Teacher
+                        </div>
+                        <div className="back writing">
+                            Learn
+                        </div>
+                        <div className="top writing">
+                            24/7 Access
+                        </div>
+                        <div className="bottom writing">
+                            Mentor
+                        </div>
+                        <div className="left writing">
+                            SMARTER
+                        </div>
+                        <div className="right writing">
+                            NOT HARDER
+                        </div>
+                    </div>
+                </div>
             </div>
             <Footer />
         </div>

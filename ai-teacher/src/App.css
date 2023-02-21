@@ -18,7 +18,7 @@ nav {
 .counts .counters span {
   font-size: 48px;
   display: block;
-  color: #5fcf80;
+  color: #A1CAF1;;
   font-weight: 700;
 }
 
@@ -28,7 +28,7 @@ nav {
   font-family: "Raleway", sans-serif;
   font-size: 15px;
   font-weight: 600;
-  color: #37423b;
+  color: #A1CAF1;;
 }
 
 .d-flex {
@@ -94,29 +94,26 @@ MDBInput {
 
 .cube {
   margin: auto;
-  /*position: relative;*/
+  position: relative;
   float: left;
   height: 75px;
   width: 75px;
   transform-style: preserve-3d;
 }
 
+
 .cube > div {
   position: absolute;
   box-sizing: border-box;
   padding: 10px;
-  height: 100%;
-  width: 100%;
+  height: 80%;
+  width: 80%;
   opacity: 0.9;
   background-color: rgba(0, 0, 0, 0.45);
   border: solid 1px #eeeeee;
   color: #ffffff;
 }
-.front {
-  transform: translateZ(170px);
-  transform-origin: top left;
 
-}
 
 .front, .back, .top, .bottom, .left, .right {
   text-align: center;
@@ -125,9 +122,16 @@ MDBInput {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  font-size: 1.5em;
+  height: 80vh;
+  font-size: 1em;
 }
+
+/*.front {*/
+/*  transform: translateZ(170px);*/
+/*  transform-origin: top left;*/
+
+/*}*/
+
 
 .back {
   transform: translateZ(-100px) rotateY(180deg);
