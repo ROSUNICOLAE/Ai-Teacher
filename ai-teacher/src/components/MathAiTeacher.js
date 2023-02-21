@@ -28,7 +28,6 @@ function MathAiTeacher() {
                 <h6>You asked...</h6>
             </aside>
             <section className="question-container">
-                {/*<div className="chat-log">*/}
                     <div id="aiTitle"><h1> Math AI teacher </h1></div>
                     <div><h4 id="aiQuote">"Mathematics is the language in which God has written the universe." – Galileo Galilei</h4></div>
                 <div className="chatbox">

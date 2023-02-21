@@ -28,7 +28,6 @@ function HistoryAiTeacher() {
                     <h6>You asked...</h6>
                 </aside>
                 <section className="question-container">
-                    {/*<div className="chat-log">*/}
                     <div id="aiTitle"><h1> History AI teacher </h1></div>
                     <div><h4 id="aiQuote">"Those who cannot remember the past are condemned to repeat it" – George Santayana</h4></div>
                     <div className="chatbox">
