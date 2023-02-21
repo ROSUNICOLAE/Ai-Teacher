@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 import img from './images/AI k12.png.jpg';
@@ -13,82 +13,161 @@ import {
 } from 'mdb-react-ui-kit';
 
 function PhysicsAiTeacher() {
-    const [message, setMessage] = useState('');
-    const [response, setResponse] = useState('');
+    const [message, setMessage] = useState("");
     const [messages, setMessages] = useState([]);
+    const [allMessages, setAllMessages] = useState([]);
 
     const fetchMessages = () => {
         const requestOptions = {
-            method: 'GET',
+            method: "GET",
             headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${localStorage.getItem('token')}`
-            }
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
         };
 
-        fetch('http://localhost:8080/api/messages', requestOptions)
-            .then(response => response.json())
-            .then(data => setMessages(data));
-    }
+        fetch("http://localhost:8080/api/messages", requestOptions)
+            .then((response) => response.json())
+            .then((data) => setAllMessages(data));
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const requestOptions = {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${localStorage.getItem('token')}`
-            },
-            body: JSON.stringify({ prompt: message })
-        };
+        if (message.trim()) {
+            const newMessage = {
+                text: message,
+                isUser: true,
+                time: new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
+            };
+            const newMessages = [...messages, newMessage];
+            setMessages(newMessages);
+            const requestOptions = {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${localStorage.getItem("token")}`,
+                },
+                body: JSON.stringify({ prompt: message }),
+            };
 
-        fetch('http://localhost:8080/api/Physicsai', requestOptions)
-            .then(response => response.text())
-            .then(data => {
-                setResponse(data);
-                fetchMessages();
-            });
-        setMessage('');
+            fetch("http://localhost:8080/api/Physicsai", requestOptions)
+                .then((response) => response.text())
+                .then((data) => {
+                    const newResponse = {
+                        text: data,
+                        isUser: false,
+                        time: new Date().toLocaleString("en-US", {
+                            hour: "numeric",
+                            minute: "numeric",
+                            hour12: true,
+                        }),
+                    };
+                    const updatedMessages = [...newMessages, newResponse];
+                    setMessages(updatedMessages);
+                    setAllMessages([...allMessages, newResponse]);
+                    fetchMessages();
+                });
+
+            setMessage("");
+        }
     };
 
     useEffect(() => {
         fetchMessages();
     }, []);
-
     return (
         <div>
             <Navbar />
             <div className="flex-container">
-                <aside className="sidemenu">
-                    <h6>You asked...</h6>
+                <aside className="sidemenu" style={{ overflowY: "auto" }}>
+                    <h4>All time conversational log with Aiteacher</h4>
+                    {allMessages.map((message, index) => (
+                        <div key={index}>
+                            <p>
+                                <strong>Message:</strong> {message.prompt}
+                            </p>
+                            <p>
+                                <strong>Response:</strong> {message.text || message.response}
+                            </p>
+                        </div>
+                    ))}
                 </aside>
-                <section className="question-container">
-                    <div id="aiTitle"><h1> Physics AI teacher </h1></div>
-                    <div><h4 id="aiQuote">"Nothing in life is to be feared, it is only to be understood. Now is the time to understand more, so that we may fear less" – Marie Curie</h4></div>
-                    <div className="chatbox">
-                        <form onSubmit={handleSubmit}>
-                            <div className="form-group">
-                            <textarea
-                                id="message"
-                                value={message}
-                                onChange={(e) => setMessage(e.target.value)}
-                                rows="1" className="chat-input-textarea" placeholder="Type your question here">
-                            </textarea>
-                                <button type="submit" className="btn btn-outline-secondary ask">Ask</button>
-                                <div id="hint">Hint: you can ask for extra explanations</div>
+                <div className="question-container">
+                    <div id="aiTitle">
+                        <h1>Physics AI teacher</h1>
+                    </div>
+                    <div>
+                        <h4 id="aiQuote">
+                            "Those who cannot remember the past are condemned to repeat it." – George Santayana
+                        </h4>
+                    </div>
+                    <div className="d-flex justify-content-center align-items-center">
+                        <div className="maincontainer" style={{ width: "50%" }}>
+                            <div
+                                id="msg-box"
+                                className="card-body msg_card_body"
+                                style={{ height: "500px", overflowY: "auto" }}
+                            >
+                                {messages.map((msg, index) => (
+                                    <div
+                                        key={index}
+                                        className={
+                                            msg.isUser
+                                                ? "d-flex justify-content-end mb-4"
+                                                : "d-flex justify-content-start mb-4"
+                                        }
+                                    >
+                                        <div className="img_cont_msg">
+                                            <img
+                                                src="https://therichpost.com/wp-content/uploads/2020/06/avatar2.png"
+                                                className="rounded-circle user_img_msg"
+                                            />
+                                        </div>
+                                        <div
+                                            className={
+                                                msg.isUser ? "msg_cotainer_send" : "msg_cotainer"
+                                            }
+                                        >
+                                            {msg.text}
+                                            <span
+                                                className={
+                                                    msg.isUser ? "msg_time_send" : "msg_time"
+                                                }
+                                            >
+                                            {msg.time}
+                                        </span>
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
-                        </form>
-
-                        <div className="chat-output-textarea">
-                            {response}
+                            <div className="card-footer">
+                                <form onSubmit={handleSubmit} className="input-group">
+                                    <label htmlFor="message"></label>
+                                    <br />
+                                    <textarea
+                                        id="message"
+                                        value={message}
+                                        onChange={(e) => setMessage(e.target.value)}
+                                        name=""
+                                        className="form-control type_msg"
+                                        placeholder="Type your message..."
+                                    ></textarea>
+                                    <div className="input-group-append">
+                                        <button type="submit" className="input-group-text send_btn">
+                                            <i className="fas fa-location-arrow"></i>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
-
-                </section>
+                </div>
             </div>
             <Footer />
         </div>
     );
+
+
 }
 
 export default PhysicsAiTeacher;

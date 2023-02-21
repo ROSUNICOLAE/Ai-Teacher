@@ -53,6 +53,7 @@ function Navbar() {
     };
 
 
+
     return (
         <nav className="navbar navbar-expand-lg bg-tertiary" style={{ backgroundColor: "white" }}>
             <div className="container-fluid">
@@ -65,22 +66,22 @@ function Navbar() {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="/MathAi">Math</a>
+                            <a className="nav-link " aria-current="page" href="/MathAi">Math</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="/PhysicsAi">Physics</a>
+                            <a className="nav-link " aria-current="page" href="/PhysicsAi">Physics</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="/InfoAi">IT</a>
+                            <a className="nav-link " aria-current="page" href="/InfoAi">IT</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="/HistoryAi">History</a>
+                            <a className="nav-link " aria-current="page" href="/HistoryAi">History</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/about">About</a>
+                            <a className="nav-link " href="/about">About us</a>
                         </li>
                     </ul>
-                    {!token && <button type="button" className="btn btn-dark signup" onClick={() => setScrollableModal(!scrollableModal)}>Sign Up</button>}
+                    {!token && <MDBBtn onClick={() => setScrollableModal(!scrollableModal)}>SIGN UP</MDBBtn>}
                     {token ? null : (
                         <MDBModal show={scrollableModal} setShow={setScrollableModal} tabIndex='-1'>
                             <MDBModalDialog className="modal-dialog-center" scrollable>
@@ -118,9 +119,9 @@ function Navbar() {
                         </MDBModal>
                     )}
                     {token ? (
-                        <button type="button" className="btn btn-dark signup" onClick={() => setSignInModal(true)}>Sign Out</button>
+                        <MDBBtn onClick={() => setSignInModal(true)}>SIGN OUT</MDBBtn>
                     ) : (
-                        <button type="button" className="btn btn-dark signup" onClick={() => setSignInModal(!signInModal)}>Sign In</button>
+                        <MDBBtn onClick={() => setSignInModal(!signInModal)}>SIGN IN</MDBBtn>
                     )}
 
                     <MDBModal show={signInModal} setShow={setSignInModal} tabIndex='-1'>
@@ -132,7 +133,7 @@ function Navbar() {
                                 {token ? (
                                     <MDBModalBody>
                                         <p>You are currently signed in. Do you want to sign out?</p>
-                                        <button type="button" className="btn btn-dark" onClick={() => signOut()}>Sign Out</button>
+                                        <MDBBtn onClick={() => signOut()}>Sign Out</MDBBtn>
                                     </MDBModalBody>
                                 ) : (
                                     <>
@@ -149,7 +150,7 @@ function Navbar() {
                                                     <label htmlFor="email">Email:</label>
                                                     <MDBInput id='email' type='email' value={email} onChange={e => setEmail(e.target.value)} />
                                                 </div>
-                                                <button type="button" className="btn btn-dark signup" type="submit">Sign In</button>
+                                                <MDBBtn outline rounded className='mx-2' color='dark' type="submit">Sign In</MDBBtn>
                                             </form>
                                         </MDBModalBody>
                                     </>
