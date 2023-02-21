@@ -32,26 +32,28 @@ function MathAiTeacher() {
                 <h6>You asked...</h6>
             </aside>
             <section className="question-container">
-                <div className="chat-log">
-                   <h1> Math AI teacher </h1>
-                </div>
+                {/*<div className="chat-log">*/}
+                    <div id="aiTitle"><h1> Math AI teacher </h1></div>
+                    <div><h4 id="aiQuote">"Mathematics is the language in which God has written the universe." – Galileo Galilei</h4></div>
                 <div className="chatbox">
                     <form onSubmit={handleSubmit}>
                         <div className="form-group">
                             <textarea
-                                id="message"
+                                      id="message"
                                 value={message}
                                 onChange={(e) => setMessage(e.target.value)}
                                 rows="1" className="chat-input-textarea" placeholder="Type your question here">
                             </textarea>
-                        <span><button type="submit" className="btn btn-outline-secondary ask">Ask</button></span>
+                        <button type="submit" className="btn btn-outline-secondary ask">Ask</button>
+                            <div id="hint">Hint: you can ask for extra explanations</div>
                         </div>
-                        <p id="hint">Hint: you can ask for extra explanations</p>
                     </form>
-                    <textarea rows="1" className="chat-input-textarea">
-                                  {response}
-                    </textarea>
+
+                    <div className="chat-output-textarea">
+                        {response}
+                    </div>
                 </div>
+
             </section>
             </div>
             <Footer />
