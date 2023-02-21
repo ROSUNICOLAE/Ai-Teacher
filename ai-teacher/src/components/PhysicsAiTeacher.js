@@ -2,20 +2,15 @@ import React, { useState, useEffect } from "react";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 import img from './images/AI k12.png.jpg';
-import {
-    MDBCard,
-    MDBCardBody,
-    MDBCardTitle,
-    MDBCardText,
-    MDBRow,
-    MDBCol,
-    MDBBtn
-} from 'mdb-react-ui-kit';
+import jwt_decode from 'jwt-decode';
+
 
 function PhysicsAiTeacher() {
     const [message, setMessage] = useState("");
     const [messages, setMessages] = useState([]);
     const [allMessages, setAllMessages] = useState([]);
+    const [username, setUsername] = useState("");
+
 
     const fetchMessages = () => {
         const requestOptions = {
@@ -75,11 +70,23 @@ function PhysicsAiTeacher() {
     useEffect(() => {
         fetchMessages();
     }, []);
+
+    useEffect(() => {
+        fetchMessages();
+        const token = localStorage.getItem("token");
+        console.log(token);
+        if (token) {
+            const decodedToken = jwt_decode(token);
+            console.log(decodedToken);
+            setUsername(decodedToken.sub);
+        }
+    }, []);
+
     return (
         <div>
-            <Navbar />
+            <Navbar/>
             <div className="flex-container">
-                <aside className="sidemenu" style={{ overflowY: "auto" }}>
+                <aside className="sidemenu" style={{overflowY: "auto"}}>
                     <h4>All time conversational log with Aiteacher</h4>
                     {allMessages.map((message, index) => (
                         <div key={index}>
@@ -102,11 +109,11 @@ function PhysicsAiTeacher() {
                         </h4>
                     </div>
                     <div className="d-flex justify-content-center align-items-center">
-                        <div className="maincontainer" style={{ width: "50%" }}>
+                        <div className="maincontainer" style={{width: "50%"}}>
                             <div
                                 id="msg-box"
                                 className="card-body msg_card_body"
-                                style={{ height: "500px", overflowY: "auto" }}
+                                style={{height: "500px", overflowY: "auto"}}
                             >
                                 {messages.map((msg, index) => (
                                     <div
@@ -118,10 +125,14 @@ function PhysicsAiTeacher() {
                                         }
                                     >
                                         <div className="img_cont_msg">
-                                            <img
-                                                src="https://therichpost.com/wp-content/uploads/2020/06/avatar2.png"
-                                                className="rounded-circle user_img_msg"
-                                            />
+                                            {msg.isUser ? (
+                                                <span className="rounded-circle user_img_msg">{username}</span>
+                                            ) : (
+                                                <img
+                                                    src="https://therichpost.com/wp-content/uploads/2020/06/avatar2.png"
+                                                    className="rounded-circle user_img_msg"
+                                                />
+                                            )}
                                         </div>
                                         <div
                                             className={
@@ -134,8 +145,8 @@ function PhysicsAiTeacher() {
                                                     msg.isUser ? "msg_time_send" : "msg_time"
                                                 }
                                             >
-                                            {msg.time}
-                                        </span>
+        {msg.time}
+      </span>
                                         </div>
                                     </div>
                                 ))}
@@ -143,7 +154,7 @@ function PhysicsAiTeacher() {
                             <div className="card-footer">
                                 <form onSubmit={handleSubmit} className="input-group">
                                     <label htmlFor="message"></label>
-                                    <br />
+                                    <br/>
                                     <textarea
                                         id="message"
                                         value={message}
@@ -163,7 +174,7 @@ function PhysicsAiTeacher() {
                     </div>
                 </div>
             </div>
-            <Footer />
+            <Footer/>
         </div>
     );
 
