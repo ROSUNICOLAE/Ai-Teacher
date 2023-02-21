@@ -29,7 +29,7 @@ function InfoAiTeacher() {
                 </aside>
                 <section className="question-container">
                     <div id="aiTitle"><h1> IT AI teacher </h1></div>
-                    <div><h4 id="aiQuote">"Computer science is not about computers, any more than astronomy is about telescopes."  Edsger Dijkstra</h4></div>
+                    <div><h4 id="aiQuote">"Computer science is not about computers, any more than astronomy is about telescopes."  - Edsger Dijkstra</h4></div>
                     <div className="chatbox">
                         <form onSubmit={handleSubmit}>
                             <div className="form-group">
