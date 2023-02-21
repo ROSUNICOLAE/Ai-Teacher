@@ -194,7 +194,7 @@ MDBInput {
 }
 
 #aiTitle {
-  margin-left: 100px;
+  margin-left: 130px;
   margin-top: 20px;
   font-family: 'Gloria Hallelujah';
   font-size: 40px;
@@ -267,7 +267,7 @@ MDBInput {
   left: 0; right: 0;
 }
 .chat-input-textarea {
-  background-color: #BCD4E6;
+  background-color: #B9D9EB;
   width: 70%;
   border-radius: 5px;
   border: none;
@@ -280,12 +280,12 @@ MDBInput {
 }
 
 .chat-output-textarea {
-  background-color: #BCD4E6;
+  background-color: #B9D9EB;
   width: 70%;
   border-radius: 5px;
   border: none;
   outline: none;
-  padding: 40px;
+  padding: 20px;
   color: black;
   font-size: 1em;
   margin-left: 50px;
@@ -311,8 +311,6 @@ MDBInput {
 }
 .chat-message {
   padding: 12px;
-  padding-left: 24px;
-  padding-right: 24px;
   max-width: 480px;
   margin-left: 50px;
 }
@@ -330,12 +328,6 @@ MDBInput {
   height: 40px;
   width: 40px;
 }
-
-/*.message {*/
-/*  padding-left: 40px;*/
-/*  padding-right: 40px;*/
-
-/*}*/
 
 .signup {
   margin-right: 10px;
