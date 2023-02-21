@@ -94,9 +94,10 @@ MDBInput {
 
 .cube {
   margin: auto;
-  position: relative;
-  height: 200px;
-  width: 200px;
+  /*position: relative;*/
+  float: left;
+  height: 75px;
+  width: 75px;
   transform-style: preserve-3d;
 }
 
@@ -104,8 +105,8 @@ MDBInput {
   position: absolute;
   box-sizing: border-box;
   padding: 10px;
-  height: 135%;
-  width: 135%;
+  height: 100%;
+  width: 100%;
   opacity: 0.9;
   background-color: rgba(0, 0, 0, 0.45);
   border: solid 1px #eeeeee;
@@ -200,34 +201,45 @@ MDBInput {
   margin-left: 700px;
 }
 
+.flex-container {
+  display: flex;
+}
+
 .sidemenu {
   width: 240px;
+  height: 700px;
   padding: 10px;
-  background-color: plum;
+  background-color: royalblue;
 }
 
-.side-menu-button {
-  padding: 12px;
-  border: 1px solid white;
-  border-radius: 5px;
-  text-align: center;
-  transition: ease 0.25s all;
-}
+/*.side-menu-button {*/
+/*  padding: 12px;*/
+/*  border: 1px solid white;*/
+/*  border-radius: 5px;*/
+/*  text-align: center;*/
+/*  transition: ease 0.25s all;*/
+/*}*/
 
-.side-menu-button:hover {
-  background-color: pink;
-}
+/*.side-menu-button:hover {*/
+/*  background-color: pink;*/
+/*}*/
 
-.side-menu-button span {
-  padding-left: 6px;
-  padding-right: 12px;
+/*.side-menu-button span {*/
+/*  padding-left: 6px;*/
+/*  padding-right: 12px;*/
+/*}*/
+
+.question-container {
+  width: 70%;
+  float: left;
+  padding: 20px;
 }
 
 .chatbox{
   flex: 1;
-  background-color: black;
   position: relative;
 }
+
 .chat-input-holder {
   padding: 24px;
   position: absolute;
@@ -235,15 +247,22 @@ MDBInput {
   left: 0; right: 0;
 }
 .chat-input-textarea {
-  background-color: grey;
-  width: 90%;
+  background-color: #DCDCDC;
+  width: 70%;
   border-radius: 5px;
   border: none;
-  border-color: none;
   outline: none;
   padding: 10px;
-  color: white;
+  color: black;
   font-size: 1em;
+  margin-left: 50px;
+}
+#hint {
+  margin-left: 50px;
+}
+.ask {
+  margin-left: 5px;
+  margin-top: 10px;
 }
 
 .chat-log {
@@ -285,4 +304,8 @@ MDBInput {
 
 .signup {
   margin-right: 10px;
+}
+
+.form-group {
+  display: inline-flex;
 }

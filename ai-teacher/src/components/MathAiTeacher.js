@@ -23,36 +23,37 @@ function MathAiTeacher() {
     return (
         <div>
             <Navbar />
+            <div className="flex-container">
             <aside className="sidemenu">
-                <h1> Aside</h1>
-                <div className="side-menu-button">
-                    <span>+</span> New Question
-                </div>
+                {/*<div className="side-menu-button">*/}
+                {/*    /!*<span>+</span> New Question*!/*/}
+                {/*    /!*You asked*!/*/}
+                {/*</div>*/}
+                <h6>You asked...</h6>
             </aside>
-
-            <section className="chatbox">
+            <section className="question-container">
                 <div className="chat-log">
-                    <div className="chat-message">
-                        <div className="avatar">
-                        </div>
-                        <div className="message">
-                            hello hello
-                        </div>
-                    </div>
+                   <h1> Math AI teacher </h1>
                 </div>
-                <div className="chat-log">
-                    <div className="chat-message chatgpt">
-                        <div className="avatar chatgpt">
+                <div className="chatbox">
+                    <form onSubmit={handleSubmit}>
+                        <div className="form-group">
+                            <textarea
+                                id="message"
+                                value={message}
+                                onChange={(e) => setMessage(e.target.value)}
+                                rows="1" className="chat-input-textarea" placeholder="Type your question here">
+                            </textarea>
+                        <span><button type="submit" className="btn btn-outline-secondary ask">Ask</button></span>
                         </div>
-                        <div className="message">
-                        </div>
-                    </div>
-                </div>
-                <div className="chat-input-holder">
-          <textarea rows="1" className="chat-input-textarea" placeholder="Type your question here">
-          </textarea>
+                        <p id="hint">Hint: you can ask for extra explanations</p>
+                    </form>
+                    <textarea rows="1" className="chat-input-textarea">
+                                  {response}
+                    </textarea>
                 </div>
             </section>
+            </div>
             <Footer />
         </div>
     );
