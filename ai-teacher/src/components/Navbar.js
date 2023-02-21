@@ -80,7 +80,7 @@ function Navbar() {
                             <a className="nav-link" href="/about">About</a>
                         </li>
                     </ul>
-                    {!token && <MDBBtn onClick={() => setScrollableModal(!scrollableModal)}>Sign Up</MDBBtn>}
+                    {!token && <button type="button" className="btn btn-dark signup" onClick={() => setScrollableModal(!scrollableModal)}>Sign Up</button>}
                     {token ? null : (
                         <MDBModal show={scrollableModal} setShow={setScrollableModal} tabIndex='-1'>
                             <MDBModalDialog className="modal-dialog-center" scrollable>
@@ -118,9 +118,9 @@ function Navbar() {
                         </MDBModal>
                     )}
                     {token ? (
-                        <MDBBtn onClick={() => setSignInModal(true)}>Sign Out</MDBBtn>
+                        <button type="button" className="btn btn-dark signup" onClick={() => setSignInModal(true)}>Sign Out</button>
                     ) : (
-                        <MDBBtn onClick={() => setSignInModal(!signInModal)}>Sign In</MDBBtn>
+                        <button type="button" className="btn btn-dark signup" onClick={() => setSignInModal(!signInModal)}>Sign In</button>
                     )}
 
                     <MDBModal show={signInModal} setShow={setSignInModal} tabIndex='-1'>
@@ -132,7 +132,7 @@ function Navbar() {
                                 {token ? (
                                     <MDBModalBody>
                                         <p>You are currently signed in. Do you want to sign out?</p>
-                                        <MDBBtn onClick={() => signOut()}>Sign Out</MDBBtn>
+                                        <button type="button" className="btn btn-dark" onClick={() => signOut()}>Sign Out</button>
                                     </MDBModalBody>
                                 ) : (
                                     <>
@@ -149,7 +149,7 @@ function Navbar() {
                                                     <label htmlFor="email">Email:</label>
                                                     <MDBInput id='email' type='email' value={email} onChange={e => setEmail(e.target.value)} />
                                                 </div>
-                                                <MDBBtn outline rounded className='mx-2' color='dark' type="submit">Sign In</MDBBtn>
+                                                <button type="button" className="btn btn-dark signup" type="submit">Sign In</button>
                                             </form>
                                         </MDBModalBody>
                                     </>
