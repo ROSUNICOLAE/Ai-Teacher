@@ -29,7 +29,7 @@ function HistoryAiTeacher() {
                 </aside>
                 <section className="question-container">
                     <div id="aiTitle"><h1> History AI teacher </h1></div>
-                    <div><h4 id="aiQuote">"Those who cannot remember the past are condemned to repeat it" – George Santayana</h4></div>
+                    <div><h4 id="aiQuote">"Those who cannot remember the past are condemned to repeat it." – George Santayana</h4></div>
                     <div className="chatbox">
                         <form onSubmit={handleSubmit}>
                             <div className="form-group">
