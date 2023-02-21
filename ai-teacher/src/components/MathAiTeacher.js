@@ -25,10 +25,6 @@ function MathAiTeacher() {
             <Navbar />
             <div className="flex-container">
             <aside className="sidemenu">
-                {/*<div className="side-menu-button">*/}
-                {/*    /!*<span>+</span> New Question*!/*/}
-                {/*    /!*You asked*!/*/}
-                {/*</div>*/}
                 <h6>You asked...</h6>
             </aside>
             <section className="question-container">
