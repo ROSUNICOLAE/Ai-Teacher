@@ -92,15 +92,20 @@ MDBInput {
   perspective-origin: 50% 50%;
 }
 
-.cube {
-  margin: auto;
-  position: relative;
-  float: left;
-  height: 75px;
-  width: 75px;
-  transform-style: preserve-3d;
+.img_cont_msg {
+  display: flex;
+  align-items: flex-start;
 }
 
+.cube {
+  position: relative;
+  height: 45px;
+  width: 45px;
+  transform-style: preserve-3d;
+  animation: rotate 10s infinite linear;
+  margin-right: 10px;
+  vertical-align: middle;
+}
 
 .cube > div {
   position: absolute;
@@ -109,11 +114,10 @@ MDBInput {
   height: 80%;
   width: 80%;
   opacity: 0.9;
-  background-color: rgba(0, 0, 0, 0.45);
+  background-color: rgba(10, 0, 10, 0.55);
   border: solid 1px #eeeeee;
   color: #ffffff;
 }
-
 
 .front, .back, .top, .bottom, .left, .right {
   text-align: center;
@@ -122,75 +126,43 @@ MDBInput {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 80vh;
+  height: 100%;
   font-size: 1em;
 }
-
-/*.front {*/
-/*  transform: translateZ(170px);*/
-/*  transform-origin: top left;*/
-
-/*}*/
-
+.front {
+  transform: translateZ(20px) rotateY(180deg);
+}
 
 .back {
-  transform: translateZ(-100px) rotateY(180deg);
+  transform: translateZ(-15px) rotateY(180deg);
 }
 
 .right {
-  transform: rotateY(-270deg) translateX(100px);
+  transform: rotateY(-270deg) translateX(15px);
   transform-origin: top right;
 }
 
 .left {
-  transform: rotateY(270deg) translateX(-100px);
+  transform: rotateY(270deg) translateX(-15px);
   transform-origin: center left;
 }
 
 .top {
-  transform: rotateX(-270deg) translateY(-100px);
+  transform: rotateX(-270deg) translateY(-15px);
   transform-origin: top center;
 }
 
 .bottom {
-  transform: rotateX(270deg) translateY(100px);
+  transform: rotateX(270deg) translateY(15px);
   transform-origin: bottom center;
 }
 @keyframes rotate {
   from {
-    transform: rotateX(0deg) rotateY(0deg);
+    transform: rotate3d(1, 1, 0, 0deg);
   }
-
   to {
-    transform: rotateX(360deg) rotateY(360deg);
+    transform: rotate3d(1, 1, 0, 360deg);
   }
-}
-
-.cube {
-  animation: rotate 20s infinite linear;
-}
-.wrap:hover .front {
-  transform: translateZ(150px);
-}
-
-.wrap:hover .back {
-  transform: translateZ(-200px) rotateY(180deg);
-}
-
-.wrap:hover .right {
-  transform: rotateY(-270deg) translateZ(100px) translateX(100px);
-}
-
-.wrap:hover .left {
-  transform: rotateY(270deg) translateZ(100px) translateX(-100px);
-}
-
-.wrap:hover .top {
-  transform: rotateX(-270deg) translateZ(100px) translateY(-100px);
-}
-
-.wrap:hover .bottom {
-  transform: rotateX(270deg) translateZ(100px) translateY(100px);
 }
 
 #mainPageTitle {

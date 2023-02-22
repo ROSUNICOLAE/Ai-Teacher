@@ -3,7 +3,7 @@ import Footer from "./Footer";
 import Navbar from "./Navbar";
 import img from './images/AI k12.png.jpg';
 import jwt_decode from 'jwt-decode';
-
+import Cube from "./Cube";
 
 function PhysicsAiTeacher() {
     const [message, setMessage] = useState("");
@@ -98,15 +98,14 @@ function PhysicsAiTeacher() {
                             id="msg-box"
                             className="card-body msg_card_body"
                             style={{height: "500px", overflowY: "auto"}}>
-                            {messages.map((msg, index) => (<div
+                            {messages.map((msg, index) => (
+                                <div
                                 key={index}
                                 className={msg.isUser ? "d-flex justify-content-end mb-4" : "d-flex justify-content-start mb-4"}>
-                                <div className="img_cont_msg">
-                                    {msg.isUser ? (<span className="rounded-circle user_img_msg">{username}</span>) : (
-                                        <img
-                                            src="https://therichpost.com/wp-content/uploads/2020/06/avatar2.png"
-                                            className="rounded-circle user_img_msg"
-                                        />)}
+                                <div className="img_cont_msg" style={{position: "relative"}}>
+                                    {msg.isUser ? (<span>{username.charAt(0).toUpperCase() + username.slice(1)}</span>)
+                                        : (
+                                            <Cube style={{position: "relative", top: -300, left: 0, zIndex: -50}} />)}
                                 </div>
                                 <div
                                     className={msg.isUser ? "msg_cotainer_send" : "msg_cotainer"}>
