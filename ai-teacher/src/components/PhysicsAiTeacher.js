@@ -126,11 +126,13 @@ function PhysicsAiTeacher() {
                                     name=""
                                     className="form-control type_msg"
                                     placeholder="Type your message..."
+                                    onKeyPress={(e) => {
+                                        if (e.key === "Enter") {
+                                            handleSubmit(e);
+                                        }
+                                    }}
                                 ></textarea>
                                 <div className="input-group-append">
-                                    <button type="submit" className="input-group-text send_btn">
-                                        <i className="fas fa-location-arrow"></i>
-                                    </button>
                                 </div>
                             </form>
                         </div>
