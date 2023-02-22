@@ -116,7 +116,7 @@ function HistoryAiTeacher() {
                                             onChange={(e) => setMessage(e.target.value)}
                                             name=""
                                             className="form-control type_msg"
-                                            placeholder="Type your message..."
+                                            placeholder="Type your question here and hit enter"
                                         ></textarea>
                                         <div className="input-group-append">
                                             <button

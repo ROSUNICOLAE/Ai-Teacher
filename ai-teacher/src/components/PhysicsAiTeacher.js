@@ -77,7 +77,7 @@ function PhysicsAiTeacher() {
         <Navbar/>
         <div className="flex-container">
             <aside className="sidemenu" style={{overflowY: "auto"}}>
-                <h4>All time conversational log with Aiteacher</h4>
+                <h4 className="side-menu-button">Asked questions</h4>
                 {allMessages.map((message, index) => (<div key={index}>
                     <p><strong>Message:</strong> {message.prompt}</p>
                     <p><strong>Response:</strong> {message.text || message.response}</p>
@@ -87,11 +87,7 @@ function PhysicsAiTeacher() {
                 <div id="aiTitle">
                     <h1>Physics AI teacher</h1>
                 </div>
-                <div>
-                    <h4 id="aiQuote">
-                        "Those who cannot remember the past are condemned to repeat it." – George Santayana
-                    </h4>
-                </div>
+                <div><h4 id="aiQuote">"Nothing in life is to be feared, it is only to be understood. Now is the time to understand more, so that we may fear less." – Marie Curie</h4></div>
                 <div className="d-flex justify-content-center align-items-center">
                     <div className="maincontainer" style={{width: "50%"}}>
                         <div
@@ -125,7 +121,7 @@ function PhysicsAiTeacher() {
                                     onChange={(e) => setMessage(e.target.value)}
                                     name=""
                                     className="form-control type_msg"
-                                    placeholder="Type your message..."
+                                    placeholder="Type your question here and hit enter"
                                     onKeyPress={(e) => {
                                         if (e.key === "Enter") {
                                             handleSubmit(e);

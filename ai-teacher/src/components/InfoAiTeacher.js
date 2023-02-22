@@ -37,7 +37,7 @@ function InfoAiTeacher() {
                                 id="message"
                                 value={message}
                                 onChange={(e) => setMessage(e.target.value)}
-                                rows="1" className="chat-input-textarea" placeholder="Type your question here">
+                                rows="1" className="chat-input-textarea" placeholder="Type your question here and hit enter">
                             </textarea>
                                 <button type="submit" className="btn btn-outline-secondary ask">Ask</button>
                                 <div id="hint">Hint: you can ask for extra explanations</div>
