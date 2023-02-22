@@ -10,6 +10,7 @@ import {
     MDBModalFooter,
     MDBInput
 } from 'mdb-react-ui-kit';
+import jwt_decode from "jwt-decode";
 
 function Navbar() {
     const [name, setName] = useState('');
@@ -18,6 +19,7 @@ function Navbar() {
     const [scrollableModal, setScrollableModal] = useState(false);
     const [signInModal, setSignInModal] = useState(false);
     const [token, setToken] = useState(localStorage.getItem("token"));
+
 
 
     const handleSubmit = async (e) => {
@@ -38,11 +40,12 @@ function Navbar() {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ username, email})
         });
-        console.log(response.headers.get("Authorization"));
-        console.log(response);
         if (response.headers.get("Authorization")) {
             localStorage.setItem("token", response.headers.get("Authorization"));
             setToken(response.headers.get("Authorization"));
+            const decodedToken = jwt_decode(token);
+            console.log(decodedToken);
+            setUsername(decodedToken.sub);
         }
     }
 
@@ -51,6 +54,7 @@ function Navbar() {
         setToken(null);
         setSignInModal(false);
     };
+
 
 
 
@@ -119,7 +123,10 @@ function Navbar() {
                         </MDBModal>
                     )}
                     {token ? (
+                        <div>
+                        <span>Signed in as {username.charAt(0).toUpperCase() + username.slice(1)} </span>
                         <MDBBtn onClick={() => setSignInModal(true)}>SIGN OUT</MDBBtn>
+                            </div>
                     ) : (
                         <MDBBtn onClick={() => setSignInModal(!signInModal)}>SIGN IN</MDBBtn>
                     )}
