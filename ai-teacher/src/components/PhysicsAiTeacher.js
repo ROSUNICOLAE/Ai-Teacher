@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from "react";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
-import img from './images/AI k12.png.jpg';
 import jwt_decode from 'jwt-decode';
 import Cube from "./Cube";
 
