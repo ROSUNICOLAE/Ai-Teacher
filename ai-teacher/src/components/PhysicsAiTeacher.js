@@ -18,7 +18,7 @@ function PhysicsAiTeacher() {
             },
         };
 
-        fetch("http://localhost:8080/api/messages", requestOptions)
+        fetch("http://localhost:8080/api/physics-asked-questions", requestOptions)
             .then((response) => response.json())
             .then((data) => setAllMessages(data));
     };

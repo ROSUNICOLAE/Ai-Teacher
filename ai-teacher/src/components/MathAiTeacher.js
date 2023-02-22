@@ -20,7 +20,7 @@ function MathAiTeacher() {
             },
         };
 
-        fetch("http://localhost:8080/api/messages", requestOptions)
+        fetch("http://localhost:8080/api/math-asked-questions", requestOptions)
             .then((response) => response.json())
             .then((data) => setAllMessages(data));
     };
