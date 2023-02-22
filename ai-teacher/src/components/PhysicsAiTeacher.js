@@ -77,10 +77,12 @@ function PhysicsAiTeacher() {
         <Navbar/>
         <div className="flex-container">
             <aside className="sidemenu" style={{overflowY: "auto"}}>
-                <h4 className="side-menu-button">Asked questions</h4>
+                <h6 className="side-menu-button">Asked questions</h6>
                 {allMessages.map((message, index) => (<div key={index}>
-                    <p><strong>Message:</strong> {message.prompt}</p>
+                    <div className="side-menu-button">
+                    <p><strong>Question:</strong> {message.prompt}</p>
                     <p><strong>Response:</strong> {message.text || message.response}</p>
+                    </div><p></p>
                 </div>))}
             </aside>
             <div className="question-container">
