@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 import {
     MDBBtn,
     MDBModal,
@@ -43,9 +43,6 @@ function Navbar() {
         if (response.headers.get("Authorization")) {
             localStorage.setItem("token", response.headers.get("Authorization"));
             setToken(response.headers.get("Authorization"));
-            const decodedToken = jwt_decode(token);
-            console.log(decodedToken);
-            setUsername(decodedToken.sub);
         }
     }
 
@@ -55,8 +52,15 @@ function Navbar() {
         setSignInModal(false);
     };
 
-
-
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+        console.log(token);
+        if (token) {
+            const decodedToken = jwt_decode(token);
+            console.log(decodedToken);
+            setUsername(decodedToken.sub);
+        }
+    }, []);
 
     return (
         <nav className="navbar navbar-expand-lg bg-tertiary" style={{ backgroundColor: "white" }}>
