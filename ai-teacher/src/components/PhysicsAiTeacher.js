@@ -134,7 +134,7 @@ function PhysicsAiTeacher() {
                 </div>
                 <div><h4 id="aiQuote">"Nothing in life is to be feared, it is only to be understood. Now is the time to understand more, so that we may fear less." – Marie Curie</h4></div>
                 <div className="d-flex justify-content-center align-items-center">
-                    <div className="maincontainer" style={{width: "50%"}}>
+                    <div className="maincontainer" style={{width: "80%"}}>
                         <div
                             id="msg-box"
                             className="card-body msg_card_body"
