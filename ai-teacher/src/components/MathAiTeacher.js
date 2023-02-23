@@ -92,7 +92,7 @@ function MathAiTeacher() {
                     </div>
                     <div><h4 id="aiQuote">"Mathematics is the language in which God has written the universe." – Galileo Galilei</h4></div>
                     <div className="d-flex justify-content-center align-items-center">
-                        <div className="maincontainer" style={{width: "50%"}}>
+                        <div className="maincontainer" style={{width: "80%"}}>
                             <div
                                 id="msg-box"
                                 className="card-body msg_card_body"
