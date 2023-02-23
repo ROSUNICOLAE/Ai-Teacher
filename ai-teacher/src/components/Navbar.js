@@ -89,7 +89,7 @@ function Navbar() {
                             <a className="nav-link " href="/about">About us</a>
                         </li>
                     </ul>
-                    {!token && <MDBBtn onClick={() => setScrollableModal(!scrollableModal)}>SIGN UP</MDBBtn>}
+                    {!token && <MDBBtn className="btn btn-dark signup" onClick={() => setScrollableModal(!scrollableModal)}>SIGN UP</MDBBtn>}
                     {token ? null : (
                         <MDBModal show={scrollableModal} setShow={setScrollableModal} tabIndex='-1'>
                             <MDBModalDialog className="modal-dialog-center" scrollable>
@@ -129,10 +129,10 @@ function Navbar() {
                     {token ? (
                         <div>
                         <span>Signed in as {username.charAt(0).toUpperCase() + username.slice(1)} </span>
-                        <MDBBtn onClick={() => setSignInModal(true)}>SIGN OUT</MDBBtn>
+                        <MDBBtn className="btn btn-dark" onClick={() => setSignInModal(true)}>SIGN OUT</MDBBtn>
                             </div>
                     ) : (
-                        <MDBBtn onClick={() => setSignInModal(!signInModal)}>SIGN IN</MDBBtn>
+                        <MDBBtn className="btn btn-dark" onClick={() => setSignInModal(!signInModal)}>SIGN IN</MDBBtn>
                     )}
 
                     <MDBModal show={signInModal} setShow={setSignInModal} tabIndex='-1'>
