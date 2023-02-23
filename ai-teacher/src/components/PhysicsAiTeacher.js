@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
-import jwt_decode from 'jwt-decode';
+import jwt_decode from "jwt-decode";
 import Cube from "./Cube";
 
 function PhysicsAiTeacher() {
@@ -9,16 +9,23 @@ function PhysicsAiTeacher() {
     const [messages, setMessages] = useState([]);
     const [allMessages, setAllMessages] = useState([]);
     const [username, setUsername] = useState("");
-
+    const [selectedCourse, setSelectedCourse] = useState("All");
+    const [courseNames, setCourseNames] = useState([]);
 
     const fetchMessages = () => {
+        let url = "http://localhost:8080/api/physics-course";
+        if (selectedCourse !== "All" && selectedCourse !== "All") {
+            url += `?course=${selectedCourse}`;
+        }
         const requestOptions = {
-            method: "GET", headers: {
-                "Content-Type": "application/json", Authorization: `Bearer ${localStorage.getItem("token")}`,
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${localStorage.getItem("token")}`,
             },
         };
 
-        fetch("http://localhost:8080/api/physics-asked-questions", requestOptions)
+        fetch(url, requestOptions)
             .then((response) => response.json())
             .then((data) => setAllMessages(data));
     };
@@ -29,22 +36,33 @@ function PhysicsAiTeacher() {
             const newMessage = {
                 text: message,
                 isUser: true,
-                time: new Date().toLocaleString('en-US', {hour: 'numeric', minute: 'numeric', hour12: true})
+                time: new Date().toLocaleString("en-US", {
+                    hour: "numeric",
+                    minute: "numeric",
+                    hour12: true,
+                }),
             };
             const newMessages = [...messages, newMessage];
             setMessages(newMessages);
             const requestOptions = {
-                method: "POST", headers: {
-                    "Content-Type": "application/json", Authorization: `Bearer ${localStorage.getItem("token")}`,
-                }, body: JSON.stringify({prompt: message}),
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${localStorage.getItem("token")}`,
+                },
+                body: JSON.stringify({ prompt: message }),
             };
 
             fetch("http://localhost:8080/api/Physicsai", requestOptions)
                 .then((response) => response.text())
                 .then((data) => {
                     const newResponse = {
-                        text: data, isUser: false, time: new Date().toLocaleString("en-US", {
-                            hour: "numeric", minute: "numeric", hour12: true,
+                        text: data,
+                        isUser: false,
+                        time: new Date().toLocaleString("en-US", {
+                            hour: "numeric",
+                            minute: "numeric",
+                            hour12: true,
                         }),
                     };
                     const updatedMessages = [...newMessages, newResponse];
@@ -52,38 +70,64 @@ function PhysicsAiTeacher() {
                     setAllMessages([...allMessages, newResponse]);
                     fetchMessages();
                 });
-
             setMessage("");
         }
     };
 
-    useEffect(() => {
-        fetchMessages();
-    }, []);
+    const handleSelectCourse = (event) => {
+        setSelectedCourse(event.target.value);
+    };
 
     useEffect(() => {
         fetchMessages();
+    }, [selectedCourse]);
+
+    useEffect(() => {
         const token = localStorage.getItem("token");
-        console.log(token);
         if (token) {
             const decodedToken = jwt_decode(token);
-            console.log(decodedToken);
             setUsername(decodedToken.sub);
         }
     }, []);
 
-    return (<div>
-        <Navbar/>
-        <div className="flex-container">
-            <aside className="sidemenu" style={{overflowY: "auto"}}>
-                <h6 className="side-menu-button">Asked questions</h6>
-                {allMessages.map((message, index) => (<div key={index}>
-                    <div className="side-menu-button">
-                    <p><strong>Question:</strong> {message.prompt}</p>
-                    <p><strong>Response:</strong> {message.text || message.response}</p>
-                    </div><p></p>
-                </div>))}
-            </aside>
+    useEffect(() => {
+        fetch("http://localhost:8080/courses/coursesNames")
+            .then(response => response.json())
+            .then(data => {
+                console.log("Course names data:", data);
+                setCourseNames([...data]);
+            })
+            .catch(error => console.error(error));
+    }, []);
+
+    return (
+        <div>
+            <Navbar />
+            <div className="flex-container">
+                <aside className="sidemenu" style={{ overflowY: "auto" }}>
+                    <h6 className="side-menu-button">All time Q&A</h6>
+                    <select onChange={handleSelectCourse} className="form-select">
+                        <option>Select Course</option>
+                        {courseNames.map((courseName, index) => (
+                            <option key={index} value={courseName}>{courseName}</option>
+                        ))}
+                    </select>
+                    <hr />
+                    <h6 className="side-menu-button">Asked questions</h6>
+                    {allMessages.map((message, index) => (
+                        <div key={index}>
+                            <div className="side-menu-button">
+                                <p>
+                                    <strong>Question:</strong> {message.prompt}
+                                </p>
+                                <p>
+                                    <strong>Response:</strong> {message.text || message.response}
+                                </p>
+                            </div>
+                            <p></p>
+                        </div>
+                    ))}
+                </aside>
             <div className="question-container">
                 <div id="aiTitle">
                     <h1>Physics AI teacher</h1>

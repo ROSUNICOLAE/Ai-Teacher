@@ -7,4 +7,7 @@ import java.util.List;
 
 public interface MessageRepository extends JpaRepository<Message, Long> {
     List<Message> findByStudent(String username);
+    List<Message> findByCourse(String course);
+    List<Message> findByCourseAndStudent(String course, String student);
+
 }

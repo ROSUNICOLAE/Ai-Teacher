@@ -72,6 +72,7 @@ public class HistoryAiController {
             message.setPrompt(promptValue);
             message.setResponse(responseText);
             message.setStudent(student.getUsername());
+            message.setCourse("History");
             messageService.save(message);
         }
         return responseText;
@@ -86,6 +87,23 @@ public class HistoryAiController {
         if (optionalStudent.isPresent()) {
             Student student = optionalStudent.get();
             return messageService.getAllMessagesForUser(student.getUsername());
+        } else {
+            throw new RuntimeException("Error: Student not found.");
+        }
+    }
+
+    public List<Message> getAllMessagesForCurrentUser(@RequestParam(name = "History", required = false) String course) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String username = ((UserDetailsImpl) authentication.getPrincipal()).getUsername();
+
+        Optional<Student> optionalStudent = studentService.findByUsername(username);
+        if (optionalStudent.isPresent()) {
+            Student student = optionalStudent.get();
+            if (course != null) {
+                return messageService.getMessagesByCourseAndStudent(course, student.getUsername());
+            } else {
+                return messageService.getAllMessagesForUser(student.getUsername());
+            }
         } else {
             throw new RuntimeException("Error: Student not found.");
         }
