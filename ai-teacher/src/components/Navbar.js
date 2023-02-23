@@ -89,7 +89,7 @@ function Navbar() {
                             <a className="nav-link " href="/about">About us</a>
                         </li>
                     </ul>
-                    {!token && <MDBBtn onClick={() => setScrollableModal(!scrollableModal)}>SIGN UP</MDBBtn>}
+                    {!token && <MDBBtn className="btn btn-dark signup" onClick={() => setScrollableModal(!scrollableModal)}>SIGN UP</MDBBtn>}
                     {token ? null : (
                         <MDBModal show={scrollableModal} setShow={setScrollableModal} tabIndex='-1'>
                             <MDBModalDialog className="modal-dialog-center" scrollable>
@@ -114,14 +114,9 @@ function Navbar() {
                                                 <label htmlFor="email">Email:</label>
                                                 <MDBInput id='email' type='email' value={email} onChange={e => setEmail(e.target.value)} />
                                             </div>
-                                            <MDBBtn MDBBtn outline rounded className='mx-2' color='dark' type="submit">Create Account</MDBBtn>
+                                            <MDBBtn  className="btn btn-dark" MDBBtn outline rounded className='mx-2' color='dark' type="submit">Create Account</MDBBtn>
                                         </form>
                                     </MDBModalBody>
-                                    <MDBModalFooter>
-                                        <MDBBtn color='secondary' onClick={() => setScrollableModal(!setScrollableModal)}>
-                                            Close
-                                        </MDBBtn>
-                                    </MDBModalFooter>
                                 </MDBModalContent>
                             </MDBModalDialog>
                         </MDBModal>
@@ -129,22 +124,19 @@ function Navbar() {
                     {token ? (
                         <div>
                         <span>Signed in as {username.charAt(0).toUpperCase() + username.slice(1)} </span>
-                        <MDBBtn onClick={() => setSignInModal(true)}>SIGN OUT</MDBBtn>
+                        <MDBBtn className="btn btn-dark signup" onClick={() => setSignInModal(true)}>SIGN OUT</MDBBtn>
                             </div>
                     ) : (
-                        <MDBBtn onClick={() => setSignInModal(!signInModal)}>SIGN IN</MDBBtn>
+                        <MDBBtn className="btn btn-dark signup" onClick={() => setSignInModal(!signInModal)}>SIGN IN</MDBBtn>
                     )}
 
                     <MDBModal show={signInModal} setShow={setSignInModal} tabIndex='-1'>
                         <MDBModalDialog className="modal-dialog-center" scrollable>
                             <MDBModalContent>
-                                <MDBModalHeader>
-                                    <MDBModalTitle>{token ? "Sign Out" : "Sign In"}</MDBModalTitle>
-                                </MDBModalHeader>
                                 {token ? (
                                     <MDBModalBody>
                                         <p>You are currently signed in. Do you want to sign out?</p>
-                                        <MDBBtn onClick={() => signOut()}>Sign Out</MDBBtn>
+                                        <MDBBtn className="btn btn-dark" onClick={() => signOut()}>Sign Out</MDBBtn>
                                     </MDBModalBody>
                                 ) : (
                                     <>
@@ -166,11 +158,6 @@ function Navbar() {
                                         </MDBModalBody>
                                     </>
                                 )}
-                                <MDBModalFooter>
-                                    <MDBBtn color='secondary' onClick={() => setSignInModal(false)}>
-                                        Close
-                                    </MDBBtn>
-                                </MDBModalFooter>
                             </MDBModalContent>
                         </MDBModalDialog>
                     </MDBModal>
