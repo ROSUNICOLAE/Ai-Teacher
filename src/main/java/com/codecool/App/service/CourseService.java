@@ -22,19 +22,17 @@ public class CourseService {
         return courseRepository.save(new Course(name));
     }
 
-        // method to get all courses names
     public List<String> getCoursesNames() {
-        return courseRepository.findAllNames();
-    }
+            List<String> names = courseRepository.findAllNames();
+            return names;
+        }
 
-
+    // method to initialize database with some data 4 courses : Math Physics IT History
     @PostConstruct
     public void init() {
-        courseRepository.save(new Course("Java"));
-        courseRepository.save(new Course("Python"));
-        courseRepository.save(new Course("C#"));
-        courseRepository.save(new Course("C++"));
-
+        courseRepository.save(new Course("Math"));
+        courseRepository.save(new Course("Physics"));
+        courseRepository.save(new Course("IT"));
+        courseRepository.save(new Course("History"));
     }
-
 }

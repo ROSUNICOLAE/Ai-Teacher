@@ -26,6 +26,14 @@ public class Message {
     private Date createdAt;
 
     private String student;
+    @Column(name = "course", nullable = false)
+    private String course;
+
+    public void setCourse(String course) {
+        this.course = course;
+    }
+
+
 
 
     public Message() {
@@ -38,10 +46,4 @@ public class Message {
 
 
 
-    public void setStudent(Student student) {
-        this.student = student.getName();
-    }
-
-
-    // getters and setters
 }
