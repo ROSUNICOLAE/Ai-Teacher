@@ -25,7 +25,6 @@ public class MathAiController {
 
     private final String apiKey = "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";
     private final String endpoint = "https://api.openai.com/v1/completions";
-
     private final MessageService messageService;
     private final StudentService studentService;
 

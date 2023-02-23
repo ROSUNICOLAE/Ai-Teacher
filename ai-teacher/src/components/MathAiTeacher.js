@@ -82,7 +82,7 @@ function MathAiTeacher() {
                     {allMessages.map((message, index) => (<div key={index}>
                         <div className="side-menu-button">
                             <p><strong>Question:</strong> {message.prompt}</p>
-                            <p><strong>Response:</strong> {message.text || message.response}</p>
+                            <p><strong>Answer:</strong> {message.text || message.response}</p>
                         </div><p></p>
                     </div>))}
                 </aside>

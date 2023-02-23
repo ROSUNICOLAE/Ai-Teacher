@@ -22,10 +22,9 @@ import java.util.Optional;
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api")
-public class HistoryAiTeacher {
+public class HistoryAiController {
     private final String apiKey = "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";
     private final String endpoint = "https://api.openai.com/v1/completions";
-
     private final MessageService messageService;
     private final StudentService studentService;
 
@@ -47,7 +46,7 @@ public class HistoryAiTeacher {
 
         JsonNode requestJson = new ObjectMapper().createObjectNode()
                 .put("model", "text-davinci-003")
-                .put("prompt", "Answer like a Physics Teacher, a genius in Physics. And do not accept other questions from anything else. Try to be as explicit as possible. Be interested to help an give live support for the student to complete his homeworks and fulfill his knowledge.\n" +
+                .put("prompt", "Answer like a History Teacher, a genius in History. And do not accept other questions from anything else. Try to be as explicit as possible. Be interested to help an give live support for the student to complete his homeworks and fulfill his knowledge.\n" +
                         prompt)
                 .put("max_tokens", 500);
 
@@ -91,6 +90,5 @@ public class HistoryAiTeacher {
             throw new RuntimeException("Error: Student not found.");
         }
     }
-
 
 }

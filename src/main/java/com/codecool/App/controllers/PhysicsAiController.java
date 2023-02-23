@@ -79,7 +79,7 @@ public class PhysicsAiController {
         return responseText;
     }
 
-    @GetMapping("/messages")
+    @GetMapping("/physics-asked-questions")
     public List<Message> getAllMessagesForCurrentUser() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String username = ((UserDetailsImpl) authentication.getPrincipal()).getUsername();
