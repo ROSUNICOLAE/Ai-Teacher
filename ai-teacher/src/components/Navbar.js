@@ -128,7 +128,7 @@ function Navbar() {
                     )}
                     {token ? (
                         <div>
-                        <span>Signed in as {username.charAt(0).toUpperCase() + username.slice(1)} </span>
+                        <span style={{fontFamily: 'Gloria Hallelujah', fontSize: '20px', marginRight: "10px"}}>Hi, {username.charAt(0).toUpperCase() + username.slice(1)} </span>
                         <MDBBtn className="btn btn-dark" onClick={() => setSignInModal(true)}>SIGN OUT</MDBBtn>
                             </div>
                     ) : (
