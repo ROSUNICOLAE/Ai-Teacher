@@ -16,6 +16,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -78,34 +79,58 @@ public class HistoryAiController {
         return responseText;
     }
 
-    @GetMapping("/history-asked-questions")
-    public List<Message> getAllMessagesForCurrentUser() {
+//    @GetMapping("/history-asked-questions")
+//    public List<Message> getAllMessagesForCurrentUser() {
+//        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+//        String username = ((UserDetailsImpl) authentication.getPrincipal()).getUsername();
+//
+//        Optional<Student> optionalStudent = studentService.findByUsername(username);
+//        if (optionalStudent.isPresent()) {
+//            Student student = optionalStudent.get();
+//            return messageService.getAllMessagesForUser(student.getUsername());
+//        } else {
+//            throw new RuntimeException("Error: Student not found.");
+//        }
+//    }
+
+//    public List<Message> getAllMessagesForCurrentUser(@RequestParam(name = "History", required = false) String course) {
+//        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+//        String username = ((UserDetailsImpl) authentication.getPrincipal()).getUsername();
+//
+//        Optional<Student> optionalStudent = studentService.findByUsername(username);
+//        if (optionalStudent.isPresent()) {
+//            Student student = optionalStudent.get();
+//            if (course != null) {
+//                return messageService.getMessagesByCourseAndStudent(course, student.getUsername());
+//            } else {
+//                return messageService.getAllMessagesForUser(student.getUsername());
+//            }
+//        } else {
+//            throw new RuntimeException("Error: Student not found.");
+//        }
+//    }
+
+    @GetMapping("/history-course")
+    public List<Message> getAllMessagesForCurrentUser(@RequestParam(name = "course", required = false) String course) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String username = ((UserDetailsImpl) authentication.getPrincipal()).getUsername();
+        Object principal = authentication.getPrincipal(); // Get the principal object
 
-        Optional<Student> optionalStudent = studentService.findByUsername(username);
-        if (optionalStudent.isPresent()) {
-            Student student = optionalStudent.get();
-            return messageService.getAllMessagesForUser(student.getUsername());
-        } else {
-            throw new RuntimeException("Error: Student not found.");
-        }
-    }
+        if (principal instanceof UserDetailsImpl) { // Check if the principal is an instance of UserDetailsImpl
+            String username = ((UserDetailsImpl) principal).getUsername();
 
-    public List<Message> getAllMessagesForCurrentUser(@RequestParam(name = "History", required = false) String course) {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String username = ((UserDetailsImpl) authentication.getPrincipal()).getUsername();
-
-        Optional<Student> optionalStudent = studentService.findByUsername(username);
-        if (optionalStudent.isPresent()) {
-            Student student = optionalStudent.get();
-            if (course != null) {
-                return messageService.getMessagesByCourseAndStudent(course, student.getUsername());
+            Optional<Student> optionalStudent = studentService.findByUsername(username);
+            if (optionalStudent.isPresent()) {
+                Student student = optionalStudent.get();
+                if (course != null) {
+                    return messageService.getMessagesByCourseAndStudent(course, student.getUsername());
+                } else {
+                    return messageService.getAllMessagesForUser(student.getUsername());
+                }
             } else {
-                return messageService.getAllMessagesForUser(student.getUsername());
+                throw new RuntimeException("Error: Student not found.");
             }
-        } else {
-            throw new RuntimeException("Error: Student not found.");
+        } else { // Handle case when the principal is not an instance of UserDetailsImpl
+            return Collections.emptyList();
         }
     }
 
