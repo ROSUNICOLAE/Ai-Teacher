@@ -101,91 +101,69 @@ function HistoryAiTeacher() {
             .catch(error => console.error(error));
     }, []);
 
-    return (
-        <div>
-            <Navbar />
+        return (<div>
+            <Navbar/>
             <div className="flex-container">
-                <aside className="sidemenu" style={{ overflowY: "auto" }}>
-                    <h6 className="side-menu-button">All time Q&A</h6>
-                    <select onChange={handleSelectCourse} className="form-select">
-                        <option>Select Course</option>
-                        {courseNames.map((courseName, index) => (
-                            <option key={index} value={courseName}>{courseName}</option>
-                        ))}
-                    </select>
-                    <hr />
+                <aside className="sidemenu" style={{overflowY: "auto"}}>
                     <h6 className="side-menu-button">Asked questions</h6>
-                    {allMessages.map((message, index) => (
-                        <div key={index}>
-                            <div className="side-menu-button">
-                                <p>
-                                    <strong>Question:</strong> {message.prompt}
-                                </p>
-                                <p>
-                                    <strong>Response:</strong> {message.text || message.response}
-                                </p>
-                            </div>
-                            <p></p>
-                        </div>
-                    ))}
+                    {allMessages.map((message, index) => (<div key={index}>
+                        <div className="side-menu-button">
+                            <p><strong>Question:</strong> {message.prompt}</p>
+                            <p><strong>Answer:</strong> {message.text || message.response}</p>
+                        </div><p></p>
+                    </div>))}
                 </aside>
                 <div className="question-container">
                     <div id="aiTitle">
                         <h1>History AI teacher</h1>
                     </div>
-                    <div><h4 id="aiQuote">"Those who cannot remember the past are condemned to repeat it." –
-                        George Santayana</h4></div>
+                    <div><h4 id="aiQuote">"Those who cannot remember the past are condemned to repeat it." – George Santayana
+                        <Cube style={{marginRight: '1200px'}}/>
+                    </h4>
+                    </div>
                     <div className="d-flex justify-content-center align-items-center">
-                        <div className="maincontainer" style={{width: "80%"}}>
+                        <div className="maincontainer" style={{width: "90%"}}>
                             <div
                                 id="msg-box"
                                 className="card-body msg_card_body"
                                 style={{height: "500px", overflowY: "auto"}}>
                                 {messages.map((msg, index) => (
-                                    <div
-                                        key={index}
-                                        className={msg.isUser ? "d-flex justify-content-end mb-4" : "d-flex justify-content-start mb-4"}>
+                                    <div key={index}>
                                         <div className="img_cont_msg" style={{position: "relative"}}>
-                                            {msg.isUser ? (<span>{username.charAt(0).toUpperCase() + username.slice(1)}</span>)
-                                                : (
-                                                    <Cube style={{position: "relative", top: -300, left: 0, zIndex: -50}} />)}
                                         </div>
                                         <div
                                             className={msg.isUser ? "msg_cotainer_send" : "msg_cotainer"}>
                                             {msg.text}
-                                            <span className={msg.isUser ? "msg_time_send" : "msg_time"}>{msg.time}</span>
                                         </div>
                                     </div>
                                 ))}
-                            </div>
-                            <div className="card-footer">
-                                <form onSubmit={handleSubmit} className="input-group">
-                                    <label htmlFor="message"></label>
-                                    <br/>
-                                    <textarea
-                                        id="message"
-                                        value={message}
-                                        onChange={(e) => setMessage(e.target.value)}
-                                        name=""
-                                        className="form-control type_msg"
-                                        placeholder="Type your question here and hit enter"
-                                        onKeyPress={(e) => {
-                                            if (e.key === "Enter") {
-                                                handleSubmit(e);
-                                            }
-                                        }}
-                                    ></textarea>
-                                    <div className="input-group-append">
-                                    </div>
-                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div className="content">
+                <div className="container-ask">
+                    <form onSubmit={handleSubmit} className="form-grup" onKeyPress={(e) => {
+                        if (e.key === "Enter") {
+                            handleSubmit(e);
+                        }
+                    }}>
+                                    <textarea
+                                        id="message"
+                                        value={message}
+                                        onChange={(e) => setMessage(e.target.value)}
+                                        rows="1"
+                                        className="chat-input-textarea"
+                                        placeholder="Type your question here">
+                                    </textarea>
+                        <button type="submit" className="btn btn-outline-secondary ask">Ask</button>
+                    </form>
+                </div>
+            </div>
             <Footer/>
         </div>
-    );
-}
+        );
+        }
 
 export default HistoryAiTeacher;
