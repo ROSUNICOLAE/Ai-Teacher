@@ -13,6 +13,7 @@ import {
 import jwt_decode from "jwt-decode";
 
 function Navbar() {
+    const [isFixed, setIsFixed] = useState(false);
     const [name, setName] = useState('');
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
@@ -21,7 +22,17 @@ function Navbar() {
     const [token, setToken] = useState(localStorage.getItem("token"));
 
 
-
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.pageYOffset > 0 && !isFixed) {
+                setIsFixed(true);
+            } else if (window.pageYOffset === 0 && isFixed) {
+                setIsFixed(false);
+            }
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [isFixed]);
     const handleSubmit = async (e) => {
         e.preventDefault();
         const response = await fetch('http://localhost:8080/api/auth/signup', {
@@ -63,7 +74,7 @@ function Navbar() {
     }, []);
 
     return (
-        <nav className="navbar navbar-expand-lg bg-tertiary" style={{ backgroundColor: "white" }}>
+        <nav className={`navbar ${isFixed ? "fixed" : "navbar navbar-expand-lg bg-tertiary"}`} style={{ backgroundColor: "white" }}>
             <div className="container-fluid">
                 <a className="navbar-brand" href="/"><i className="fas fa-home"></i>AIteacher</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -128,9 +139,9 @@ function Navbar() {
                     )}
                     {token ? (
                         <div>
-                        <span style={{fontFamily: 'Gloria Hallelujah', fontSize: '20px', marginRight: "10px"}}>Hi, {username.charAt(0).toUpperCase() + username.slice(1)} </span>
-                        <MDBBtn className="btn btn-dark" onClick={() => setSignInModal(true)}>SIGN OUT</MDBBtn>
-                            </div>
+                            <span style={{fontFamily: 'Gloria Hallelujah', fontSize: '20px', marginRight: "10px"}}>Hi, {username.charAt(0).toUpperCase() + username.slice(1)} </span>
+                            <MDBBtn className="btn btn-dark" onClick={() => setSignInModal(true)}>SIGN OUT</MDBBtn>
+                        </div>
                     ) : (
                         <MDBBtn className="btn btn-dark" onClick={() => setSignInModal(!signInModal)}>SIGN IN</MDBBtn>
                     )}

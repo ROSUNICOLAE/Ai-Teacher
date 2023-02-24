@@ -1,7 +1,14 @@
-nav {
-  background-color: greenyellow;
-  display: flex;
-  justify-content: space-between;
+.navbar {
+  position: absolute; /* use absolute position to maintain the layout of the page */
+  width: 100%;
+  transition: all 0.3s ease-in-out; /* add a transition effect for smoother animation */
+}
+
+.navbar.fixed {
+  position: fixed; /* make the navbar fixed when the "fixed" class is added */
+  top: 0;
+  left: 0;
+  background-color: #fff; /* change the background color of the navbar when fixed */
 }
 
 .logo {
@@ -224,7 +231,7 @@ MDBInput {
 }
 
 .side-menu-button:hover {
-  background-color: pink;
+  background-color: white;
 }
 
 /*.side-menu-button span {*/
@@ -250,7 +257,6 @@ MDBInput {
   left: 0; right: 0;
 }
 .chat-input-textarea {
-  background-color: #B9D9EB;
   width: 70%;
   border-radius: 5px;
   border: none;
@@ -260,6 +266,8 @@ MDBInput {
   font-size: 1em;
   margin-left: 50px;
   margin-right: 10px;
+  background-color: bisque;
+  /*margin-bottom: 50px;*/
 }
 
 .chat-output-textarea {
@@ -280,7 +288,7 @@ MDBInput {
   font-size: 13px;
 }
 .ask {
-  margin-bottom: 35px;
+  margin-bottom: 33px;
 }
 
 .chat-log {
@@ -526,3 +534,21 @@ MDBInput {
 .maincontainer {
   padding-top : 30px;
 }
+
+
+.content {
+  margin-bottom: 50px; /* height of the div plus the desired padding */
+  /* other styles for the content above the div */
+}
+
+.container-ask {
+  position: absolute;
+  bottom: 20px; /* height of the fixed footer plus the desired padding */
+  left: 230px;
+  right: 0;
+  padding: 20px; /* desired padding */
+  /* other styles for the div */
+}
+
+
+
