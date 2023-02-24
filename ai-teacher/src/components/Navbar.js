@@ -125,7 +125,7 @@ function Navbar() {
                                                 <label htmlFor="email">Email:</label>
                                                 <MDBInput className="input-field" id='email' type='email' value={email} onChange={e => setEmail(e.target.value)} />
                                             </div>
-                                            <MDBBtn className="submit-button" MDBBtn outline rounded className='mx-2' color='dark' type="submit">Create Account</MDBBtn>
+                                            <MDBBtn submit-buttonMDBBtn outline rounded className='mx-2' color='dark' type="submit">Create Account</MDBBtn>
                                         </form>
                                     </MDBModalBody>
                                     <MDBModalFooter>
