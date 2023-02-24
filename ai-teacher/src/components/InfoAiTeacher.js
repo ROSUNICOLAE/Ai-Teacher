@@ -10,80 +10,127 @@ function InfoAiTeacher() {
     const [messages, setMessages] = useState([]);
     const [allMessages, setAllMessages] = useState([]);
     const [username, setUsername] = useState("");
+    const [selectedCourse, setSelectedCourse] = useState("All");
+    const [courseNames, setCourseNames] = useState([]);
 
-    const fetchMessages = () => {
+
+
+const fetchMessages = () => {
+    let url = "http://localhost:8080/api/it-asked-questions";
+    if (selectedCourse !== "All" && selectedCourse !== "All") {
+        url += `?course=${selectedCourse}`;
+    }
+    const requestOptions = {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+    };
+
+    fetch(url, requestOptions)
+        .then((response) => response.json())
+        .then((data) => setAllMessages(data));
+};
+
+const handleSubmit = (e) => {
+    e.preventDefault();
+    if (message.trim()) {
+        const newMessage = {
+            text: message,
+            isUser: true,
+            time: new Date().toLocaleString("en-US", {
+                hour: "numeric",
+                minute: "numeric",
+                hour12: true,
+            }),
+        };
+        const newMessages = [...messages, newMessage];
+        setMessages(newMessages);
         const requestOptions = {
-            method: "GET", headers: {
-                "Content-Type": "application/json", Authorization: `Bearer ${localStorage.getItem("token")}`,
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${localStorage.getItem("token")}`,
             },
+            body: JSON.stringify({ prompt: message }),
         };
 
-        fetch("http://localhost:8080/api/it-asked-questions", requestOptions)
-            .then((response) => response.json())
-            .then((data) => setAllMessages(data));
-    };
+        fetch("http://localhost:8080/api/InfoAi", requestOptions)
+            .then((response) => response.text())
+            .then((data) => {
+                const newResponse = {
+                    text: data,
+                    isUser: false,
+                    time: new Date().toLocaleString("en-US", {
+                        hour: "numeric",
+                        minute: "numeric",
+                        hour12: true,
+                    }),
+                };
+                const updatedMessages = [...newMessages, newResponse];
+                setMessages(updatedMessages);
+                setAllMessages([...allMessages, newResponse]);
+                fetchMessages();
+            });
+        setMessage("");
+    }
+};
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (message.trim()) {
-            const newMessage = {
-                text: message,
-                isUser: true,
-                time: new Date().toLocaleString('en-US', {hour: 'numeric', minute: 'numeric', hour12: true})
-            };
-            const newMessages = [...messages, newMessage];
-            setMessages(newMessages);
-            const requestOptions = {
-                method: "POST", headers: {
-                    "Content-Type": "application/json", Authorization: `Bearer ${localStorage.getItem("token")}`,
-                }, body: JSON.stringify({prompt: message}),
-            };
+const handleSelectCourse = (event) => {
+    setSelectedCourse(event.target.value);
+};
 
-            fetch("http://localhost:8080/api/InfoAi", requestOptions)
-                .then((response) => response.text())
-                .then((data) => {
-                    const newResponse = {
-                        text: data, isUser: false, time: new Date().toLocaleString("en-US", {
-                            hour: "numeric", minute: "numeric", hour12: true,
-                        }),
-                    };
-                    const updatedMessages = [...newMessages, newResponse];
-                    setMessages(updatedMessages);
-                    setAllMessages([...allMessages, newResponse]);
-                    fetchMessages();
-                });
+useEffect(() => {
+    fetchMessages();
+}, [selectedCourse]);
 
-            setMessage("");
-        }
-    };
+useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+        const decodedToken = jwt_decode(token);
+        setUsername(decodedToken.sub);
+    }
+}, []);
 
-    useEffect(() => {
-        fetchMessages();
-    }, []);
-
-    useEffect(() => {
-        fetchMessages();
-        const token = localStorage.getItem("token");
-        console.log(token);
-        if (token) {
-            const decodedToken = jwt_decode(token);
-            console.log(decodedToken);
-            setUsername(decodedToken.sub);
-        }
-    }, []);
+useEffect(() => {
+    fetch("http://localhost:8080/courses/coursesNames")
+        .then(response => response.json())
+        .then(data => {
+            console.log("Course names data:", data);
+            setCourseNames([...data]);
+        })
+        .catch(error => console.error(error));
+}, []);
 
     return (<div>
             <Navbar/>
             <div className="flex-container">
-                <aside className="sidemenu" style={{overflowY: "auto"}}>
-                    <h6 className="side-menu-button">Your Q&A</h6>
-                    {allMessages.map((message, index) => (<div key={index}>
-                        <div className="side-menu-button">
-                            <p><strong>Question:</strong> {message.prompt}</p>
-                            <p><strong>Answer:</strong> {message.text || message.response}</p>
-                        </div><p></p>
-                    </div>))}
+                <aside className="sidemenu" style={{ overflowY: "auto" }}>
+                    <h6 className="side-menu-button">All time Q&A</h6>
+                    <select onChange={handleSelectCourse} className="form-select">
+                        <option>Select Course</option>
+                        {courseNames.map((courseName, index) => (
+                            <option key={index} value={courseName}>{courseName}</option>
+                        ))}
+                    </select>
+                    <hr />
+                    <h6 className="side-menu-button">Asked questions</h6>
+                    {allMessages.map((message, index) => (
+                        <div key={index}>
+                            <div className="side-menu-button">
+                                <p>
+                                    <strong>Question:</strong> {message.prompt}
+                                </p>
+                                <p>
+                                    <strong>Response:</strong> {message.text || message.response}
+                                </p>
+                            </div>
+                            <p></p>
+                        </div>
+                    ))}
                 </aside>
+
                 <div className="question-container">
                     <div id="aiTitle">
                         <h1>IT AI teacher</h1>
