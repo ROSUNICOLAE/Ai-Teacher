@@ -17,7 +17,7 @@ function Body()  {
                 className='p-5 text-center bg-image'
                 style={{backgroundImage: `url('${img}')`, height: '680px', width: '1500px'}}
             >
-                <div className='mask' style={{backgroundColor: 'rgba(0, 0, 0, 0.6)'}}>
+                <div className='mask'>
                     <div className='d-flex justify-content-center align-items-center h-100'>
                         <div className='text-white'>
                             <h1 id= 'mainPageTitle' className='mb-3' style={{fontFamily: 'Gloria Hallelujah', fontSize: '100px'}}>AI TEACHER</h1>

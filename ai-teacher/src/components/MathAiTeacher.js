@@ -113,8 +113,29 @@ function MathAiTeacher() {
                                     </div>
                                 ))}
                             </div>
-                            <div className="card-footer">
-                                <form onSubmit={handleSubmit} className="input-group">
+                            {/*<div className="card-footer">*/}
+                            {/*    <form onSubmit={handleSubmit} className="input-group">*/}
+                            {/*        <label htmlFor="message"></label>*/}
+                            {/*        <br/>*/}
+                            {/*        <textarea*/}
+                            {/*            id="message"*/}
+                            {/*            value={message}*/}
+                            {/*            onChange={(e) => setMessage(e.target.value)}*/}
+                            {/*            name=""*/}
+                            {/*            className="form-control type_msg"*/}
+                            {/*            placeholder="Type your question here and hit enter"*/}
+                            {/*            onKeyPress={(e) => {*/}
+                            {/*                if (e.key === "Enter") {*/}
+                            {/*                    handleSubmit(e);*/}
+                            {/*                }*/}
+                            {/*            }}*/}
+                            {/*        ></textarea>*/}
+                            {/*        <div className="input-group-append">*/}
+                            {/*        </div>*/}
+                            {/*    </form>*/}
+                            {/*</div>*/}
+                            <div className="">
+                                <form onSubmit={handleSubmit} className="">
                                     <label htmlFor="message"></label>
                                     <br/>
                                     <textarea
@@ -122,7 +143,7 @@ function MathAiTeacher() {
                                         value={message}
                                         onChange={(e) => setMessage(e.target.value)}
                                         name=""
-                                        className="form-control type_msg"
+                                        className=""
                                         placeholder="Type your question here and hit enter"
                                         onKeyPress={(e) => {
                                             if (e.key === "Enter") {
