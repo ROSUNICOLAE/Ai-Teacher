@@ -550,5 +550,19 @@ MDBInput {
   /* other styles for the div */
 }
 
+.modal-container {
+  margin-left: 70px;
+  margin-right: 70px;
+  /*width: 400px;*/
+}
+.input-field {
+  width: 100%; /* make the input field fill the width of the parent */
+}
+
+.submit-button {
+  width: 50%; /* make the button half the width of the parent */
+}
+
+
 
 

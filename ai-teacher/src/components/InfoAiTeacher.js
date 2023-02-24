@@ -76,7 +76,7 @@ function InfoAiTeacher() {
             <Navbar/>
             <div className="flex-container">
                 <aside className="sidemenu" style={{overflowY: "auto"}}>
-                    <h6 className="side-menu-button">Asked questions</h6>
+                    <h6 className="side-menu-button">Your Q&A</h6>
                     {allMessages.map((message, index) => (<div key={index}>
                         <div className="side-menu-button">
                             <p><strong>Question:</strong> {message.prompt}</p>
