@@ -16,6 +16,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -72,22 +73,34 @@ public class ITAiController {
                 message.setPrompt(promptValue);
                 message.setResponse(responseText);
                 message.setStudent(student.getUsername());
+                message.setCourse("IT");
                 messageService.save(message);
             }
             return responseText;
         }
 
-    @GetMapping("/it-asked-questions")
-    public List<Message> getAllMessagesForCurrentUser() {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String username = ((UserDetailsImpl) authentication.getPrincipal()).getUsername();
 
-        Optional<Student> optionalStudent = studentService.findByUsername(username);
-        if (optionalStudent.isPresent()) {
-            Student student = optionalStudent.get();
-            return messageService.getAllMessagesForUser(student.getUsername());
-        } else {
-            throw new RuntimeException("Error: Student not found.");
+    @GetMapping("/it-asked-questions")
+    public List<Message> getAllMessagesForCurrentUser(@RequestParam(name = "course", required = false) String course) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        Object principal = authentication.getPrincipal(); // Get the principal object
+
+        if (principal instanceof UserDetailsImpl) { // Check if the principal is an instance of UserDetailsImpl
+            String username = ((UserDetailsImpl) principal).getUsername();
+
+            Optional<Student> optionalStudent = studentService.findByUsername(username);
+            if (optionalStudent.isPresent()) {
+                Student student = optionalStudent.get();
+                if (course != null) {
+                    return messageService.getMessagesByCourseAndStudent(course, student.getUsername());
+                } else {
+                    return messageService.getAllMessagesForUser(student.getUsername());
+                }
+            } else {
+                throw new RuntimeException("Error: Student not found.");
+            }
+        } else { // Handle case when the principal is not an instance of UserDetailsImpl
+            return Collections.emptyList();
         }
     }
 }
