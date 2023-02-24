@@ -155,7 +155,7 @@ function Navbar() {
                                 {token ? (
                                     <MDBModalBody>
                                         <p>You are currently signed in. Do you want to sign out?</p>
-                                        <MDBBtn onClick={() => signOut()}>Sign Out</MDBBtn>
+                                        <MDBBtn className="btn btn-dark" onClick={() => signOut()}>Sign Out</MDBBtn>
                                     </MDBModalBody>
                                 ) : (
                                     <>
