@@ -11,16 +11,25 @@ function MathAiTeacher() {
     const [messages, setMessages] = useState([]);
     const [allMessages, setAllMessages] = useState([]);
     const [username, setUsername] = useState("");
+    const [selectedCourse, setSelectedCourse] = useState("All");
+    const [courseNames, setCourseNames] = useState([]);
+
 
 
     const fetchMessages = () => {
+        let url = "http://localhost:8080/api/math-course";
+        if (selectedCourse !== "All" && selectedCourse !== "All") {
+            url += `?course=${selectedCourse}`;
+        }
         const requestOptions = {
-            method: "GET", headers: {
-                "Content-Type": "application/json", Authorization: `Bearer ${localStorage.getItem("token")}`,
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${localStorage.getItem("token")}`,
             },
         };
 
-        fetch("http://localhost:8080/api/math-asked-questions", requestOptions)
+        fetch(url, requestOptions)
             .then((response) => response.json())
             .then((data) => setAllMessages(data));
     };
@@ -59,32 +68,61 @@ function MathAiTeacher() {
         }
     };
 
-    useEffect(() => {
-        fetchMessages();
-    }, []);
+    const handleSelectCourse = (event) => {
+        setSelectedCourse(event.target.value);
+    };
 
     useEffect(() => {
         fetchMessages();
+    }, [selectedCourse]);
+
+    useEffect(() => {
         const token = localStorage.getItem("token");
-        console.log(token);
         if (token) {
             const decodedToken = jwt_decode(token);
-            console.log(decodedToken);
             setUsername(decodedToken.sub);
         }
     }, []);
 
+    useEffect(() => {
+        fetch("http://localhost:8080/courses/coursesNames")
+            .then(response => response.json())
+            .then(data => {
+                console.log("Course names data:", data);
+                setCourseNames([...data]);
+            })
+            .catch(error => console.error(error));
+    }, []);
+
+
+
+
     return (<div>
             <Navbar/>
             <div className="flex-container">
-                <aside className="sidemenu" style={{overflowY: "auto"}}>
-                    <h6 className="side-menu-button">Your Q&A</h6>
-                    {allMessages.map((message, index) => (<div key={index}>
-                        <div className="side-menu-button">
-                            <p><strong>Question:</strong> {message.prompt}</p>
-                            <p><strong>Answer:</strong> {message.text || message.response}</p>
-                        </div><p></p>
-                    </div>))}
+                <aside className="sidemenu" style={{ overflowY: "auto" }}>
+                    <h6 className="side-menu-button">All time Q&A</h6>
+                    <select onChange={handleSelectCourse} className="form-select">
+                        <option>Select Course</option>
+                        {courseNames.map((courseName, index) => (
+                            <option key={index} value={courseName}>{courseName}</option>
+                        ))}
+                    </select>
+                    <hr />
+                    <h6 className="side-menu-button">Asked questions</h6>
+                    {allMessages.map((message, index) => (
+                        <div key={index}>
+                            <div className="side-menu-button">
+                                <p>
+                                    <strong>Question:</strong> {message.prompt}
+                                </p>
+                                <p>
+                                    <strong>Response:</strong> {message.text || message.response}
+                                </p>
+                            </div>
+                            <p></p>
+                        </div>
+                    ))}
                 </aside>
                 <div className="question-container">
                     <div id="aiTitle">
