@@ -57,14 +57,13 @@ nav {
   margin-bottom: 1rem;
 }
 
-
 .footer {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
   background-color: black;
-  color: white;
+  color: white !important;
   padding-top: 5px;
   text-align: center;
 }
@@ -72,7 +71,6 @@ nav {
 .signup {
   margin-right: 5px;
 }
-
 
 MBCard {
   textcenter: true;
@@ -189,6 +187,15 @@ MDBInput {
   height: 100px;
 }
 
+#aiQuote {
+  display: flex;
+  align-items: center;
+}
+
+#aiQuote > div {
+  margin-right: 100px;
+}
+
 #mainPageP1 {
   margin-left: 500px;
 }
@@ -205,7 +212,7 @@ MDBInput {
   width: 240px;
   height: 700px;
   padding: 10px;
-  background-color: #A1CAF1;
+  background-color: bisque;
 }
 
 .side-menu-button {
@@ -313,108 +320,109 @@ MDBInput {
   padding-top: 100px;
 }
 
-/*.chat{*/
-/*  margin-top: auto;*/
-/*  margin-bottom: auto;*/
-/*}*/
-/*.card{*/
-/*  height: 550px;*/
-/*  border-radius: 15px !important;*/
-/*  background-color: rgba(0,0,0,0.4) !important;*/
-/*}*/
+.chat{
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.card{
+  height: 550px;
+  border-radius: 15px !important;
+  background-color: rgba(0,0,0,0.4) !important;
+}
 
-/*.msg_card_body{*/
-/*  overflow-y: auto;*/
-/*}*/
-/*.card-header{*/
-/*  border-radius: 15px 15px 0 0 !important;*/
-/*  border-bottom: 0 !important;*/
-/*}*/
-/*.card-footer{*/
-/*  border-radius: 0 0 15px 15px !important;*/
-/*  border-top: 0 !important;*/
-/*}*/
-/*.container{*/
-/*  align-content: center;*/
-/*}*/
+.msg_card_body{
+  overflow-y: auto;
+}
+.card-header{
+  border-radius: 15px 15px 0 0 !important;
+  border-bottom: 0 !important;
+}
+.card-footer{
+  border-radius: 0 0 15px 15px !important;
+  border-top: 0 !important;
+}
+.container{
+  align-content: center;
+}
 
-/*.type_msg{*/
-/*  background-color: rgba(0,0,0,0.3) !important;*/
-/*  border:0 !important;*/
-/*  color:white !important;*/
-/*  height: 60px !important;*/
-/*  overflow-y: auto;*/
-/*}*/
-/*.type_msg:focus{*/
-/*  box-shadow:none !important;*/
-/*  outline:0px !important;*/
-/*}*/
+.type_msg{
+  background-color: rgba(0,0,0,0.3) !important;
+  border:0 !important;
+  color:white !important;
+  height: 60px !important;
+  overflow-y: auto;
+}
+.type_msg:focus{
+  box-shadow:none !important;
+  outline:0px !important;
+}
 
-/*.send_btn{*/
-/*  border-radius: 0 15px 15px 0 !important;*/
-/*  background-color: rgba(0,0,0,0.3) !important;*/
-/*  border:0 !important;*/
-/*  color: white !important;*/
-/*  cursor: pointer;*/
-/*}*/
+.send_btn{
+  border-radius: 0 15px 15px 0 !important;
+  background-color: rgba(0,0,0,0.3) !important;
+  border:0 !important;
+  color: white !important;
+  cursor: pointer;
+}
 
-/*.active{*/
-/*  background-color: rgba(0,0,0,0.3);*/
-/*}*/
-/*.user_img{*/
-/*  height: 70px;*/
-/*  width: 70px;*/
-/*  border:1.5px solid #f5f6fa;*/
-/*}*/
-/*.user_img_msg{*/
-/*  height: 40px;*/
-/*  width: 40px;*/
-/*  border:1.5px solid #f5f6fa;*/
-/*}*/
-/*.img_cont{*/
-/*  position: relative;*/
-/*  height: 70px;*/
-/*  width: 70px;*/
-/*}*/
-/*.img_cont_msg{*/
-/*  height: 40px;*/
-/*  width: 40px;*/
-/*}*/
-/*.msg_cotainer{*/
-/*  margin-top: auto;*/
-/*  margin-bottom: auto;*/
-/*  margin-left: 10px;*/
-/*  border-radius: 25px;*/
-/*  background-color: #82ccdd;*/
-/*  padding: 10px;*/
-/*  position: relative;*/
-/*}*/
-/*.msg_cotainer_send{*/
-/*  margin-top: auto;*/
-/*  margin-bottom: auto;*/
-/*  margin-right: 10px;*/
-/*  border-radius: 25px;*/
-/*  background-color: #78e08f;*/
-/*  padding: 10px;*/
-/*  position: relative;*/
-/*}*/
-/*.msg_time{*/
-/*  position: absolute;*/
-/*  left: 0;*/
-/*  bottom: -15px;*/
-/*  color: rgba(255,255,255,0.5);*/
-/*  font-size: 10px;*/
-/*}*/
-/*.msg_time_send{*/
-/*  position: absolute;*/
-/*  right:0;*/
-/*  bottom: -15px;*/
-/*  color: rgba(255,255,255,0.5);*/
-/*  font-size: 10px;*/
-/*}*/
-/*.msg_head{*/
-/*  position: relative;*/
-/*}*/
+.active{
+  background-color: rgba(0,0,0,0.3);
+}
+.user_img{
+  height: 70px;
+  width: 70px;
+  border:1.5px solid #f5f6fa;
+}
+.user_img_msg{
+  height: 40px;
+  width: 40px;
+  border:1.5px solid #f5f6fa;
+}
+.img_cont{
+  position: relative;
+  height: 70px;
+  width: 70px;
+}
+.img_cont_msg{
+  height: 40px;
+  width: 40px;
+}
+.msg_cotainer{
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 10px;
+  border-radius: 25px;
+  background-color: #F0F8FF;
+  padding: 10px;
+  position: relative;
+}
+.msg_cotainer_send{
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 10px;
+  border-radius: 15px;
+  /*background-color: #DCDCDC;*/
+  background-color: #E0FFFF;
+  padding: 10px;
+  position: relative;
+}
+.msg_time{
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  color: rgba(255,255,255,0.5);
+  font-size: 10px;
+}
+.msg_time_send{
+  position: absolute;
+  right:0;
+  bottom: -15px;
+  color: rgba(255,255,255,0.5);
+  font-size: 10px;
+}
+.msg_head{
+  position: relative;
+}
 /*#action_menu_btn{*/
 /*  position: absolute;*/
 /*  right: 10px;*/
@@ -474,46 +482,46 @@ MDBInput {
 /*::-webkit-scrollbar-thumb:hover {*/
 /*  background: #5454b6;*/
 /*}*/
-/*.chat-card {*/
-/*  width: 50%;*/
-/*  max-height: 400px;*/
-/*  overflow-y: auto;*/
-/*}*/
-/*.msg_card_body {*/
-/*  overflow-y: auto;*/
-/*  display: flex;*/
-/*  flex-direction: column;*/
-/*  padding: 15px 15px 15px 0;*/
-/*}*/
-/*.msg_card_body::-webkit-scrollbar {*/
-/*  width: 5px;*/
-/*}*/
-/*.msg_card_body::-webkit-scrollbar-thumb {*/
-/*  background-color: rgba(0, 0, 0, 0.3);*/
-/*}*/
-/*.msg_card_body::-webkit-scrollbar-track {*/
-/*  background-color: #f1f1f1;*/
-/*}*/
-/*.video-background {*/
-/*  position: fixed;*/
-/*  top: 0;*/
-/*  right: 0;*/
-/*  bottom: 0;*/
-/*  left: 0;*/
-/*  overflow: hidden;*/
-/*  z-index: -1;*/
-/*}*/
+.chat-card {
+  width: 50%;
+  max-height: 400px;
+  overflow-y: auto;
+}
+.msg_card_body {
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 15px 15px 15px 0;
+}
+.msg_card_body::-webkit-scrollbar {
+  width: 5px;
+}
+.msg_card_body::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.msg_card_body::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+.video-background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -1;
+}
 
-/*.video-background video {*/
-/*  position: absolute;*/
-/*  top: 50%;*/
-/*  left: 50%;*/
-/*  min-width: 100%;*/
-/*  min-height: 100%;*/
-/*  width: auto;*/
-/*  height: auto;*/
-/*  transform: translateX(-50%) translateY(-50%);*/
-/*}*/
+.video-background video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translateX(-50%) translateY(-50%);
+}
 
 .maincontainer {
   padding-top : 30px;

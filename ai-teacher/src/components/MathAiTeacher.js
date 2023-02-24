@@ -90,26 +90,25 @@ function MathAiTeacher() {
                     <div id="aiTitle">
                         <h1>Math AI teacher</h1>
                     </div>
-                    <div><h4 id="aiQuote">"Mathematics is the language in which God has written the Universe." – Galileo Galilei</h4></div>
+                    <div><h4 id="aiQuote">"Mathematics is the language in which God has written the Universe." – Galileo Galilei
+                        <Cube style={{marginRight: '1200px'}}/>
+                    </h4>
+                    </div>
+
+                    {/*<Cube style={{position: "relative", top: -300, left: 0, zIndex: -50}} />*/}
                     <div className="d-flex justify-content-center align-items-center">
-                        <div className="maincontainer" style={{width: "80%"}}>
+                        <div className="maincontainer" style={{width: "90%"}}>
                             <div
                                 id="msg-box"
                                 className="card-body msg_card_body"
                                 style={{height: "500px", overflowY: "auto"}}>
                                 {messages.map((msg, index) => (
-                                    <div
-                                        key={index}
-                                        className={msg.isUser ? "d-flex justify-content-end mb-4" : "d-flex justify-content-start mb-4"}>
+                                    <div key={index}>
                                         <div className="img_cont_msg" style={{position: "relative"}}>
-                                            {msg.isUser ? (<span>{username.charAt(0).toUpperCase() + username.slice(1)}</span>)
-                                                : (
-                                                    <Cube style={{position: "relative", top: -300, left: 0, zIndex: -50}} />)}
                                         </div>
                                         <div
                                             className={msg.isUser ? "msg_cotainer_send" : "msg_cotainer"}>
                                             {msg.text}
-                                            {/*<span className={msg.isUser ? "msg_time_send" : "msg_time"}>{msg.time}</span>*/}
                                         </div>
                                     </div>
                                 ))}
