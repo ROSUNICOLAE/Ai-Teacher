@@ -26,14 +26,13 @@ public class CourseService {
         List<String> names = courseRepository.findAllNames();
         return names;
     }
-}
 
-    // method to initialize database with some data 4 courses : Math Physics IT History
-//    @PostConstruct
-//    public void init() {
-//        courseRepository.save(new Course("Math"));
-//        courseRepository.save(new Course("Physics"));
-//        courseRepository.save(new Course("IT"));
-//        courseRepository.save(new Course("History"));
-//    }
-//}
+//     method to initialize database with some data 4 courses : Math Physics IT History
+    @PostConstruct
+    public void init() {
+        courseRepository.save(new Course("Math"));
+        courseRepository.save(new Course("Physics"));
+        courseRepository.save(new Course("IT"));
+        courseRepository.save(new Course("History"));
+    }
+}
