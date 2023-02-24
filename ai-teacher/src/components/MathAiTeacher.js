@@ -94,8 +94,6 @@ function MathAiTeacher() {
                         <Cube style={{marginRight: '1200px'}}/>
                     </h4>
                     </div>
-
-                    {/*<Cube style={{position: "relative", top: -300, left: 0, zIndex: -50}} />*/}
                     <div className="d-flex justify-content-center align-items-center">
                         <div className="maincontainer" style={{width: "90%"}}>
                             <div
