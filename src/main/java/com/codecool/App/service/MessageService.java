@@ -4,6 +4,7 @@ import com.codecool.App.models.Message;
 import com.codecool.App.repository.MessageRepository;
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -33,6 +34,8 @@ public class MessageService {
     public List<Message> getMessagesByCourseAndStudent(String course, String student) {
         return messageRepository.findByCourseAndStudent(course, student);
     }
+
+
 
 
 
