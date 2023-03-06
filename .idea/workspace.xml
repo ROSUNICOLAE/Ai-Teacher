@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dd4bf228-9e13-4d67-a837-29ea69b8ae59" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/empty!.txt" beforeDir="false" />
-    </list>
+    <list default="true" id="dd4bf228-9e13-4d67-a837-29ea69b8ae59" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,6 +32,15 @@
     "project.structure.side.proportion": "0.2"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="AiTeacherApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="El-Proyecte-Grande-sprint5" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.codecool.App.AiTeacherApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -42,7 +49,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1678090158957</updated>
-      <workItem from="1678090161389" duration="341000" />
+      <workItem from="1678090161389" duration="718000" />
     </task>
     <servers />
   </component>
