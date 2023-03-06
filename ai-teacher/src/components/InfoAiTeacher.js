@@ -107,7 +107,7 @@ useEffect(() => {
             <Navbar/>
             <div className="flex-container">
                 <aside className="sidemenu" style={{ overflowY: "auto" }}>
-                    <h6 className="side-menu-button">All time Q&A</h6>
+                    <h6 className="side-menu-button">Asked questions</h6>
                     <select onChange={handleSelectCourse} className="form-select">
                         <option>Select Course</option>
                         {courseNames.map((courseName, index) => (
@@ -115,7 +115,6 @@ useEffect(() => {
                         ))}
                     </select>
                     <hr />
-                    <h6 className="side-menu-button">Asked questions</h6>
                     {allMessages.map((message, index) => (
                         <div key={index}>
                             <div className="side-menu-button">
