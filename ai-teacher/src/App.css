@@ -490,19 +490,14 @@ MDBInput {
   max-width: 1000px;
   margin: 0 auto;
 }
-.input-field {
-  width: 5%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-}
 
 .submit-button {
   width: 50%;
 }
-.signin-button-inside-form{
-  margin-top: 10px;
+.create-account-button-inside-form{
+  margin-right: 50px;
 }
+
 
 .text-white{
   margin-left: 80px;
