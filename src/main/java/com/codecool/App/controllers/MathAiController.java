@@ -15,6 +15,7 @@ import org.springframework.http.*;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -73,22 +74,33 @@ public class MathAiController {
             message.setPrompt(promptValue);
             message.setResponse(responseText);
             message.setStudent(student.getUsername());
+            message.setCourse("Math");
             messageService.save(message);
         }
         return responseText;
     }
 
-    @GetMapping("/math-asked-questions")
-    public List<Message> getAllMessagesForCurrentUser() {
+    @GetMapping("/math-course")
+    public List<Message> getAllMessagesForCurrentUser(@RequestParam(name = "course", required = false) String course) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String username = ((UserDetailsImpl) authentication.getPrincipal()).getUsername();
+        Object principal = authentication.getPrincipal(); // Get the principal object
 
-        Optional<Student> optionalStudent = studentService.findByUsername(username);
-        if (optionalStudent.isPresent()) {
-            Student student = optionalStudent.get();
-            return messageService.getAllMessagesForUser(student.getUsername());
-        } else {
-            throw new RuntimeException("Error: Student not found.");
+        if (principal instanceof UserDetailsImpl) { // Check if the principal is an instance of UserDetailsImpl
+            String username = ((UserDetailsImpl) principal).getUsername();
+
+            Optional<Student> optionalStudent = studentService.findByUsername(username);
+            if (optionalStudent.isPresent()) {
+                Student student = optionalStudent.get();
+                if (course != null) {
+                    return messageService.getMessagesByCourseAndStudent(course, student.getUsername());
+                } else {
+                    return messageService.getAllMessagesForUser(student.getUsername());
+                }
+            } else {
+                throw new RuntimeException("Error: Student not found.");
+            }
+        } else { // Handle case when the principal is not an instance of UserDetailsImpl
+            return Collections.emptyList();
         }
     }
 }
