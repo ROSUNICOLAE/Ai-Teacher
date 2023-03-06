@@ -159,7 +159,7 @@ function Navbar() {
                                     </MDBModalBody>
                                 ) : (
                                     <>
-                                        <MDBModalBody>
+                                        <MDBModalBody className="modal-container">
                                             <form onSubmit={(e) => {
                                                 handleSignIn(e)
                                                 setSignInModal(false)
@@ -170,7 +170,7 @@ function Navbar() {
                                                 </div>
                                                 <div>
                                                     <label htmlFor="email">Email:</label>
-                                                    <MDBInput id='email' type='email' value={email} onChange={e => setEmail(e.target.value)} />
+                                                    <MDBInput className="input-field" id='email' type='email' value={email} onChange={e => setEmail(e.target.value)} />
                                                 </div>
                                                 <MDBBtn color='dark' type="submit">Sign In</MDBBtn>
                                             </form>
