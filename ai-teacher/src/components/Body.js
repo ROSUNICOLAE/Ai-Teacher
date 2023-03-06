@@ -1,13 +1,5 @@
 import img from "./images/pexels-tara-winstead-8386440.jpg";
 
-import {
-    MDBBtn,
-    MDBCard, MDBCol
-} from 'mdb-react-ui-kit';
-import { Link } from 'react-router-dom';
-
-
-
 function Body()  {
 
     return (

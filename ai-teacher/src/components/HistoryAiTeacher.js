@@ -31,7 +31,7 @@ function HistoryAiTeacher() {
             .then((response) => response.json())
             .then((data) => setAllMessages(data));
     };
-// refactor, too long TODO
+
     const handleSubmit = (e) => {
         e.preventDefault();
         if (message.trim()) {
