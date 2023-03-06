@@ -5,11 +5,11 @@ import React from "react";
 function Body()  {
 
     return (
-        <header>
+        <div className="container-body">
 
             <div
                 className='p-5 text-center bg-image'
-                style={{backgroundImage: `url('${img}')`, height: '680px', width: '1500px'}}
+                style={{backgroundImage: `url('${img}')`, height: '690px', width: '1500px'}}
             >
 <div className="cube-container">
     <Cube />
@@ -24,7 +24,7 @@ function Body()  {
                     </div>
                 </div>
             </div>
-            </header>
+            </div>
     );
 }
 export default Body;
