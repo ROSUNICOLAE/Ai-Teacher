@@ -1,14 +1,14 @@
 .navbar {
-  position: absolute; /* use absolute position to maintain the layout of the page */
+  position: absolute;
   width: 100%;
-  transition: all 0.3s ease-in-out; /* add a transition effect for smoother animation */
+  transition: all 0.3s ease-in-out;
 }
 
 .navbar.fixed {
-  position: fixed; /* make the navbar fixed when the "fixed" class is added */
+  position: fixed;
   top: 0;
   left: 0;
-  background-color: #fff; /* change the background color of the navbar when fixed */
+  background-color: #fff;
 }
 
 .logo {
@@ -93,9 +93,6 @@ MDBInput {
 }
 
 .wrap {
-  /*margin-top: 500px;*/
-  /*perspective: 1000px;*/
-  /*perspective-origin: 50% 50%;*/
   display: inline;
 }
 
@@ -267,7 +264,6 @@ MDBInput {
   margin-left: 50px;
   margin-right: 10px;
   background-color: bisque;
-  /*margin-bottom: 50px;*/
 }
 
 .chat-output-textarea {
@@ -334,8 +330,6 @@ MDBInput {
 }
 .card{
   height: 560px;
-  /*border-radius: 15px !important;*/
-  /*background-color: rgba(0,0,0,0.4) !important;*/
 }
 
 .msg_card_body{
@@ -404,8 +398,10 @@ MDBInput {
   background-color: #F0F8FF;
   padding: 10px;
   position: relative;
+  font-size: 16px;
 }
 .msg_cotainer_send{
+  font-size: 16px;
   margin-top: auto;
   margin-bottom: auto;
   margin-right: 20px;

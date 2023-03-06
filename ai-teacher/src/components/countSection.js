@@ -34,17 +34,17 @@ function CountSection() {
                 <p>Courses</p>
             </div>
 
-            <div className="col-lg-3 col-6 text-center">
-                <span data-purecounter-start="0" data-purecounter-end="421" data-purecounter-duration="5"
-                      className="purecounter">...</span>
-                <p>Events</p>
-            </div>
+            {/*<div className="col-lg-3 col-6 text-center">*/}
+            {/*    <span data-purecounter-start="0" data-purecounter-end="421" data-purecounter-duration="5"*/}
+            {/*          className="purecounter">...</span>*/}
+            {/*    <p>Events</p>*/}
+            {/*</div>*/}
 
-            <div className="col-lg-3 col-6 text-center">
-                <span data-purecounter-start="0" data-purecounter-end="151" data-purecounter-duration="5"
-                      className="purecounter">...</span>
-                <p>Online Students</p>
-            </div>
+            {/*<div className="col-lg-3 col-6 text-center">*/}
+            {/*    <span data-purecounter-start="0" data-purecounter-end="151" data-purecounter-duration="5"*/}
+            {/*          className="purecounter">...</span>*/}
+            {/*    <p>Online Students</p>*/}
+            {/*</div>*/}
 
         </div>
 

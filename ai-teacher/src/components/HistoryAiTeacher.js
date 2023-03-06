@@ -103,17 +103,32 @@ function HistoryAiTeacher() {
     }, []);
 
         return (<div>
-            <Navbar/>
-            <div className="flex-container">
-                <aside className="sidemenu" style={{overflowY: "auto"}}>
-                    <h6 className="side-menu-button">Your Q&A</h6>
-                    {allMessages.map((message, index) => (<div key={index}>
-                        <div className="side-menu-button">
-                            <p><strong>Question:</strong> {message.prompt}</p>
-                            <p><strong>Answer:</strong> {message.text || message.response}</p>
-                        </div><p></p>
-                    </div>))}
-                </aside>
+                <Navbar/>
+                <div className="flex-container">
+                    <aside className="sidemenu" style={{ overflowY: "auto" }}>
+                        <h6 className="side-menu-button">All time Q&A</h6>
+                        <select onChange={handleSelectCourse} className="form-select">
+                            <option>Select Course</option>
+                            {courseNames.map((courseName, index) => (
+                                <option key={index} value={courseName}>{courseName}</option>
+                            ))}
+                        </select>
+                        <hr />
+                        <h6 className="side-menu-button">Asked questions</h6>
+                        {allMessages.map((message, index) => (
+                            <div key={index}>
+                                <div className="side-menu-button">
+                                    <p>
+                                        <strong>Question:</strong> {message.prompt}
+                                    </p>
+                                    <p>
+                                        <strong>Response:</strong> {message.text || message.response}
+                                    </p>
+                                </div>
+                                <p></p>
+                            </div>
+                        ))}
+                    </aside>
                 <div className="question-container">
                     <div id="aiTitle">
                         <h1>History AI teacher</h1>
