@@ -11,6 +11,7 @@ import {
     MDBInput
 } from 'mdb-react-ui-kit';
 import jwt_decode from "jwt-decode";
+import Cube from "./Cube";
 
 function Navbar() {
     const [isFixed, setIsFixed] = useState(false);
@@ -76,6 +77,7 @@ function Navbar() {
         <nav className={`navbar ${isFixed ? "fixed" : "navbar navbar-expand-lg bg-tertiary"}`} style={{ backgroundColor: "white" }}>
             <div className="container-fluid">
                 <a className="navbar-brand" href="/"><i className="fas fa-home"></i>AIteacher</a>
+                {/*<a className="navbar-brand" href="/"> <Cube />teacher</a>*/}
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">

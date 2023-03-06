@@ -128,7 +128,7 @@ function MathAiTeacher() {
                     <div id="aiTitle">
                         <h1>Math AI teacher</h1>
                     </div>
-                    <div><h4 id="aiQuote">"Mathematics is the language in which God has written the Universe." – Galileo Galilei
+                    <div><h4 id="aiQuote">"Mathematics is the language in which God has written the Universe." Galileo Galilei
                     </h4>
                     </div>
                     <div className="d-flex justify-content-center align-items-center">

@@ -135,8 +135,7 @@ useEffect(() => {
                     <div id="aiTitle">
                         <h1>IT AI teacher</h1>
                     </div>
-                    <div><h4 id="aiQuote">"Computer science is not about computers, any more than astronomy is about telescopes."  - Edsger Dijkstra
-                        <Cube style={{marginRight: '1200px'}}/>
+                    <div><h4 id="aiQuote">"Computer science is not about computers, any more than astronomy is about telescopes." - Edsger Dijkstra
                     </h4>
                     </div>
                     <div className="d-flex justify-content-center align-items-center">
