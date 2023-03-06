@@ -258,7 +258,7 @@ MDBInput {
   left: 0; right: 0;
 }
 .chat-input-textarea {
-  width: 70%;
+  width: 75%;
   border-radius: 5px;
   border: none;
   outline: none;
@@ -280,7 +280,7 @@ MDBInput {
   padding: 20px;
   color: black;
   font-size: 1em;
-  margin-left: 50px;
+  margin-left: 150px;
   margin-right: 10px;
 }
 #hint {
@@ -399,8 +399,9 @@ MDBInput {
 .msg_cotainer{
   margin-top: auto;
   margin-bottom: auto;
-  margin-left: 10px;
-  border-radius: 25px;
+  margin-left: 150px;
+  margin-right: 20px;
+  border-radius: 15px;
   background-color: #F0F8FF;
   padding: 10px;
   position: relative;
@@ -408,9 +409,9 @@ MDBInput {
 .msg_cotainer_send{
   margin-top: auto;
   margin-bottom: auto;
-  margin-right: 10px;
+  margin-right: 20px;
+  margin-left: 80px;
   border-radius: 15px;
-  /*background-color: #DCDCDC;*/
   background-color: #E0FFFF;
   padding: 10px;
   position: relative;
@@ -432,65 +433,7 @@ MDBInput {
 .msg_head{
   position: relative;
 }
-/*#action_menu_btn{*/
-/*  position: absolute;*/
-/*  right: 10px;*/
-/*  top: 10px;*/
-/*  color: white;*/
-/*  cursor: pointer;*/
-/*  font-size: 20px;*/
-/*}*/
-/*.action_menu{*/
-/*  z-index: 1;*/
-/*  position: absolute;*/
-/*  padding: 15px 0;*/
-/*  background-color: rgba(0,0,0,0.5);*/
-/*  color: white;*/
-/*  border-radius: 15px;*/
-/*  top: 30px;*/
-/*  right: 15px;*/
-/*  display: none;*/
-/*}*/
-/*.action_menu ul{*/
-/*  list-style: none;*/
-/*  padding: 0;*/
-/*  margin: 0;*/
-/*}*/
-/*.action_menu ul li{*/
-/*  width: 100%;*/
-/*  padding: 10px 15px;*/
-/*  margin-bottom: 5px;*/
-/*}*/
-/*.action_menu ul li i{*/
-/*  padding-right: 10px;*/
-/*}*/
-/*.action_menu ul li:hover{*/
-/*  cursor: pointer;*/
-/*  background-color: rgba(0,0,0,0.2);*/
-/*}*/
-/*@media(max-width: 576px){*/
-/*  .contacts_card{*/
-/*    margin-bottom: 15px !important;*/
-/*  }*/
-/*}*/
-/*!* width *!*/
-/*::-webkit-scrollbar {*/
-/*  width: 10px;*/
-/*}*/
-/*!* Track *!*/
-/*::-webkit-scrollbar-track {*/
-/*  box-shadow: inset 0 0 5px grey;*/
-/*  border-radius: 10px;*/
-/*}*/
-/*!* Handle *!*/
-/*::-webkit-scrollbar-thumb {*/
-/*  background: #7F7FD5;*/
-/*  border-radius: 10px;*/
-/*}*/
-/*!* Handle on hover *!*/
-/*::-webkit-scrollbar-thumb:hover {*/
-/*  background: #5454b6;*/
-/*}*/
+
 .chat-card {
   width: 50%;
   max-height: 400px;
@@ -536,34 +479,27 @@ MDBInput {
   padding-top : 30px;
 }
 
-
 .content {
-  margin-bottom: 50px; /* height of the div plus the desired padding */
-  /* other styles for the content above the div */
+  margin-bottom: 50px;
 }
 
 .container-ask {
   position: absolute;
-  bottom: 20px; /* height of the fixed footer plus the desired padding */
-  left: 230px;
-  right: 0;
-  padding: 20px; /* desired padding */
-  /* other styles for the div */
+  bottom: 20px;
+  left: 320px;
+  right: 50px;
+  padding: 20px;
 }
 
 .modal-container {
   margin-left: 70px;
   margin-right: 70px;
-  /*width: 400px;*/
 }
 .input-field {
-  width: 100%; /* make the input field fill the width of the parent */
+  width: 100%;
 }
 
 .submit-button {
-  width: 50%; /* make the button half the width of the parent */
+  width: 50%;
 }
-
-
-
 
