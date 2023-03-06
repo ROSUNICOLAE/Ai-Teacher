@@ -33,14 +33,14 @@ function Navbar() {
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, [isFixed]);
+
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch('http://localhost:8080/api/auth/signup', {
+        await fetch('http://localhost:8080/api/auth/signup', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name, username, email})
         });
-        console.log(response);
     };
 
     // create a handlesignin function for await fetch from 'http://localhost:8080/api/auth/signin' body use username and  email
@@ -65,7 +65,6 @@ function Navbar() {
 
     useEffect(() => {
         const token = localStorage.getItem("token");
-        console.log(token);
         if (token) {
             const decodedToken = jwt_decode(token);
             console.log(decodedToken);

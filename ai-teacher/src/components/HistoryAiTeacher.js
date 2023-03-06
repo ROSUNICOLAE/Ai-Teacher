@@ -6,6 +6,7 @@ import jwt_decode from "jwt-decode";
 import Cube from "./Cube";
 
 function HistoryAiTeacher() {
+    const URL = process.env.BASE_URL; //install packages for env
     const [message, setMessage] = useState("");
     const [messages, setMessages] = useState([]);
     const [allMessages, setAllMessages] = useState([]);
@@ -30,7 +31,7 @@ function HistoryAiTeacher() {
             .then((response) => response.json())
             .then((data) => setAllMessages(data));
     };
-
+// refactor, too long TODO
     const handleSubmit = (e) => {
         e.preventDefault();
         if (message.trim()) {
@@ -149,14 +150,14 @@ function HistoryAiTeacher() {
                             handleSubmit(e);
                         }
                     }}>
-                                    <textarea
-                                        id="message"
-                                        value={message}
-                                        onChange={(e) => setMessage(e.target.value)}
-                                        rows="1"
-                                        className="chat-input-textarea"
-                                        placeholder="Type your question here">
-                                    </textarea>
+                            <textarea
+                                id="message"
+                                value={message}
+                                onChange={(e) => setMessage(e.target.value)}
+                                rows="1"
+                                className="chat-input-textarea"
+                                placeholder="Type your question here">
+                            </textarea>
                         <button type="submit" className="btn btn-outline-secondary ask">Ask</button>
                     </form>
                 </div>

@@ -9,22 +9,22 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Set;
 
-@RestController
+@RestController // include @ResponseBody
 @CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/courses")
 public class CourseController {
     @Autowired
     CourseService courseService;
 
-    @GetMapping("/all")
-    public @ResponseBody List<Course> getCoursesAPI() {return courseService.getCourses();}
+    @GetMapping
+    public List<Course> getCoursesAPI() {return courseService.getCourses();}
 
-    @PostMapping("/add")
+    @PostMapping
     public void addCourse(@RequestParam String name) {
         courseService.addCourse(name);
     }
     @GetMapping("/coursesNames")
-    public @ResponseBody List<String> getCoursesNames() {return courseService.getCoursesNames();}
+    public List<String> getCoursesNames() {return courseService.getCoursesNames();}
 
 }
 
