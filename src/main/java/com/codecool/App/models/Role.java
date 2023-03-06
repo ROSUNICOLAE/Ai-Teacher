@@ -1,5 +1,4 @@
 package com.codecool.App.models;
-import jakarta.annotation.PostConstruct;
 import jakarta.persistence.*;
 
 
@@ -12,13 +11,13 @@ public class Role {
 
     @Enumerated(EnumType.STRING)
     @Column(length = 20)
-    private ERole name = ERole.ROLE_USER;
+    private RoleType name = RoleType.ROLE_USER;
 
     public Role() {
 
     }
 
-    public Role(ERole name) {
+    public Role(RoleType name) {
         this.name = name;
     }
 
@@ -26,11 +25,11 @@ public class Role {
         return id;
     }
 
-    public ERole getName() {
+    public RoleType getName() {
         return name;
     }
 
-    public void setName(ERole name) {
+    public void setName(RoleType name) {
         this.name = name;
     }
 

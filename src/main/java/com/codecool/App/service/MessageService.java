@@ -27,10 +27,6 @@ public class MessageService {
         return messageRepository.findByStudent(username);
     }
 
-//    public List<Message> getMessagesByCourse(String course) {
-//        return messageRepository.findByCourse(course);
-//    }
-
     public List<Message> getMessagesByCourseAndStudent(String course, String student) {
         return messageRepository.findByCourseAndStudent(course, student);
     }

@@ -1,6 +1,6 @@
 package com.codecool.App.models;
 
-public enum ERole {
+public enum RoleType {
 
     ROLE_USER,
     ROLE_ADMIN

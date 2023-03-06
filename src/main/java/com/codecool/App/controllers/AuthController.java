@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 import com.codecool.App.controllers.Request.LoginRequest;
 import com.codecool.App.controllers.Request.SignupRequest;
-import com.codecool.App.models.ERole;
+import com.codecool.App.models.RoleType;
 import com.codecool.App.models.Role;
 import com.codecool.App.models.Student;
 import com.codecool.App.repository.RoleRepository;
@@ -19,7 +19,6 @@ import jakarta.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -91,20 +90,20 @@ public class AuthController {
         Set<Role> roles = new HashSet<>();
 
         if (strRoles == null) {
-            Role userRole = new Role(ERole.ROLE_USER);
+            Role userRole = new Role(RoleType.ROLE_USER);
             roles.add(userRole);
             roleRepository.saveAndFlush(userRole);
         } else {
             strRoles.forEach(role -> {
                 switch (role) {
                     case "admin":
-                        Role adminRole = roleRepository.findByName(ERole.ROLE_ADMIN)
+                        Role adminRole = roleRepository.findByName(RoleType.ROLE_ADMIN)
                                 .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
                         roles.add(adminRole);
 
                         break;
                     default:
-                        Role userRole = roleRepository.findByName(ERole.ROLE_USER)
+                        Role userRole = roleRepository.findByName(RoleType.ROLE_USER)
                                 .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
                         roles.add(userRole);
                         roleRepository.saveAndFlush(userRole);

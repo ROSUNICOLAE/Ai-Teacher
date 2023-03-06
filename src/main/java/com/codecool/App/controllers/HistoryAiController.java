@@ -79,36 +79,6 @@ public class HistoryAiController {
         return responseText;
     }
 
-//    @GetMapping("/history-asked-questions")
-//    public List<Message> getAllMessagesForCurrentUser() {
-//        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-//        String username = ((UserDetailsImpl) authentication.getPrincipal()).getUsername();
-//
-//        Optional<Student> optionalStudent = studentService.findByUsername(username);
-//        if (optionalStudent.isPresent()) {
-//            Student student = optionalStudent.get();
-//            return messageService.getAllMessagesForUser(student.getUsername());
-//        } else {
-//            throw new RuntimeException("Error: Student not found.");
-//        }
-//    }
-
-//    public List<Message> getAllMessagesForCurrentUser(@RequestParam(name = "History", required = false) String course) {
-//        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-//        String username = ((UserDetailsImpl) authentication.getPrincipal()).getUsername();
-//
-//        Optional<Student> optionalStudent = studentService.findByUsername(username);
-//        if (optionalStudent.isPresent()) {
-//            Student student = optionalStudent.get();
-//            if (course != null) {
-//                return messageService.getMessagesByCourseAndStudent(course, student.getUsername());
-//            } else {
-//                return messageService.getAllMessagesForUser(student.getUsername());
-//            }
-//        } else {
-//            throw new RuntimeException("Error: Student not found.");
-//        }
-//    }
 
     @GetMapping("/history-course")
     public List<Message> getAllMessagesForCurrentUser(@RequestParam(name = "course", required = false) String course) {
