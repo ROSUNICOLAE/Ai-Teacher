@@ -27,7 +27,6 @@ public class CourseService {
         return names;
     }
 
-    // method to initialize database with some data 4 courses : Math Physics IT History
     @PostConstruct
     public void init() {
         courseRepository.save(new Course("Math"));
