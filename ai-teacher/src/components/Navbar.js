@@ -115,17 +115,17 @@ function Navbar() {
                                         }}>
                                             <div>
                                                 <label htmlFor="name">Name:</label>
-                                                <MDBInput className="input-field" id="name" type="text" value={name} onChange={e => setName(e.target.value)} />
+                                                <MDBInput style={{ width: "300px" }} className="input-field" id="name" type="text" value={name} onChange={e => setName(e.target.value)} />
                                             </div>
                                             <div>
                                                 <label htmlFor="username">Username:</label>
-                                                <MDBInput className="input-field" id="username" type="text" value={username} onChange={e => setUsername(e.target.value)} />
+                                                <MDBInput style={{ width: "300px" }} className="input-field" id="username" type="text" value={username} onChange={e => setUsername(e.target.value)} />
                                             </div>
                                             <div>
                                                 <label htmlFor="email">Email:</label>
-                                                <MDBInput className="input-field" id="email" type="email" value={email} onChange={e => setEmail(e.target.value)} />
+                                                <MDBInput style={{ width: "300px" }} className="input-field" id="email" type="email" value={email} onChange={e => setEmail(e.target.value)} />
                                             </div>
-                                            <MDBBtn className="mx-2" color="dark" type="submit">Create Account</MDBBtn>
+                                            <MDBBtn style={{ width: "300px" }} className="mx-2" color="dark" type="submit">Create Account</MDBBtn>
                                         </form>
                                     </MDBModalBody>
                                     <MDBModalFooter>
@@ -166,13 +166,13 @@ function Navbar() {
                                             }}>
                                                 <div>
                                                     <label htmlFor="username">Username:</label>
-                                                    <MDBInput id='username' type='text' value={username} onChange={e => setUsername(e.target.value)} />
+                                                    <MDBInput style={{ width: "300px" }} id='username' type='text' value={username} onChange={e => setUsername(e.target.value)} />
                                                 </div>
                                                 <div>
                                                     <label htmlFor="email">Email:</label>
-                                                    <MDBInput id='email' type='email' value={email} onChange={e => setEmail(e.target.value)} />
+                                                    <MDBInput  style={{ width: "300px" }} id='email' type='email' value={email} onChange={e => setEmail(e.target.value)} />
                                                 </div>
-                                                <MDBBtn className="signin-button-inside-form" color='dark' type="submit">Sign In</MDBBtn>
+                                                <MDBBtn style={{ width: "300px" }} className="signin-button-inside-form" color='dark' type="submit">Sign In</MDBBtn>
                                             </form>
                                         </MDBModalBody>
                                     </>
