@@ -77,7 +77,6 @@ function Navbar() {
         <nav className={`navbar ${isFixed ? "fixed" : "navbar navbar-expand-lg bg-tertiary"}`} style={{ backgroundColor: "white" }}>
             <div className="container-fluid">
                 <a className="navbar-brand" href="/"><i className="fas fa-home"></i>AIteacher</a>
-                {/*<a className="navbar-brand" href="/"> <Cube />teacher</a>*/}
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -103,7 +102,7 @@ function Navbar() {
                     </ul>
                     {!token && <MDBBtn className="btn btn-dark signup" onClick={() => setScrollableModal(!scrollableModal)}>SIGN UP</MDBBtn>}
                     {token ? null : (
-                        <MDBModal show={scrollableModal} setShow={setScrollableModal} tabIndex='-1'>
+                        <MDBModal show={scrollableModal} setShow={setScrollableModal}>
                             <MDBModalDialog className="modal-dialog-center" scrollable>
                                 <MDBModalContent>
                                     <MDBModalHeader>
@@ -126,7 +125,7 @@ function Navbar() {
                                                 <label htmlFor="email">Email:</label>
                                                 <MDBInput className="input-field" id='email' type='email' value={email} onChange={e => setEmail(e.target.value)} />
                                             </div>
-                                            <MDBBtn submit-buttonMDBBtn outline rounded className='mx-2' color='dark' type="submit">Create Account</MDBBtn>
+                                            <MDBBtn className='mx-2' color='dark' type="submit">Create Account</MDBBtn>
                                         </form>
                                     </MDBModalBody>
                                     <MDBModalFooter>
@@ -147,7 +146,7 @@ function Navbar() {
                         <MDBBtn className="btn btn-dark" onClick={() => setSignInModal(!signInModal)}>SIGN IN</MDBBtn>
                     )}
 
-                    <MDBModal show={signInModal} setShow={setSignInModal} tabIndex='-1'>
+                    <MDBModal show={signInModal} setShow={setSignInModal}>
                         <MDBModalDialog className="modal-dialog-center" scrollable>
                             <MDBModalContent>
                                 <MDBModalHeader>
@@ -173,7 +172,7 @@ function Navbar() {
                                                     <label htmlFor="email">Email:</label>
                                                     <MDBInput id='email' type='email' value={email} onChange={e => setEmail(e.target.value)} />
                                                 </div>
-                                                <MDBBtn outline rounded className='mx-2' color='dark' type="submit">Sign In</MDBBtn>
+                                                <MDBBtn color='dark' type="submit">Sign In</MDBBtn>
                                             </form>
                                         </MDBModalBody>
                                     </>
