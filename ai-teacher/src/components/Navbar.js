@@ -114,18 +114,18 @@ function Navbar() {
                                             setScrollableModal(!scrollableModal)
                                         }}>
                                             <div>
-                                                <label htmlFor="name">Name:</label>
-                                                <MDBInput style={{ width: "300px" }} className="input-field" id="name" type="text" value={name} onChange={e => setName(e.target.value)} />
+                                                <input MDBInput placeholder="name" style={{ width: "300px" }} className="input-field" id="name" type="text" value={name} onChange={e => setName(e.target.value)} />
                                             </div>
+                                            <p></p>
                                             <div>
-                                                <label htmlFor="username">Username:</label>
-                                                <MDBInput style={{ width: "300px" }} className="input-field" id="username" type="text" value={username} onChange={e => setUsername(e.target.value)} />
+                                                <input MDBInput placeholder="username" style={{ width: "300px" }} className="input-field" id="username" type="text" value={username} onChange={e => setUsername(e.target.value)} />
                                             </div>
+                                            <p></p>
                                             <div>
-                                                <label htmlFor="email">Email:</label>
-                                                <MDBInput style={{ width: "300px" }} className="input-field" id="email" type="email" value={email} onChange={e => setEmail(e.target.value)} />
+                                                <input MDBInput placeholder="email" style={{ width: "300px" }} className="input-field" id="email" type="email" value={email} onChange={e => setEmail(e.target.value)} />
                                             </div>
-                                            <MDBBtn style={{ width: "300px" }} className="mx-2" color="dark" type="submit">Create Account</MDBBtn>
+                                            <p></p>
+                                            <MDBBtn className="create-account-button-inside-form" style={{ width: "300px" }} color="dark" type="submit">Create Account</MDBBtn>
                                         </form>
                                     </MDBModalBody>
                                     <MDBModalFooter>
@@ -165,13 +165,13 @@ function Navbar() {
                                                 setSignInModal(false)
                                             }}>
                                                 <div>
-                                                    <label htmlFor="username">Username:</label>
-                                                    <MDBInput style={{ width: "300px" }} id='username' type='text' value={username} onChange={e => setUsername(e.target.value)} />
+                                                    <input MDBInput placeholder="username" style={{ width: "300px" }} id='username' type='text' value={username} onChange={e => setUsername(e.target.value)} />
                                                 </div>
+                                                <p></p>
                                                 <div>
-                                                    <label htmlFor="email">Email:</label>
-                                                    <MDBInput  style={{ width: "300px" }} id='email' type='email' value={email} onChange={e => setEmail(e.target.value)} />
+                                                    <input MDBInput  placeholder="email" style={{ width: "300px" }} id='email' type='email' value={email} onChange={e => setEmail(e.target.value)} />
                                                 </div>
+                                                <p></p>
                                                 <MDBBtn style={{ width: "300px" }} className="signin-button-inside-form" color='dark' type="submit">Sign In</MDBBtn>
                                             </form>
                                         </MDBModalBody>
