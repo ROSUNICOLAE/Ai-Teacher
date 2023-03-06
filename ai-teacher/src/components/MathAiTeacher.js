@@ -129,7 +129,6 @@ function MathAiTeacher() {
                         <h1>Math AI teacher</h1>
                     </div>
                     <div><h4 id="aiQuote">"Mathematics is the language in which God has written the Universe." – Galileo Galilei
-                        <Cube style={{marginRight: '1200px'}}/>
                     </h4>
                     </div>
                     <div className="d-flex justify-content-center align-items-center">
