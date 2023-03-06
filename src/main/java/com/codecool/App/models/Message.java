@@ -24,26 +24,18 @@ public class Message {
 
     @Column(name = "created_at", nullable = false)
     private Date createdAt;
-
     private String student;
     @Column(name = "course", nullable = false)
     private String course;
-
     public void setCourse(String course) {
         this.course = course;
     }
 
-
-
-
     public Message() {
         this.createdAt = new Date();
     }
-
     public void setStudent(String student) {
         this.student = student;
     }
-
-
 
 }

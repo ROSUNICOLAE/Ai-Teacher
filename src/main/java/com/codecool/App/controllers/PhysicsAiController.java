@@ -81,19 +81,6 @@ public class PhysicsAiController {
         return responseText;
     }
 
-//    @GetMapping("/physics-asked-questions")
-//    public List<Message> getAllMessagesForCurrentUser() {
-//        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-//        String username = ((UserDetailsImpl) authentication.getPrincipal()).getUsername();
-//
-//        Optional<Student> optionalStudent = studentService.findByUsername(username);
-//        if (optionalStudent.isPresent()) {
-//            Student student = optionalStudent.get();
-//            return messageService.getAllMessagesForUser(student.getUsername());
-//        } else {
-//            throw new RuntimeException("Error: Student not found.");
-//        }
-//    }
     @GetMapping("/physics-course")
     public List<Message> getAllMessagesForCurrentUser(@RequestParam(name = "course", required = false) String course) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
