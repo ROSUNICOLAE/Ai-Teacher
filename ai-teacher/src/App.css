@@ -333,9 +333,9 @@ MDBInput {
   margin-bottom: auto;
 }
 .card{
-  height: 550px;
-  border-radius: 15px !important;
-  background-color: rgba(0,0,0,0.4) !important;
+  height: 560px;
+  /*border-radius: 15px !important;*/
+  /*background-color: rgba(0,0,0,0.4) !important;*/
 }
 
 .msg_card_body{
