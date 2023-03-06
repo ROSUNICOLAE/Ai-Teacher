@@ -115,21 +115,21 @@ function Navbar() {
                                         }}>
                                             <div>
                                                 <label htmlFor="name">Name:</label>
-                                                <MDBInput className="input-field" id='name' type='text' value={name} onChange={e => setName(e.target.value)} />
+                                                <MDBInput className="input-field" id="name" type="text" value={name} onChange={e => setName(e.target.value)} />
                                             </div>
                                             <div>
                                                 <label htmlFor="username">Username:</label>
-                                                <MDBInput className="input-field" id='username' type='text' value={username} onChange={e => setUsername(e.target.value)} />
+                                                <MDBInput className="input-field" id="username" type="text" value={username} onChange={e => setUsername(e.target.value)} />
                                             </div>
                                             <div>
                                                 <label htmlFor="email">Email:</label>
-                                                <MDBInput className="input-field" id='email' type='email' value={email} onChange={e => setEmail(e.target.value)} />
+                                                <MDBInput className="input-field" id="email" type="email" value={email} onChange={e => setEmail(e.target.value)} />
                                             </div>
-                                            <MDBBtn className='mx-2' color='dark' type="submit">Create Account</MDBBtn>
+                                            <MDBBtn className="mx-2" color="dark" type="submit">Create Account</MDBBtn>
                                         </form>
                                     </MDBModalBody>
                                     <MDBModalFooter>
-                                        <MDBBtn color='secondary' onClick={() => setScrollableModal(!setScrollableModal)}>
+                                        <MDBBtn color="secondary" onClick={() => setScrollableModal(!setScrollableModal)}>
                                             Close
                                         </MDBBtn>
                                     </MDBModalFooter>
@@ -170,9 +170,9 @@ function Navbar() {
                                                 </div>
                                                 <div>
                                                     <label htmlFor="email">Email:</label>
-                                                    <MDBInput className="input-field" id='email' type='email' value={email} onChange={e => setEmail(e.target.value)} />
+                                                    <MDBInput id='email' type='email' value={email} onChange={e => setEmail(e.target.value)} />
                                                 </div>
-                                                <MDBBtn color='dark' type="submit">Sign In</MDBBtn>
+                                                <MDBBtn className="signin-button-inside-form" color='dark' type="submit">Sign In</MDBBtn>
                                             </form>
                                         </MDBModalBody>
                                     </>
