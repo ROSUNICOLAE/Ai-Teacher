@@ -1,7 +1,10 @@
 version: '3.8'
 services:
   server:
-    image: my-app-backend # the name of the existing server container image
+    build: ./
+    expose:
+      - ${SERVER_PORT}
+#    image: my-app-backend # the name of the existing server container image
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://109.97.198.79:5432/AiTeacher
       SPRING_DATASOURCE_USERNAME: postgres
