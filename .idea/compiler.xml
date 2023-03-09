@@ -14,7 +14,6 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="El-Proyecte-Grande-sprint5" target="17" />
       <module name="ElProyecteGrande-sprint2" target="17" />
       <module name="ElProyecteGrande-sprint3" target="17" />
       <module name="ElProyecteGrande-sprint4" target="17" />

@@ -6,7 +6,6 @@ import Footer from "./Footer";
 function About() {
     const videoId = "OiU4gXpFiJY";
     const videoUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&loop=1&controls=0&mute=1`;
-
     return (
         <div>
             <Navbar />
