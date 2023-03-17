@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dabea6c3-1866-4226-864a-19ee4408e610" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/El-Proyecte-Grande-sprint5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/El-Proyecte-Grande-sprint5.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-teacher/src/components/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/ai-teacher/src/components/About.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-teacher/src/components/countSection.js" beforeDir="false" afterPath="$PROJECT_DIR$/ai-teacher/src/components/countSection.js" afterDir="false" />
-    </list>
+    <list default="true" id="1ae67f87-8c88-47d1-8ed6-44426609109a" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,23 +13,16 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="JpbToolWindowState">
-    <option name="isToolWindowVisible" value="false" />
-  </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
         <option name="useMavenConfig" value="true" />
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectId" id="2MdGgZpKcyLJ4nu9QAJo1PiIR3a" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="2N6pgPFOG9wojTdZUI4xVwt0Knj" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="autoscrollToSource" value="true" />
@@ -46,47 +31,21 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/rosun/OneDrive/Desktop/CC - Projects/create-react-app-react-ROSUNICOLAE",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
+    "last_opened_file_path": "/Users/zzz/Documents/4. Advanced - Java Spring/Projects cv/Ai-teacher",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "show.run.dashboard.notification": "false",
-    "spring.configuration.checksum": "c134f316bcb114a4e51975dabee11445"
+    "project.structure.side.proportion": "0.2"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\rosun\OneDrive\Desktop\CC - Projects\el-proyecte-grande-sprint-5-java-904756" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Spring Boot.AiTeacherApplication">
-    <configuration name="AiTeacherApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="App" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.codecool.App.AiTeacherApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration name="AiTeacherApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <option name="ACTIVE_PROFILES" />
-      <option name="ALTERNATIVE_JRE_PATH" value="18" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <module name="App" />
+      <module name="Ai-teacher" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.codecool.App.AiTeacherApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -96,14 +55,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="dabea6c3-1866-4226-864a-19ee4408e610" name="Changes" comment="" />
-      <created>1678090158957</created>
+      <changelist id="1ae67f87-8c88-47d1-8ed6-44426609109a" name="Changes" comment="" />
+      <created>1678994498711</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1678090158957</updated>
-      <workItem from="1678090161389" duration="12966000" />
-      <workItem from="1678188304885" duration="9502000" />
-      <workItem from="1678379653390" duration="1001000" />
+      <updated>1678994498711</updated>
+      <workItem from="1678994501444" duration="6050000" />
     </task>
     <servers />
   </component>
@@ -120,8 +77,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
