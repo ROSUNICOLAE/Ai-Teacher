@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="dabea6c3-1866-4226-864a-19ee4408e610" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/El-Proyecte-Grande-sprint5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/El-Proyecte-Grande-sprint5.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
@@ -23,6 +24,9 @@
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
     </list>
+=======
+    <list default="true" id="1ae67f87-8c88-47d1-8ed6-44426609109a" name="Changes" comment="" />
+>>>>>>> f06b33d6810545b81f26104dab835eae5f9cb9f4
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,12 +34,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="JpbToolWindowState">
-    <option name="isToolWindowVisible" value="false" />
-  </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -45,10 +43,8 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectId" id="2MdGgZpKcyLJ4nu9QAJo1PiIR3a" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="2N6pgPFOG9wojTdZUI4xVwt0Knj" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="autoscrollToSource" value="true" />
@@ -57,29 +53,27 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+<<<<<<< HEAD
     "last_opened_file_path": "C:/Users/rosun/OneDrive/Desktop/CC - Projects/el-proyecte-grande-sprint-4-java-ROSUNICOLAE",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+=======
+    "last_opened_file_path": "/Users/zzz/Documents/4. Advanced - Java Spring/Projects cv/Ai-teacher",
+>>>>>>> f06b33d6810545b81f26104dab835eae5f9cb9f4
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "show.run.dashboard.notification": "false",
-    "spring.configuration.checksum": "c134f316bcb114a4e51975dabee11445"
+    "project.structure.side.proportion": "0.2"
   }
 }]]></component>
+<<<<<<< HEAD
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\rosun\OneDrive\Desktop\CC - Projects\el-proyecte-grande-sprint-5-java-904756" />
@@ -101,6 +95,11 @@
       <option name="ALTERNATIVE_JRE_PATH" value="18" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <module name="El-Proyecte-Grande-sprint5" />
+=======
+  <component name="RunManager">
+    <configuration name="AiTeacherApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="Ai-teacher" />
+>>>>>>> f06b33d6810545b81f26104dab835eae5f9cb9f4
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.codecool.App.AiTeacherApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -110,10 +109,11 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="dabea6c3-1866-4226-864a-19ee4408e610" name="Changes" comment="" />
-      <created>1678090158957</created>
+      <changelist id="1ae67f87-8c88-47d1-8ed6-44426609109a" name="Changes" comment="" />
+      <created>1678994498711</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+<<<<<<< HEAD
       <updated>1678090158957</updated>
       <workItem from="1678090161389" duration="12966000" />
       <workItem from="1678188304885" duration="9502000" />
@@ -124,6 +124,10 @@
       <workItem from="1679071669858" duration="6314000" />
       <workItem from="1679079053129" duration="747000" />
       <workItem from="1679080197415" duration="2627000" />
+=======
+      <updated>1678994498711</updated>
+      <workItem from="1678994501444" duration="6050000" />
+>>>>>>> f06b33d6810545b81f26104dab835eae5f9cb9f4
     </task>
     <servers />
   </component>
@@ -140,8 +144,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
