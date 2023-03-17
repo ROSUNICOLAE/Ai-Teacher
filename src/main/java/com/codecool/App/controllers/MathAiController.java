@@ -24,7 +24,7 @@ import java.util.Optional;
 @RequestMapping("/api")
 public class MathAiController {
 
-    private final String apiKey = "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";
+    private final String apiKey = "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";
     private final String endpoint = "https://api.openai.com/v1/completions";
     private final MessageService messageService;
     private final StudentService studentService;

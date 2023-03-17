@@ -5,13 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dabea6c3-1866-4226-864a-19ee4408e610" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/El-Proyecte-Grande-sprint5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/El-Proyecte-Grande-sprint5.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a6b0033d-26ba-4125-b050-096a2ee2af7c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a6b0033d-26ba-4125-b050-096a2ee2af7c.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a6b0033d-26ba-4125-b050-096a2ee2af7c/storage_v2/_src_/database/AiTeacher.evolTg/schema/information_schema.FNRwLQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a6b0033d-26ba-4125-b050-096a2ee2af7c/storage_v2/_src_/database/AiTeacher.evolTg/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a6b0033d-26ba-4125-b050-096a2ee2af7c/storage_v2/_src_/database/AiTeacher.evolTg/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a6b0033d-26ba-4125-b050-096a2ee2af7c/storage_v2/_src_/database/AiTeacher.evolTg/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a6b0033d-26ba-4125-b050-096a2ee2af7c/storage_v2/_src_/database/AiTeacher.evolTg/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a6b0033d-26ba-4125-b050-096a2ee2af7c/storage_v2/_src_/database/AiTeacher.evolTg/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_validation_jakarta_validation_api_3_0_0.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-teacher/src/components/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/ai-teacher/src/components/About.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-teacher/src/components/countSection.js" beforeDir="false" afterPath="$PROJECT_DIR$/ai-teacher/src/components/countSection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codecool/App/controllers/HistoryAiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codecool/App/controllers/HistoryAiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codecool/App/controllers/ITAiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codecool/App/controllers/ITAiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codecool/App/controllers/MathAiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codecool/App/controllers/MathAiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codecool/App/controllers/PhysicsAiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codecool/App/controllers/PhysicsAiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codecool/App/security/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codecool/App/security/CorsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +40,7 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
         <option name="useMavenConfig" value="true" />
       </MavenGeneralSettings>
     </option>
@@ -56,7 +67,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/rosun/OneDrive/Desktop/CC - Projects/create-react-app-react-ROSUNICOLAE",
+    "last_opened_file_path": "C:/Users/rosun/OneDrive/Desktop/CC - Projects/el-proyecte-grande-sprint-4-java-ROSUNICOLAE",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -73,6 +84,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\rosun\OneDrive\Desktop\CC - Projects\el-proyecte-grande-sprint-5-java-904756" />
     </key>
+    <key name="ImportMappingsDialog.RecentPackages">
+      <recent name="" />
+    </key>
   </component>
   <component name="RunManager" selected="Spring Boot.AiTeacherApplication">
     <configuration name="AiTeacherApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -86,7 +100,7 @@
       <option name="ACTIVE_PROFILES" />
       <option name="ALTERNATIVE_JRE_PATH" value="18" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <module name="App" />
+      <module name="El-Proyecte-Grande-sprint5" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.codecool.App.AiTeacherApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -103,7 +117,13 @@
       <updated>1678090158957</updated>
       <workItem from="1678090161389" duration="12966000" />
       <workItem from="1678188304885" duration="9502000" />
-      <workItem from="1678379653390" duration="1001000" />
+      <workItem from="1678379653390" duration="1370000" />
+      <workItem from="1678382974414" duration="1560000" />
+      <workItem from="1678434472426" duration="1865000" />
+      <workItem from="1678809937473" duration="21000" />
+      <workItem from="1679071669858" duration="6314000" />
+      <workItem from="1679079053129" duration="747000" />
+      <workItem from="1679080197415" duration="2627000" />
     </task>
     <servers />
   </component>

@@ -15,7 +15,7 @@ import java.util.List;
 @Configuration
 public class CorsConfig {
     @Bean
-    public CorsFilter corsFilter(@Value("${cors.allowed-origins}") List<String> allowedOrigins) {
+    public CorsFilter corsFilter(@Value("http://localhost:3000/") List<String> allowedOrigins) {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
