@@ -1,0 +1,43 @@
+version: '3.8'
+services:
+  server:
+    build: ./
+    expose:
+      - ${SERVER_PORT}
+#    image: my-app-backend # the name of the existing server container image
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://109.97.198.79:5432/AiTeacher
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: admin
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+    ports:
+      - ${SERVER_PORT}:${SERVER_PORT}
+    links:
+      - PostgresSql
+
+  client:
+    build: ./ai-teacher
+    environment:
+      - CLIENT_PORT=${CLIENT_PORT}
+    expose:
+      - ${CLIENT_PORT}
+    ports:
+      - ${CLIENT_PORT}:${CLIENT_PORT}
+    links:
+      - server
+    command: npm start
+
+  PostgresSql:
+    image: postgres:alpine
+    environment:
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: AiTeacher
+    ports:
+      - "5433:5433"
+    volumes:
+      - postgres-data:/data/db
+
+volumes:
+  postgres-data:
+
+    driver: local
