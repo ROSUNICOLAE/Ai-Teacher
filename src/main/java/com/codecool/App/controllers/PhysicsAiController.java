@@ -25,7 +25,7 @@ import java.util.Optional;
 @RequestMapping("/api")
 public class PhysicsAiController {
 
-    private final String apiKey = "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";
+    private final String apiKey = "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";
     private final String endpoint = "https://api.openai.com/v1/completions";
 
     private final MessageService messageService;

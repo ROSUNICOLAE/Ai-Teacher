@@ -47,7 +47,7 @@ public class MathAiController {
 
         JsonNode requestJson = new ObjectMapper().createObjectNode()
                 .put("model", "text-davinci-003")
-                .put("prompt", "Act like a Math teacher, a genius in mathematics. And do not accept other questions from anything else. Try to be as explicit as possible.\n" +
+                .put("prompt", "Answer like a Math teacher, a genius in mathematics. And do not accept other questions from anything else. Try to be as explicit as possible.\n" +
                         prompt)
                 .put("max_tokens", 500);
 
