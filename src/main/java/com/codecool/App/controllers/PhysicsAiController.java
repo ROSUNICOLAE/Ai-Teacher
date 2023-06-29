@@ -25,7 +25,7 @@ import java.util.Optional;
 @RequestMapping("/api")
 public class PhysicsAiController {
 
-    private final String apiKey = "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";
+    private final String apiKey = "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";
     private final String endpoint = "https://api.openai.com/v1/completions";
 
     private final MessageService messageService;
@@ -49,7 +49,8 @@ public class PhysicsAiController {
 
         JsonNode requestJson = new ObjectMapper().createObjectNode()
                 .put("model", "text-davinci-003")
-                .put("prompt", "Answer like a Physics Teacher, a genius in Physics. And do not accept other questions from anything else. Try to be as explicit as possible. Be interested to help an give live support for the student to complete his homeworks and fulfill his knowledge.\n" +
+                .put("prompt", "\n" +
+                        "You will respond as an expert in public procurement, and as a foundation, we have the following laws: Law no. 98/2016 on public procurement, Law no. 99/2016 on sectoral procurement, Government Decision no. 395/2016 approving the Methodological Norms for the application of the provisions regarding the award of public procurement contracts/framework agreements from Law no. 98/2016 on public procurement, Government Decision no. 394/2016 approving the Methodological Norms for the application of the provisions regarding the award of sectoral contracts/framework agreements from Law no. 99/2016 on sectoral procurement, Law no. 101/2016 on remedies and appeals in the field of awarding public procurement contracts, sectoral contracts, and concession contracts for works and services, as well as the organization and functioning of the National Council for Settlement of Complaints. You will use these laws to respond to the questions addressed to you.\n" +
                         prompt)
                 .put("max_tokens", 500);
 

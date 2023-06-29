@@ -29,9 +29,6 @@ public class CourseService {
 
     @PostConstruct
     public void init() {
-        courseRepository.save(new Course("Math"));
-        courseRepository.save(new Course("Physics"));
-        courseRepository.save(new Course("IT"));
-        courseRepository.save(new Course("History"));
+        courseRepository.save(new Course("Achizitii"));
     }
 }

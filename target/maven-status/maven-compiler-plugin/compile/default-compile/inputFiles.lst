@@ -1,32 +1,32 @@
-C:\Users\rosun\OneDrive\Desktop\CC - Projects\el-proyecte-grande-sprint-5-java-904756\src\main\java\com\codecool\App\controllers\CapitalController.java
-C:\Users\rosun\OneDrive\Desktop\CC - Projects\el-proyecte-grande-sprint-5-java-904756\src\main\java\com\codecool\App\controllers\AuthController.java
-C:\Users\rosun\OneDrive\Desktop\CC - Projects\el-proyecte-grande-sprint-5-java-904756\src\main\java\com\codecool\App\models\Student.java
-C:\Users\rosun\OneDrive\Desktop\CC - Projects\el-proyecte-grande-sprint-5-java-904756\src\main\java\com\codecool\App\models\Message.java
-C:\Users\rosun\OneDrive\Desktop\CC - Projects\el-proyecte-grande-sprint-5-java-904756\src\main\java\com\codecool\App\security\services\UserDetailsImpl.java
-C:\Users\rosun\OneDrive\Desktop\CC - Projects\el-proyecte-grande-sprint-5-java-904756\src\main\java\com\codecool\App\security\jwt\AuthEntryPointJwt.java
-C:\Users\rosun\OneDrive\Desktop\CC - Projects\el-proyecte-grande-sprint-5-java-904756\src\main\java\com\codecool\App\controllers\TestController.java
-C:\Users\rosun\OneDrive\Desktop\CC - Projects\el-proyecte-grande-sprint-5-java-904756\src\main\java\com\codecool\App\repository\StudentRepository.java
-C:\Users\rosun\OneDrive\Desktop\CC - Projects\el-proyecte-grande-sprint-5-java-904756\src\main\java\com\codecool\App\controllers\CourseController.java
-C:\Users\rosun\OneDrive\Desktop\CC - Projects\el-proyecte-grande-sprint-5-java-904756\src\main\java\com\codecool\App\controllers\StudentController.java
-C:\Users\rosun\OneDrive\Desktop\CC - Projects\el-proyecte-grande-sprint-5-java-904756\src\main\java\com\codecool\App\repository\CourseRepository.java
-C:\Users\rosun\OneDrive\Desktop\CC - Projects\el-proyecte-grande-sprint-5-java-904756\src\main\java\com\codecool\App\controllers\MessageResponse.java
-C:\Users\rosun\OneDrive\Desktop\CC - Projects\el-proyecte-grande-sprint-5-java-904756\src\main\java\com\codecool\App\controllers\HistoryAiController.java
-C:\Users\rosun\OneDrive\Desktop\CC - Projects\el-proyecte-grande-sprint-5-java-904756\src\main\java\com\codecool\App\security\CorsConfig.java
-C:\Users\rosun\OneDrive\Desktop\CC - Projects\el-proyecte-grande-sprint-5-java-904756\src\main\java\com\codecool\App\AiTeacherApplication.java
-C:\Users\rosun\OneDrive\Desktop\CC - Projects\el-proyecte-grande-sprint-5-java-904756\src\main\java\com\codecool\App\service\CourseService.java
-C:\Users\rosun\OneDrive\Desktop\CC - Projects\el-proyecte-grande-sprint-5-java-904756\src\main\java\com\codecool\App\models\RoleType.java
-C:\Users\rosun\OneDrive\Desktop\CC - Projects\el-proyecte-grande-sprint-5-java-904756\src\main\java\com\codecool\App\controllers\PhysicsAiController.java
-C:\Users\rosun\OneDrive\Desktop\CC - Projects\el-proyecte-grande-sprint-5-java-904756\src\main\java\com\codecool\App\models\Role.java
-C:\Users\rosun\OneDrive\Desktop\CC - Projects\el-proyecte-grande-sprint-5-java-904756\src\main\java\com\codecool\App\security\services\UserDetailsServiceImpl.java
-C:\Users\rosun\OneDrive\Desktop\CC - Projects\el-proyecte-grande-sprint-5-java-904756\src\main\java\com\codecool\App\controllers\MathAiController.java
-C:\Users\rosun\OneDrive\Desktop\CC - Projects\el-proyecte-grande-sprint-5-java-904756\src\main\java\com\codecool\App\controllers\Request\LoginRequest.java
-C:\Users\rosun\OneDrive\Desktop\CC - Projects\el-proyecte-grande-sprint-5-java-904756\src\main\java\com\codecool\App\security\jwt\AuthTokenFilter.java
-C:\Users\rosun\OneDrive\Desktop\CC - Projects\el-proyecte-grande-sprint-5-java-904756\src\main\java\com\codecool\App\service\StudentService.java
-C:\Users\rosun\OneDrive\Desktop\CC - Projects\el-proyecte-grande-sprint-5-java-904756\src\main\java\com\codecool\App\repository\MessageRepository.java
-C:\Users\rosun\OneDrive\Desktop\CC - Projects\el-proyecte-grande-sprint-5-java-904756\src\main\java\com\codecool\App\security\jwt\JwtUtils.java
-C:\Users\rosun\OneDrive\Desktop\CC - Projects\el-proyecte-grande-sprint-5-java-904756\src\main\java\com\codecool\App\repository\RoleRepository.java
-C:\Users\rosun\OneDrive\Desktop\CC - Projects\el-proyecte-grande-sprint-5-java-904756\src\main\java\com\codecool\App\models\Course.java
-C:\Users\rosun\OneDrive\Desktop\CC - Projects\el-proyecte-grande-sprint-5-java-904756\src\main\java\com\codecool\App\controllers\Request\SignupRequest.java
-C:\Users\rosun\OneDrive\Desktop\CC - Projects\el-proyecte-grande-sprint-5-java-904756\src\main\java\com\codecool\App\service\MessageService.java
-C:\Users\rosun\OneDrive\Desktop\CC - Projects\el-proyecte-grande-sprint-5-java-904756\src\main\java\com\codecool\App\controllers\ITAiController.java
-C:\Users\rosun\OneDrive\Desktop\CC - Projects\el-proyecte-grande-sprint-5-java-904756\src\main\java\com\codecool\App\security\WebSecurityConfig.java
+C:\Users\rosun\OneDrive\Desktop\Web.App\Ai-Teacher\src\main\java\com\codecool\App\controllers\AuthController.java
+C:\Users\rosun\OneDrive\Desktop\Web.App\Ai-Teacher\src\main\java\com\codecool\App\controllers\HistoryAiController.java
+C:\Users\rosun\OneDrive\Desktop\Web.App\Ai-Teacher\src\main\java\com\codecool\App\AiTeacherApplication.java
+C:\Users\rosun\OneDrive\Desktop\Web.App\Ai-Teacher\src\main\java\com\codecool\App\models\Role.java
+C:\Users\rosun\OneDrive\Desktop\Web.App\Ai-Teacher\src\main\java\com\codecool\App\repository\MessageRepository.java
+C:\Users\rosun\OneDrive\Desktop\Web.App\Ai-Teacher\src\main\java\com\codecool\App\models\RoleType.java
+C:\Users\rosun\OneDrive\Desktop\Web.App\Ai-Teacher\src\main\java\com\codecool\App\security\jwt\AuthEntryPointJwt.java
+C:\Users\rosun\OneDrive\Desktop\Web.App\Ai-Teacher\src\main\java\com\codecool\App\models\Course.java
+C:\Users\rosun\OneDrive\Desktop\Web.App\Ai-Teacher\src\main\java\com\codecool\App\controllers\CapitalController.java
+C:\Users\rosun\OneDrive\Desktop\Web.App\Ai-Teacher\src\main\java\com\codecool\App\controllers\Request\LoginRequest.java
+C:\Users\rosun\OneDrive\Desktop\Web.App\Ai-Teacher\src\main\java\com\codecool\App\controllers\MessageResponse.java
+C:\Users\rosun\OneDrive\Desktop\Web.App\Ai-Teacher\src\main\java\com\codecool\App\controllers\PhysicsAiController.java
+C:\Users\rosun\OneDrive\Desktop\Web.App\Ai-Teacher\src\main\java\com\codecool\App\repository\RoleRepository.java
+C:\Users\rosun\OneDrive\Desktop\Web.App\Ai-Teacher\src\main\java\com\codecool\App\models\Message.java
+C:\Users\rosun\OneDrive\Desktop\Web.App\Ai-Teacher\src\main\java\com\codecool\App\controllers\MathAiController.java
+C:\Users\rosun\OneDrive\Desktop\Web.App\Ai-Teacher\src\main\java\com\codecool\App\service\CourseService.java
+C:\Users\rosun\OneDrive\Desktop\Web.App\Ai-Teacher\src\main\java\com\codecool\App\security\CorsConfig.java
+C:\Users\rosun\OneDrive\Desktop\Web.App\Ai-Teacher\src\main\java\com\codecool\App\security\jwt\JwtUtils.java
+C:\Users\rosun\OneDrive\Desktop\Web.App\Ai-Teacher\src\main\java\com\codecool\App\security\services\UserDetailsImpl.java
+C:\Users\rosun\OneDrive\Desktop\Web.App\Ai-Teacher\src\main\java\com\codecool\App\controllers\TestController.java
+C:\Users\rosun\OneDrive\Desktop\Web.App\Ai-Teacher\src\main\java\com\codecool\App\models\Student.java
+C:\Users\rosun\OneDrive\Desktop\Web.App\Ai-Teacher\src\main\java\com\codecool\App\controllers\Request\SignupRequest.java
+C:\Users\rosun\OneDrive\Desktop\Web.App\Ai-Teacher\src\main\java\com\codecool\App\security\WebSecurityConfig.java
+C:\Users\rosun\OneDrive\Desktop\Web.App\Ai-Teacher\src\main\java\com\codecool\App\service\StudentService.java
+C:\Users\rosun\OneDrive\Desktop\Web.App\Ai-Teacher\src\main\java\com\codecool\App\controllers\StudentController.java
+C:\Users\rosun\OneDrive\Desktop\Web.App\Ai-Teacher\src\main\java\com\codecool\App\controllers\CourseController.java
+C:\Users\rosun\OneDrive\Desktop\Web.App\Ai-Teacher\src\main\java\com\codecool\App\repository\StudentRepository.java
+C:\Users\rosun\OneDrive\Desktop\Web.App\Ai-Teacher\src\main\java\com\codecool\App\security\services\UserDetailsServiceImpl.java
+C:\Users\rosun\OneDrive\Desktop\Web.App\Ai-Teacher\src\main\java\com\codecool\App\service\MessageService.java
+C:\Users\rosun\OneDrive\Desktop\Web.App\Ai-Teacher\src\main\java\com\codecool\App\controllers\ITAiController.java
+C:\Users\rosun\OneDrive\Desktop\Web.App\Ai-Teacher\src\main\java\com\codecool\App\security\jwt\AuthTokenFilter.java
+C:\Users\rosun\OneDrive\Desktop\Web.App\Ai-Teacher\src\main\java\com\codecool\App\repository\CourseRepository.java

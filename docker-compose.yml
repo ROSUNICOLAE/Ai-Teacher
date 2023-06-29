@@ -33,7 +33,7 @@ services:
       POSTGRES_PASSWORD: admin
       POSTGRES_DB: AiTeacher
     ports:
-      - "5433:5433"
+      - "5432:5432"
     volumes:
       - postgres-data:/data/db
 

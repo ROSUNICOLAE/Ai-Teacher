@@ -105,10 +105,10 @@ function PhysicsAiTeacher() {
     return (<div>
             <Navbar/>
             <div className="flex-container">
-                <aside className="sidemenu" style={{ overflowY: "auto" }}>
-                    <h6 className="side-menu-button">Asked questions</h6>
+                <aside className="sidemenu" style={{ overflowY: "auto" , backgroundColor: "#184BA1" }}>
+                    <h6 className="side-menu-button">Istoric Conversatie</h6>
                     <select onChange={handleSelectCourse} className="form-select">
-                        <option>Select Course</option>
+                        <option>Istoric disponibil</option>
                         {courseNames.map((courseName, index) => (
                             <option key={index} value={courseName}>{courseName}</option>
                         ))}
@@ -129,10 +129,10 @@ function PhysicsAiTeacher() {
                     ))}
                 </aside>
                 <div className="question-container">
-                    <div id="aiTitle">
-                        <h1>Physics AI teacher</h1>
+                    <div>
+                        <h1>AI-Achiziti</h1>
                     </div>
-                    <div><h4 id="aiQuote">"Nothing in life is to be feared, it is only to be understood. Now is the time to understand more, so that we may fear less." - Marie Curie
+                    <div className="d-flex justify-content-center align-items-center" ><h4 >"Asistenta online 24/24 pe segmentul achizitii publice"
                     </h4>
                     </div>
                     <div className="d-flex justify-content-center align-items-center">
@@ -163,15 +163,15 @@ function PhysicsAiTeacher() {
                             handleSubmit(e);
                         }
                     }}>
-                                    <textarea
+                                    <textarea style={{backgroundColor: "#184BA1"}}
                                         id="message"
                                         value={message}
                                         onChange={(e) => setMessage(e.target.value)}
                                         rows="1"
                                         className="chat-input-textarea"
-                                        placeholder="Type your question here">
+                                        placeholder="Incepeti dialogul ...">
                                     </textarea>
-                        <button type="submit" className="btn btn-outline-secondary ask">Ask</button>
+                        <button type="submit" className="btn btn-outline-secondary ask">Trimite</button>
                     </form>
                 </div>
             </div>
